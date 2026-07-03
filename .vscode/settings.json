@@ -1,0 +1,8 @@
+{
+  "python.defaultInterpreterPath": "d:/projects/enterpriserag/enterprise-env/Scripts/python.exe",
+  "python.analysis.typeCheckingMode": "basic",
+  "python.analysis.diagnosticSeverityOverrides": {
+    "reportMissingModuleSource": "none",
+    "reportMissingTypeStubs": "none"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "venvPath": ".",
+  "venv": "enterprise-env",
+  "pythonVersion": "3.12",
+  "typeCheckingMode": "basic",
+  "reportMissingModuleSource": "none",
+  "reportMissingTypeStubs": "none"
+}
