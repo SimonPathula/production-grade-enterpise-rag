@@ -41,5 +41,5 @@ def chunk_text(text:str, chunk_size:int = 1500) -> List[str]:
         if current_chunk.strip():
             chunks.append(current_chunk.strip())
 
-        logfire.info(f"✅ Generated {len(chunks)} chunks")
+        logfire.info(f"Generated {len(chunks)} chunks")
         return chunks

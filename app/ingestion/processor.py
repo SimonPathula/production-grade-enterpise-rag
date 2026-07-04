@@ -1,9 +1,8 @@
-from rich import control
-from sqlalchemy.engine import url
 import os
 import sys
 import uuid
 import json
+import time
 import tempfile
 import logfire
 import vertexai
@@ -27,7 +26,7 @@ from app.ingestion.chunking.splitter import chunk_text
 logfire.configure(service_name="enterprise-ingestion-service")
 vertexai.init(project= settings.PROJECT_ID, location= settings.LOCATION)
 storage_client = storage.Client(project=settings.PROJECT_ID)
-qdrant_client = QdrantClient(url=settings.QDRANT_URL, api_key=settings.QDRANT_API_KEY)
+qdrant_client = QdrantClient(url=settings.QDRANT_URL, api_key=settings.QDRANT_API_KEY, timeout= 60)
 
 # FastAPI
 app = FastAPI(title="RAG Ingestion Service")
@@ -51,6 +50,19 @@ def upload_to_gcs(data, bucket_name:str, destination:str, is_json: bool = False)
         except Exception as e:
             logfire.error(f"GCS Upload failed: {e}")
             raise e
+
+def upsert_in_batches(points, batch_size=64, retries=3):
+    for i in range(0, len(points), batch_size):
+        batch = points[i:i+batch_size]
+        for attempt in range(retries):
+            try:
+                qdrant_client.upsert(collection_name=settings.QDRANT_COLLECTION, points=batch, wait=True)
+                break
+            except Exception as e:
+                if attempt == retries - 1:
+                    raise
+                logfire.warning(f"Upsert batch failed (attempt {attempt+1}): {e}")
+                time.sleep(2 ** attempt)
 
 def process_file(file_path:str, filename:str, source_type:str, skip_raw_upload: bool = False):
     with logfire.span("Processing File", file_path= file_path, filename= filename, source= source_type, cloud_mode=skip_raw_upload):
@@ -102,10 +114,7 @@ def process_file(file_path:str, filename:str, source_type:str, skip_raw_upload: 
                     )
                     for chunk, vector in zip(chunks, embeddings)
                 ]
-                qdrant_client.upsert(
-                    collection_name=settings.QDRANT_COLLECTION,
-                    points=points,
-                )
+                upsert_in_batches(points)
                 logfire.info(f"Indexed {len(points)} points to Qdrant from '{filename}'")   
 
         except Exception as e:
@@ -115,9 +124,21 @@ def universal_ingestion(base_dir: str, explicit_source_type: str | None, wipe: b
     with logfire.span("Universal ingestion started", base_directory= base_dir):
         if wipe:
             with logfire.span("Wiping collection"):
+                print("URL:", settings.QDRANT_URL)
+                print("Collection:", settings.QDRANT_COLLECTION)
+                print("Exists:", qdrant_client.collection_exists(settings.QDRANT_COLLECTION))
                 if qdrant_client.collection_exists(settings.QDRANT_COLLECTION):
                     qdrant_client.delete_collection(settings.QDRANT_COLLECTION)
                     logfire.info(f"Collection {settings.QDRANT_COLLECTION} deleted")
+
+        if not qdrant_client.collection_exists(settings.QDRANT_COLLECTION):
+            qdrant_client.create_collection(
+                collection_name=settings.QDRANT_COLLECTION,
+                vectors_config=models.VectorParams(
+                    size=768,   # e.g. 768 for text-embedding-004, 1536 for OpenAI ada
+                    distance=models.Distance.COSINE,
+                ),
+            )
 
         subdirs = [d for d in os.listdir(base_dir) if os.path.isdir(os.path.join(base_dir, d))]
 

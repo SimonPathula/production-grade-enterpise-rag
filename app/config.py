@@ -16,7 +16,7 @@ class Settings:
     # --- Vector DB (Qdrant) ---
     QDRANT_URL = os.getenv("QDRANT_CLUSTER_ENDPOINT")
     QDRANT_API_KEY = os.getenv("QDRANT_API_KEY")
-    QDRANT_COLLECTION = "enterprise_rag"
+    QDRANT_COLLECTION = "enterpriserag"
 
     # --- LLM (Groq) ---
     GROQ_API_KEY = os.getenv("GROQ_API_KEY")
