@@ -9,7 +9,7 @@ def parse_office(file_path:str):
         if not full_text.strip():
             logfire.warning(f"Unstructured return empty text for {file_path}")
         else:
-            logfire.info(f"Successfully parsed {len{full_text}} characters")
+            logfire.info(f"Successfully parsed {len(full_text)} characters")
 
         return full_text
 

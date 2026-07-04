@@ -112,7 +112,7 @@ def process_file(file_path:str, filename:str, source_type:str, skip_raw_upload: 
             logfire.error(f"Failed to process {filename}: {e}")
 
 def universal_ingestion(base_dir: str, explicit_source_type: str | None, wipe: bool = False):
-    with logfire.span("Universal ingestion started", base_directory= base_dir)
+    with logfire.span("Universal ingestion started", base_directory= base_dir):
         if wipe:
             with logfire.span("Wiping collection"):
                 if qdrant_client.collection_exists(settings.QDRANT_COLLECTION):
@@ -144,7 +144,7 @@ def _process_directory(dir_path: str, source_type: str):
 if __name__ == "__main__":
     wipe_requested = "--wipe" in sys.argv
     clean_args     = [a for a in sys.argv if a != "--wipe"]
-    target_dir     = clean_args[1] if len(clean_args) > 1 else "DATA"
+    target_dir     = clean_args[1] if len(clean_args) > 1 else "data"
     explicit_type  = clean_args[2] if len(clean_args) > 2 else None
 
     if not os.path.exists(target_dir):

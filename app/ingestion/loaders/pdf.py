@@ -65,7 +65,7 @@ def parse_pdf(file_path:str):
             if not full_text.strip():
                 logfire.error(f"Document AI returned empty text for {file_path}")
             else:
-                logfire.info(f"Document AI successfully pared {len{full_text}} characters")
+                logfire.info(f"Document AI successfully parsed {len(full_text)} characters")
 
             return full_text
 
