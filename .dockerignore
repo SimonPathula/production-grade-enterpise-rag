@@ -1,0 +1,6 @@
+.env
+/enterprise-env
+commands.md
+commands_scalable.md
+.logfire
+/.vscode
