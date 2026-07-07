@@ -58,7 +58,7 @@ def generate_node(state: AgentState):
             response = llm.invoke(prompt)
             logfire.info("Response synthesized successfully")
             return{
-                "final answer":response.content, 
+                "final_answer":response.content, 
                 "status": "Response generated.",
                 "messages":[{"role" : "assistant", "content": response.content}]
             }

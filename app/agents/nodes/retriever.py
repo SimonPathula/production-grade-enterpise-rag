@@ -7,14 +7,6 @@ from app.services.retrieval.ranking_service import rerank_documents
 def retrieve_node(state: AgentState):
         query = state["current_query"]
 
-        if query == "CONVERSATIONAL":
-            logfire.info("Skipping retrieval - query is conversational")
-            return {
-                "documents" : [],
-                "status" : "Using conversation history. No retrieval needed",
-                "plan" : state["plan"] + ["Retrieval skipped"]
-            }
-
         with logfire.span("Documents Retrieval"):
             logfire.info(f"Searching Qdrant for: {query}")
             raw_results = search_qdrant_db(query, 15)

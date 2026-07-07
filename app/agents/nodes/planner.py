@@ -8,7 +8,7 @@ llm = ChatGroq(model= settings.GROQ_MODEL, api_key=settings.GROQ_API_KEY, temper
 def planner_node(state: AgentState):
     history = ""
     for msg in state["messages"]:
-        role = "User" if msg["role"] == "user " else "Assistant"
+        role = "User" if msg["role"] == "user" else "Assistant"
         history += f"{role}: {msg["content"]}\n"    
 
     user_message = state["messages"][-1]["content"] if state["messages"] else ""

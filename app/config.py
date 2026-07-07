@@ -49,6 +49,7 @@ class Settings:
     LANGSMITH_API_KEY = os.getenv("LANGSMITH_API_KEY")
     LANGSMITH_PROJECT = os.getenv("LANGSMITH_PROJECT", "entrepriserag")
     LANGSMITH_ENDPOINT = os.getenv("LANGSMITH_ENDPOINT", "https://api.smith.langchain.com")
+    LOGFIRE_TOKEN = os.getenv("LOGFIRE_TOKEN", "pylf_v1_us_4JL0QgP52DBvFPRP8KJ5ScBLVtWJCjX1vHdlvNY9F2WN")
 
     # --- Evals ---
     JUDGE_GROQ = os.getenv("JUDGE_GROQ")
