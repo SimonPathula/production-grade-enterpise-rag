@@ -75,7 +75,7 @@ if prompt := st.chat_input("Ask about your documentation..."):
                 try:
                     with logfire.span("📡 Calling RAG Backend"):
                         url = f"{base_url}/query"
-                        payload = {"q": prompt, "thread_id": st.session_state.session_id}
+                        payload = {"query": prompt, "thread_id": st.session_state.session_id}
                         response = requests.post(url, json=payload, timeout=60)
 
                         if response.status_code != 200:
