@@ -1,3 +1,4 @@
+from nemoguardrails import LLMRails, RailsConfig
 from app.config import settings
 import logfire
 import os
@@ -10,12 +11,17 @@ from fastapi import FastAPI, Response
 from app.agents.graph import rag_agent
 from pydantic import BaseModel
 from typing import Optional
+from app.agents.guardrails.rails import intialize_rails, guard
 
 app = FastAPI(title="Enterprise Agentic RAG API")
 
 class QueryRequest(BaseModel):
     query: str
     thread_id: Optional[str] = "default_user"
+
+@app.on_event("startup")
+def startup_event():
+    intialize_rails()
 
 @app.get("/")
 def health():
@@ -44,6 +50,17 @@ def query(request: QueryRequest):
     config = {"configurable": {"thread_id": thread_id}}
 
     try:
+        rail_fired,rail_response = guard(q)
+        if rail_fired:
+            logfire.info(f"🛡️ Request blocked by guardrails | thread={thread_id}")
+            return {
+                "question": q,
+                "answer": rail_response,
+                "thought_process": ["Intent: Guardrails Fired", "Retrieval: Skipped"],
+                "status": "Blocked by guardrails.",
+                "sources": [],
+            }
+
         final_output = rag_agent.invoke(initial_state, config=config)
 
         return {

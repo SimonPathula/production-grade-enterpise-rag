@@ -4,3 +4,4 @@ commands.md
 commands_scalable.md
 .logfire
 /.vscode
+__pycache__/
