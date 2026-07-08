@@ -27,8 +27,14 @@ python-pptx
 python-docx
 pypdf
 beautifulsoup4
+
+#=== Observability ====
 langsmith
 logfire
 logfire[fastapi]
 logfire[requests]
 loguru
+
+# === Guardrails =====
+nemoguardrails[nvidia]
+langchain-nvidia-ai-endpoints
