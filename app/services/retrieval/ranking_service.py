@@ -1,4 +1,3 @@
-from sqlalchemy.engine import result
 import time
 import logfire
 from flashrank import RerankRequest, Ranker
