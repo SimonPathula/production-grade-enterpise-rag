@@ -27,6 +27,7 @@ langchain-groq
 langchain-google-vertexai
 langchain-community
 langchain-openai
+langchain-text-splitters
 pydantic>=2.0.0
 python-pptx
 python-docx
