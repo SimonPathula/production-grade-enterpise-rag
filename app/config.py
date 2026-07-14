@@ -37,6 +37,7 @@ class Settings:
     DB_USER = os.getenv("DB_USER")
     DB_PASS = os.getenv("DB_PASS")
     DB_NAME = os.getenv("DB_NAME", "rag_memory")
+    DB_CONNECTION_NAME = os.getenv("DB_CONNECTION_NAME", "enterprise_rag")
     LOCAL_MODE = os.getenv("LOCAL_MODE", "true").lower() == "true"
 
     # --- Redis Semantic Cache ---
@@ -53,6 +54,8 @@ class Settings:
 
     # --- Evals ---
     JUDGE_GROQ = os.getenv("JUDGE_GROQ")
+
+    LOCAL_MODE = os.getenv("LOCAL_MODE")
 
 
 # Apply LangSmith env vars for automatic LangChain tracing

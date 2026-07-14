@@ -120,6 +120,8 @@ def process_file(file_path:str, filename:str, source_type:str, skip_raw_upload: 
         except Exception as e:
             logfire.error(f"Failed to process {filename}: {e}")
 
+
+
 def universal_ingestion(base_dir: str, explicit_source_type: str | None, wipe: bool = False):
     with logfire.span("Universal ingestion started", base_directory= base_dir):
         if wipe:

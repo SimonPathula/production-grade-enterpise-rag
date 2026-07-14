@@ -1,6 +1,7 @@
 fastapi
 uvicorn
 python-dotenv
+python-multipart    
 requests
 streamlit
 numpy
@@ -14,10 +15,14 @@ cloud-sql-python-connector
 qdrant-client
 flashrank
 redis
+redisvl
 sqlalchemy
 pg8000
+psycopg[binary]
+psycopg_pool
 langchain
 langgraph
+langgraph-checkpoint-postgres
 langchain-groq
 langchain-google-vertexai
 langchain-community
@@ -38,3 +43,7 @@ loguru
 # === Guardrails =====
 nemoguardrails[nvidia]
 langchain-nvidia-ai-endpoints
+
+# === Gateways ====
+portkey_ai
+
