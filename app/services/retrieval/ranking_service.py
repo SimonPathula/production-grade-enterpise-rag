@@ -9,7 +9,8 @@ def _get_ranker() -> Ranker:
     if _ranker is None:
         logfire.info("Initializing FlashRank Model (TinyBERT) locally...")
         try:
-            _ranker = Ranker(cache_dir="/tmp/flashrank")
+            # _ranker = Ranker(cache_dir="/tmp/flashrank")
+            _ranker = Ranker(model_name="ms-marco-MiniLM-L-12-v2")
         except Exception:
             _ranker = Ranker()
 
