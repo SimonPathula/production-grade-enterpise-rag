@@ -1,0 +1,101 @@
+id,question,precision_5,precision_5_with_ranker
+1,What is the difference between completions and parallelism in a Kubernetes Job spec?,2,2
+2,"What restart policies are allowed for a Pod managed by a Job, and why is Always not permitted?",3,2
+3,How does completionMode: Indexed differ from the default NonIndexed mode in a Job?,3,4
+4,"What cron schedule format does a CronJob use, and what does concurrencyPolicy: Forbid do?",3,3
+5,What do backoffLimit and activeDeadlineSeconds control on a Job?,4,3
+6,What do successfulJobsHistoryLimit and failedJobsHistoryLimit control on a CronJob?,2,3
+7,Describe the idempotent job design pattern and why it matters for Kubernetes Jobs.,2,2
+8,Why is running a long job without checkpointing considered an anti-pattern?,3,3
+9,"Which kubectl command shows a Job's completions, duration, and age at a glance?",2,2
+10,How can you view the logs of a Job's pod after the Job has already completed or failed?,3,3
+11,"What are the three statuses a Kubernetes Job can have, and what does kubectl describe job show that kubectl get jobs does not?",3,3
+12,"How do you follow a running Job's logs in real time, and how do you filter pods belonging to a specific job by label?",4,4
+13,"What's the role of the Metrics Server in enabling Horizontal Pod Autoscaling, and what command verifies it's collecting data?",3,3
+14,"In an HPA object, what do minReplicas, maxReplicas, and averageUtilization control?",2,2
+15,How does Vertical Pod Autoscaler's updateMode: Initial differ from Off?,2,2
+16,How does VPA use minAllowed and maxAllowed when it first starts managing a pod?,3,3
+17,"In the fine-parallel work queue example, how does a worker Pod know when the queue is empty and exit successfully?",2,2
+18,"What storage service and parallelism setting does the fine-parallel work queue example use, and what does 'parallelism: 2' mean here?",2,2
+19,"What is kube-scheduler responsible for, and how does it interact with kube-apiserver when binding a Pod to a Node?",3,3
+20,What is etcd's role in the Kubernetes control plane?,2,2
+21,"What does kube-controller-manager do, and how does it differ from cloud-controller-manager?",1,1
+22,"What are the four major Kubernetes Service types, and what does each expose?",2,2
+23,"What is the difference between a PersistentVolume, a PersistentVolumeClaim, and a StorageClass?",3,3
+24,What's the difference between a ConfigMap and a Secret in Kubernetes?,2,2
+25,"How do Role, RoleBinding, and ServiceAccount relate to each other in Kubernetes RBAC?",2,2
+26,How does a StatefulSet differ from a Deployment in how it manages Pods?,2,2
+27,"What is a DaemonSet used for, and how does its scheduling differ from a normal Deployment?",4,4
+28,How is a CronJob related to a Job according to the Kubernetes Concepts overview?,2,3
+29,"What's the difference between a Label, an Annotation, and a Selector in Kubernetes?",1,1
+30,"What are the valid operators for set-based selectors, and which object types support them?",2,2
+31,"How do you create a job using the CLI, and what does the created job's response look like?",1,2
+32,What are the three ways to run a job using the Databricks CLI?,2,2
+33,What programming languages does the Databricks SDK support for creating and managing jobs?,3,3
+34,"What REST API endpoint retrieves details for a single job in Databricks, and what environment variables does the example require?",3,3
+35,"Trace what happens from when a Deployment manifest is applied to when its Pod is finally running — which controllers/components are involved, and in what order?",3,3
+36,How do master components and node components divide responsibility for getting a Pod scheduled and running?,4,4
+37,"If a Job shows 0/1 under COMPLETIONS when you run kubectl get jobs, what are the possible explanations and how would you investigate further?",4,4
+38,How does HPA's approach to handling increased load differ fundamentally from VPA's approach?,4,4
+39,"Walk through the full sequence of steps in the fine-parallel work queue example, from setting up storage to running the Job.",4,4
+40,Both the architecture overview and the Jobs guide describe completions and parallelism. What does the Jobs guide add beyond the architecture overview's summary?,3,3
+41,"The parallel work queue example's Job uses restartPolicy: OnFailure. Is this a valid restart policy for a Kubernetes Job, and what would happen if a worker pod crashed?",2,3
+42,"If you wanted to check the progress of the parallel work-queue Job's individual worker pods, which kubectl commands from the monitoring guide would you use?",2,2
+43,"How does a CronJob's spec.jobTemplate relate to the standalone Job concepts (restartPolicy, backoffLimit) described elsewhere?",2,2
+44,"What is the purpose of a temporary interactive pod in the parallel work queue example, and what command is used to create one?",2,2
+45,What does the rediswq worker script do when it leases an item from the queue but the item is None?,1,1
+46,"In the Job resource-limits troubleshooting section, what are two ways to resolve Pods getting OOMKilled or CPU throttled?",2,2
+47,"What does ttlSecondsAfterFinished do on a CronJob's job template, and why would you use it in a cost-optimization context?",2,2
+48,What OPA Gatekeeper policy pattern is shown for enforcing that Job containers define resource requests and limits?,2,2
+49,How would you create a job on Databricks using the Python SDK rather than the CLI?,3,3
+50,"What's the recommended way to manage jobs as part of CI/CD according to the jobs automation guide, instead of using the CLI/SDK/REST API directly?",2,2
+51,"How do you view a job's configuration as YAML, Python, or JSON directly from the workspace UI, and what is each format used for?",3,3
+52,"What command deletes a job, and is it the same command whether the job is a Kubernetes Job or a job created through the automation guide's CLI?",1,1
+53,"What are the four CNI-compatible network plugins mentioned that are lettered with a C, and what is the CNI's general purpose?",1,1
+54,What are the three fundamental networking rules that apply to all Pods in a Kubernetes cluster?,2,2
+55,"What is the role of kube-apiserver in the Kubernetes control plane, and why is it described as the 'gatekeeper' to the cluster?",3,3
+56,From what sources can kubelet read YAML container manifests?,2,2
+57,What are the available proxy modes for kube-proxy?,1,1
+58,Name the container runtimes listed as CRI-compatible options for Kubernetes.,1,1
+59,"What does an Ingress controller do, and which specific controller implementations are mentioned?",3,3
+60,"What do Kube-dns, Heapster, and Kube-dashboard each provide as additional Kubernetes services?",1,1
+61,"How does a ReplicaSet differ from the older ReplicationController, and how does a Deployment relate to a ReplicaSet?",2,2
+62,"What access modes can a PersistentVolume support, and what does each one mean?",2,2
+63,"What is a Namespace in Kubernetes, and what is it primarily used for?",2,3
+64,"After kubelet is notified of a Pod assigned to its node, what steps does it take to get that Pod's containers running?",3,3
+65,"What RBAC permissions does the example job-runner Role grant, and what SecurityContext settings are recommended for job containers?",2,2
+66,How does the example NetworkPolicy restrict a batch job's network access?,1,1
+67,How does the ExternalSecret pattern shown retrieve a database password from Vault into a job's Pod?,1,1
+68,"Describe the progressive backoff pattern shown for a job calling an external API, and how it combines with the Job's own backoffLimit.",2,2
+69,How does the GracefulJobRunner Python example handle a SIGTERM signal during processing?,1,1
+70,"What is a KEDA ScaledJob, and what event source triggers new job creation in the example shown?",1,1
+71,"How does the compliance-report-job CronJob differ from a typical job in its retry and history retention configuration, and why?",1,1
+72,"What command starts a local Kubernetes cluster with Minikube, and how do you verify the cluster is running afterward?",2,2
+73,What JSONPath command extracts just the number of succeeded pods for a specific job?,1,1
+74,"How do you create a CronJob that runs every minute, and how do you confirm it's creating Jobs on schedule?",3,3
+75,"What command is used to generate load against the nginx-svc service in the HPA test, and what does it do?",2,3
+76,"How do you install VPA in a cluster, and how do you verify it's running?",2,2
+77,"How does the ReplicaSet Controller's reconciliation process, as described in the deployment flow, parallel how a Job controller responds when a Pod fails?",3,3
+78,How does the job-runner RBAC Role example relate to the general Role/RoleBinding/ServiceAccount concepts from the architecture overview?,2,3
+79,How does the parallelism field used in the work queue Job's manifest relate to the general spec.parallelism concept from the Kubernetes concepts overview?,2,3
+80,How do you retrieve the JSON representation of an existing job and use it to recreate that job's configuration?,3,3
+81,What's the difference between the Python code generated for 'Databricks SDK' versus 'Databricks Asset Bundles' when viewing a job as code?,1,1
+82,Does 'databricks jobs submit' save the job the same way 'databricks jobs create' does?,2,2
+83,"What Prometheus queries are shown for tracking a Kubernetes Job's success rate, average duration, and failed count?",1,1
+84,What do the JobFailed and CronJobMissing Prometheus alerting rules detect?,1,1
+85,"If a Job is stuck in Pending with no Pods running, what are the likely causes and how do you diagnose it?",1,1
+86,"If a CronJob exists but isn't creating Jobs, what diagnostic steps are recommended, and what's an example of an invalid schedule?",3,3
+87,What does the recommended structured logging pattern for job containers look like?,4,4
+88,"What API group does the Job resource belong to, and can a Job's Pod template be changed after creation?",2,2
+89,"How do you filter Jobs by multiple labels at once, and how do you view events for one specific Job?",2,2
+90,What JSONPath command retrieves a Job's creation timestamp?,2,2
+91,What commands start a local cluster with Minikube and verify both the cluster and its core components are running?,3,3
+92,"What three steps does HPA go through to make a scaling decision, and what API version is used to define an HPA object?",2,2
+93,How does VPA's updateMode: Recreate differ from updateMode: Auto?,2,2
+94,How do you exclude a specific container in a pod from VPA-managed scaling?,1,1
+95,What does the output of kubectl get hpa -w show while HPA is actively scaling in response to load?,2,2
+96,What access modes and reclaim policies can a PersistentVolume have?,1,1
+97,"What fields make up a StorageClass, and what is its purpose?",1,1
+98,"What steps does a request go through in the apiserver request loop before being published, according to the deployment walkthrough?",2,2
+99,"What role does the pause container play, and how is networking plumbed to a new Pod?",2,2
+100,"What does kubelet do during PodSync before a Pod's containers start, and what has to happen before PodStatus is set to ready?",2,2
