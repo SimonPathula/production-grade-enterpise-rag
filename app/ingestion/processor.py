@@ -33,6 +33,7 @@ app = FastAPI(title="RAG Ingestion Service")
 
 TOTAL_CHUNKS = 0
 TOTAL_EMBEDDINGS = 0
+FAILED_FILES: List[str] = []
 
 @app.get("/")
 def health():
@@ -67,7 +68,32 @@ def upsert_in_batches(points, batch_size=64, retries=3):
                 logfire.warning(f"Upsert batch failed (attempt {attempt+1}): {e}")
                 time.sleep(2 ** attempt)
 
-def process_file(file_path:str, filename:str, source_type:str, skip_raw_upload: bool = False):
+def embed_with_retry(chunks: List[str], retries: int = 3, backoff_base: float = 2.0):
+    """
+    Wraps embed_texts with retry + exponential backoff. If a chunk (or batch)
+    fails/times out, wait and retry up to `retries` times before giving up —
+    instead of silently dropping the chunk on first failure.
+    """
+    last_err = None
+    for attempt in range(1, retries + 1):
+        try:
+            embeddings = embed_texts(chunks)
+            if attempt > 1:
+                logfire.info(f"Embedding succeeded on retry attempt {attempt}")
+            return embeddings
+        except Exception as e:
+            last_err = e
+            if attempt == retries:
+                logfire.error(f"Embedding failed after {retries} attempts: {e}", exc_info=True)
+                raise
+            wait = backoff_base ** attempt
+            logfire.warning(
+                f"Embedding attempt {attempt}/{retries} failed ({e}). Retrying in {wait:.0f}s..."
+            )
+            time.sleep(wait)
+    raise last_err  # unreachable, safety net
+
+def process_file(file_path:str, filename:str, source_type:str, skip_raw_upload: bool = False, embed_retries: int = 3):
     with logfire.span("Processing File", file_path= file_path, filename= filename, source= source_type, cloud_mode=skip_raw_upload):
         try:
             raw_gcs_path = f"{source_type}/{filename}"
@@ -98,17 +124,20 @@ def process_file(file_path:str, filename:str, source_type:str, skip_raw_upload: 
             if not chunks:
                 return
 
-            global TOTAL_CHUNKS
-            TOTAL_CHUNKS += len(chunks)
-
             processed_data = {"filename":filename, "chunks":chunks, "source_type":source_type}
             processed_gcs_path = f"{source_type}/{filename}.json"
             upload_to_gcs(processed_data, settings.PROCESSED_BUCKET, processed_gcs_path, is_json=True)
 
             with logfire.span("Vectorizing and Indexing"):
-                embeddings = embed_texts(chunks)
-                global TOTAL_EMBEDDINGS
-                TOTAL_EMBEDDINGS += len(embeddings)
+                embeddings = embed_with_retry(chunks, retries=embed_retries)
+
+                if len(embeddings) != len(chunks):
+                    logfire.error(
+                        f"Chunk/embedding count mismatch in '{filename}': "
+                        f"{len(chunks)} chunks vs {len(embeddings)} embeddings — "
+                        f"{len(chunks) - len(embeddings)} chunk(s) will be dropped"
+                    )
+
                 points = [
                     models.PointStruct(
                         id=str(uuid.uuid4()),
@@ -123,10 +152,17 @@ def process_file(file_path:str, filename:str, source_type:str, skip_raw_upload: 
                     for chunk, vector in zip(chunks, embeddings)
                 ]
                 upsert_in_batches(points)
-                logfire.info(f"Indexed {len(points)} points to Qdrant from '{filename}'")   
+                logfire.info(f"Indexed {len(points)} points to Qdrant from '{filename}'")
+
+                # Only commit to global totals once embedding + upsert fully succeeded,
+                # so counters stay in sync per file instead of drifting under partial failure.
+                global TOTAL_CHUNKS, TOTAL_EMBEDDINGS
+                TOTAL_CHUNKS += len(chunks)
+                TOTAL_EMBEDDINGS += len(embeddings)
 
         except Exception as e:
-            logfire.error(f"Failed to process {filename}: {e}")
+            logfire.error(f"Failed to process '{filename}' (source_type={source_type}): {e}", exc_info=True)
+            FAILED_FILES.append(filename)
 
 
 
@@ -185,7 +221,10 @@ if __name__ == "__main__":
     universal_ingestion(target_dir, explicit_source_type=explicit_type, wipe=wipe_requested)
     print(f"Total chunks created: {TOTAL_CHUNKS}")
     print(f"Total embeddings generated: {TOTAL_EMBEDDINGS}")
+    if FAILED_FILES:
+        print(f"Failed files ({len(FAILED_FILES)}): {FAILED_FILES}")
     logfire.info(
-    f"Universal Ingestion Job Completed | "
-    f"Chunks: {TOTAL_CHUNKS} | Embeddings: {TOTAL_EMBEDDINGS}"
-)
+        f"Universal Ingestion Job Completed | "
+        f"Chunks: {TOTAL_CHUNKS} | Embeddings: {TOTAL_EMBEDDINGS} | "
+        f"Failed: {len(FAILED_FILES)}"
+    )
