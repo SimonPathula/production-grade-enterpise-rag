@@ -155,7 +155,7 @@ def llm_reviewer(query:str, documents: list[str]):
         "with_ranker": <integer>
     }}
     """
-    
+
     answer = _reasoning_model.invoke(prompt)
     result = json.loads(answer.content)
 

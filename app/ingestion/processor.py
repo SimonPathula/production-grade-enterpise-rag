@@ -188,4 +188,4 @@ if __name__ == "__main__":
     logfire.info(
     f"Universal Ingestion Job Completed | "
     f"Chunks: {TOTAL_CHUNKS} | Embeddings: {TOTAL_EMBEDDINGS}"
-    )
+)
