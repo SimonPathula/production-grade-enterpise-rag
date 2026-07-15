@@ -1,50 +1,84 @@
+# ===== Web =====
 fastapi
-uvicorn
+uvicorn[standard]
 python-dotenv
-python-multipart    
+python-multipart
 requests
 streamlit
+
+# ===== Data =====
 numpy
+pandas
+datasets
+pyarrow
 pytz
 nest-asyncio
+
+# ===== Google Cloud =====
 google-cloud-storage
 google-cloud-aiplatform
 google-cloud-discoveryengine
 google-cloud-documentai
 cloud-sql-python-connector
+
+# ===== Vector Stores =====
 qdrant-client
-flashrank
 redis
 redisvl
-sqlalchemy
+
+# ===== Reranking =====
+flashrank
+
+# ===== Database =====
+sqlalchemy>=2.0
 pg8000
 psycopg[binary]
 psycopg_pool
+
+# ===== LangChain =====
 langchain
-langgraph
-langgraph-checkpoint-postgres
-langchain-groq
-langchain-google-vertexai
+langchain-core
 langchain-community
 langchain-openai
+langchain-google-vertexai
+langchain-groq
 langchain-text-splitters
-pydantic>=2.0.0
+
+# ===== LangGraph =====
+langgraph
+langgraph-checkpoint-postgres
+
+# ===== LLM Providers =====
+openai
+google-genai
+
+# ===== Evaluation =====
+ragas
+deepeval
+tiktoken
+
+# ===== Documents =====
 python-pptx
 python-docx
 pypdf
 beautifulsoup4
 
-#=== Observability ====
+# ===== Validation =====
+pydantic>=2.7
+
+# ===== Observability =====
 langsmith
 logfire
 logfire[fastapi]
 logfire[requests]
 loguru
 
-# === Guardrails =====
-nemoguardrails[nvidia]
+# ===== Guardrails =====
+nemoguardrails
 langchain-nvidia-ai-endpoints
 
-# === Gateways ====
-portkey_ai
+# ===== AI Gateway =====
+portkey-ai
 
+# ===== Utilities =====
+typing-extensions
