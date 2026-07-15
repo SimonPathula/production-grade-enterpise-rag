@@ -31,6 +31,9 @@ qdrant_client = QdrantClient(url=settings.QDRANT_URL, api_key=settings.QDRANT_AP
 # FastAPI
 app = FastAPI(title="RAG Ingestion Service")
 
+TOTAL_CHUNKS = 0
+TOTAL_EMBEDDINGS = 0
+
 @app.get("/")
 def health():
     return {"status": "ok", "service": "RAG Ingestion", "mode": "cloud"}
@@ -95,12 +98,17 @@ def process_file(file_path:str, filename:str, source_type:str, skip_raw_upload: 
             if not chunks:
                 return
 
+            global TOTAL_CHUNKS
+            TOTAL_CHUNKS += len(chunks)
+
             processed_data = {"filename":filename, "chunks":chunks, "source_type":source_type}
             processed_gcs_path = f"{source_type}/{filename}.json"
             upload_to_gcs(processed_data, settings.PROCESSED_BUCKET, processed_gcs_path, is_json=True)
 
             with logfire.span("Vectorizing and Indexing"):
                 embeddings = embed_texts(chunks)
+                global TOTAL_EMBEDDINGS
+                TOTAL_EMBEDDINGS += len(embeddings)
                 points = [
                     models.PointStruct(
                         id=str(uuid.uuid4()),
@@ -175,4 +183,9 @@ if __name__ == "__main__":
         sys.exit(1)
 
     universal_ingestion(target_dir, explicit_source_type=explicit_type, wipe=wipe_requested)
-    logfire.info("Universal Ingestion Job Completed")
+    print(f"Total chunks created: {TOTAL_CHUNKS}")
+    print(f"Total embeddings generated: {TOTAL_EMBEDDINGS}")
+    logfire.info(
+    f"Universal Ingestion Job Completed | "
+    f"Chunks: {TOTAL_CHUNKS} | Embeddings: {TOTAL_EMBEDDINGS}"
+    )
