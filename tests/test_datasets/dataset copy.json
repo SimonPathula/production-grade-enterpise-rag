@@ -5,6 +5,18 @@
             "question": "What is the difference between completions and parallelism in a Kubernetes Job spec?",
             "original_answer": "completions specifies the number of Pods that must successfully complete for the Job to be considered done (e.g. completions: 5 means the Job finishes after 5 successful Pod completions). parallelism controls the maximum number of Pods that can run concurrently at any given time (e.g. parallelism: 3 means at most 3 Pods run simultaneously).",
             "source": "cronjobs.docx"
+        },
+        {
+            "id": 2,
+            "question": "What restart policies are allowed for a Pod managed by a Job, and why is Always not permitted?",
+            "original_answer": "Allowed restart policies are OnFailure (kubelet restarts the container within the same Pod if it crashes) and Never (the whole Pod is marked failed and the Job controller creates a new Pod). Always is not allowed because it would prevent the Pod from ever completing, which contradicts a Job's purpose of running to completion.",
+            "source": "cronjobs.docx"
+        },
+        {
+            "id": 3,
+            "question": "How does completionMode: Indexed differ from the default NonIndexed mode in a Job?",
+            "original_answer": "In NonIndexed mode (the default), all Pods created by the Job are identical. In Indexed mode, each Pod is assigned a unique completion index (exposed as the JOB_COMPLETION_INDEX env var), which lets each Pod process a distinct slice of work, such as a specific data range.",
+            "source": "cronjobs.docx"
         }
     ]
 }

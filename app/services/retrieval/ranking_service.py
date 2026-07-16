@@ -16,7 +16,7 @@ def _get_ranker() -> Ranker:
 
     return _ranker
 
-def rerank_documents(query:str, documents: list[str], top_n: int = 5) -> list[str]:
+def rerank_documents(query:str, documents: list[str], top_n: int = 4) -> list[str]:
     if not documents:
         return []
 
