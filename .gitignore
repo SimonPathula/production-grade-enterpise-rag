@@ -1,5 +1,5 @@
 .env
-/enterprise-env
+.venv
 commands.md
 commands_scalable.md
 .logfire
@@ -9,3 +9,4 @@ resume_points.txt
 *.py[cod]
 *$py.class
 **/__init__.py
+.deepeval

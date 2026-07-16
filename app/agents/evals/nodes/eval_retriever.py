@@ -20,6 +20,4 @@ def retrieve_node(state: AgentState):
 
         return {
         "documents": reranked_docs,
-        "status": f"Found technical context.",
-        "plan": state["plan"] + ["Context Retrieved"]
     }

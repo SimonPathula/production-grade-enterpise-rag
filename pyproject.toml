@@ -21,6 +21,7 @@ dependencies = [
     "langchain-groq>=0.3.8",
     "langchain-openai==0.3.30",
     "langgraph>=1.0.1",
+    "langgraph-checkpoint-postgres>=3.0.5",
     "langsmith>=0.10.5",
     "logfire[fastapi,requests]>=4.37.0",
     "loguru>=0.7.3",

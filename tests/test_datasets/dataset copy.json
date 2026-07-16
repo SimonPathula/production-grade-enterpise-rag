@@ -1,0 +1,10 @@
+{
+    "questions": [
+        {
+            "id": 1,
+            "question": "What is the difference between completions and parallelism in a Kubernetes Job spec?",
+            "original_answer": "completions specifies the number of Pods that must successfully complete for the Job to be considered done (e.g. completions: 5 means the Job finishes after 5 successful Pod completions). parallelism controls the maximum number of Pods that can run concurrently at any given time (e.g. parallelism: 3 means at most 3 Pods run simultaneously).",
+            "source": "cronjobs.docx"
+        }
+    ]
+}

@@ -1,5 +1,5 @@
 {
-    "precision": [
+    "questions": [
         {
             "id": 1,
             "question": "What is the difference between completions and parallelism in a Kubernetes Job spec?",

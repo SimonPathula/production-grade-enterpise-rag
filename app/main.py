@@ -12,6 +12,7 @@ from app.agents.graph import rag_agent
 from pydantic import BaseModel
 from typing import Optional
 from app.agents.guardrails.rails import intialize_rails, guard
+from app.agents.evals.eval_graph import eval_rag_agent
 
 app = FastAPI(title="Enterprise Agentic RAG API")
 
@@ -80,3 +81,28 @@ def query(request: QueryRequest):
             "status": "error",
             "sources": [],
         }
+
+
+@app.post("/evaluate")
+async def evaluate(request: QueryRequest):
+
+    initial_state = {
+        "current_query": request.query,
+        "documents": [],
+        "final_answer": "",
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0,
+    }
+
+    result = eval_rag_agent.invoke(initial_state)
+
+    return {
+        "answer": result["final_answer"],
+        "sources": result["documents"],
+        "usage": {
+            "input_tokens": result["prompt_tokens"],
+            "output_tokens": result["completion_tokens"],
+            "total_tokens": result["total_tokens"],
+        },
+    }
