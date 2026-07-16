@@ -37,6 +37,28 @@ else:
 
     print("Starting fresh...")
 
+# -----------------------------
+# Token counters
+# -----------------------------
+prompt_token_sum = sum(
+    item.get("prompt_tokens", 0)
+    for item in evaluation_dataset
+)
+
+completion_token_sum = sum(
+    item.get("completion_tokens", 0)
+    for item in evaluation_dataset
+)
+
+total_token_sum = sum(
+    item.get("total_tokens", 0)
+    for item in evaluation_dataset
+)
+
+TPD_LIMIT = 100_000
+
+print(f"Current token usage: {total_token_sum:,}/{TPD_LIMIT:,}")
+
 
 # -----------------------------
 # Generate evaluation dataset
@@ -82,6 +104,9 @@ for item in benchmark["questions"]:
                     "total_tokens": result["usage"]["total_tokens"],
                 }
             )
+            prompt_token_sum += result["usage"]["input_tokens"]
+            completion_token_sum += result["usage"]["output_tokens"]
+            total_token_sum += result["usage"]["total_tokens"]
 
             # Save immediately
             with open(OUTPUT, "w", encoding="utf-8") as f:
@@ -92,7 +117,22 @@ for item in benchmark["questions"]:
                     ensure_ascii=False,
                 )
 
-            print(f"✓ Completed {item['id']}")
+            remaining = TPD_LIMIT - total_token_sum
+
+            print(
+                f"✓ Completed {item['id']} | "
+                f"Prompt: {result['usage']['input_tokens']} | "
+                f"Completion: {result['usage']['output_tokens']} | "
+                f"Total: {result['usage']['total_tokens']}"
+            )
+
+            print(
+                f"Running Total -> "
+                f"Prompt: {prompt_token_sum:,} | "
+                f"Completion: {completion_token_sum:,} | "
+                f"Total: {total_token_sum:,}/{TPD_LIMIT:,} "
+                f"({remaining:,} remaining)"
+            )
 
             success = True
             break
@@ -119,3 +159,10 @@ for item in benchmark["questions"]:
 print("\n===================================")
 print(f"Generated {len(evaluation_dataset)} samples.")
 print("===================================")
+
+print(f"Prompt Tokens     : {prompt_token_sum:,}")
+print(f"Completion Tokens : {completion_token_sum:,}")
+print(f"Total Tokens      : {total_token_sum:,}/{TPD_LIMIT:,}")
+
+if len(evaluation_dataset):
+    print(f"Average / Question: {total_token_sum / len(evaluation_dataset):.2f}")
