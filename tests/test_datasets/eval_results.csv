@@ -1,0 +1,16 @@
+id,question,chunks_before,chunks_after,tokens_before,tokens_after,actual_prompt_tokens,reduction_tokens,reduction_pct,chars_before,chars_after,char_reduction_pct,retrieval_time_ms,rerank_time_ms,generation_time_ms,end_to_end_latency_ms,answer
+1,What is the difference between completions and parallelism in a Kubernetes Job spec?,15,4,2253,530,600,1723,76.48,9878,2458,75.12,5614.09,1432.03,1188.27,12063.18,"In a Kubernetes Job spec, `completions` and `parallelism` are two distinct parameters that control t..."
+2,"What restart policies are allowed for a Pod managed by a Job, and why is Always not permitted?",15,4,2340,574,645,1766,75.47,9836,2569,73.88,734.01,1414.89,994.05,3157.74,"For a Pod managed by a Job, the allowed restart policies are `OnFailure` and `Never`.
+
+- `OnFailure`..."
+3,How does completionMode: Indexed differ from the default NonIndexed mode in a Job?,15,4,2186,607,677,1579,72.23,9507,2455,74.18,708.08,1244.38,1162.88,3129.36,"In a Job, `completionMode: Indexed` differs from the default `NonIndexed` mode in that it allows eac..."
+4,"What cron schedule format does a CronJob use, and what does concurrencyPolicy: Forbid do?",15,4,2395,672,742,1723,71.94,9947,2688,72.98,715.46,923.99,1172.04,2828.66,"The CronJob uses the standard cron format for its schedule field, which is as follows:
+
+`minute (0 -..."
+5,What do backoffLimit and activeDeadlineSeconds control on a Job?,15,4,2459,635,708,1824,74.18,10269,2581,74.87,723.54,1322.88,1023.48,3086.24,"In the context of a Kubernetes Job, `backoffLimit` and `activeDeadlineSeconds` are two important set..."
+6,What do successfulJobsHistoryLimit and failedJobsHistoryLimit control on a CronJob?,15,4,2458,630,701,1828,74.37,10445,2728,73.88,1709.19,819.86,723.92,3266.35,"In the context of a CronJob, `successfulJobsHistoryLimit` and `failedJobsHistoryLimit` control the n..."
+7,Describe the idempotent job design pattern and why it matters for Kubernetes Jobs.,15,4,2107,621,692,1486,70.53,9589,3142,67.23,984.82,1421.05,1074.8,3499.92,"The idempotent job design pattern is a crucial concept in Kubernetes Jobs, ensuring that a job can b..."
+8,Why is running a long job without checkpointing considered an anti-pattern?,15,4,2492,687,758,1805,72.43,10437,2909,72.13,738.32,704.25,1369.8,2827.01,Running a long job without checkpointing is considered an anti-pattern because it can lead to signif...
+9,"Which kubectl command shows a Job's completions, duration, and age at a glance?",15,4,2160,667,739,1493,69.12,9771,2994,69.36,723.42,880.31,510.9,2126.87,"The kubectl command that shows a Job's completions, duration, and age at a glance is:
+
+`kubectl get ..."
