@@ -155,3 +155,21 @@ if __name__ == "__main__":
 
         with open("eval_summary.json", "w") as f:
             json.dump(summary, f, indent=2)
+
+# ============================================================
+# FINAL LATENCY / CONTEXT REDUCTION SUMMARY
+# ============================================================
+# Average Chunks Before   : 15.0
+# Average Chunks After    : 4.0
+# Average Tokens Before   : 2352.6
+# Average Tokens After    : 631.6
+# Average Actual Prompt Tokens: 702.4
+# Average Token Reduction %: 73.11
+# Average Characters Before: 10200.4
+# Average Characters After: 2816.8
+# Average Character Reduction %: 72.37
+# Average Retrieval Latency: 956.27
+# Average Rerank Latency  : 1126.08
+# Average Generation Latency: 1911.89
+# Average End-to-End Latency: 4069.5
+# ============================================================

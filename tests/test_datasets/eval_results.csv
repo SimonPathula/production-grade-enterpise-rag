@@ -14,3 +14,154 @@ id,question,chunks_before,chunks_after,tokens_before,tokens_after,actual_prompt_
 9,"Which kubectl command shows a Job's completions, duration, and age at a glance?",15,4,2160,667,739,1493,69.12,9771,2994,69.36,723.42,880.31,510.9,2126.87,"The kubectl command that shows a Job's completions, duration, and age at a glance is:
 
 `kubectl get ..."
+10,How can you view the logs of a Job's pod after the Job has already completed or failed?,15,4,2110,526,599,1584,75.07,9403,2337,75.15,696.39,920.91,810.13,2441.39,"To view the logs of a Job's pod after the Job has already completed or failed, you can use the `kube..."
+11,"What are the three statuses a Kubernetes Job can have, and what does kubectl describe job show that kubectl get jobs does not?",15,4,2238,671,743,1567,70.02,10415,3074,70.48,714.15,1784.13,1303.02,3816.93,"As a Senior Technical Architect, I can provide the following answer:
+
+A Kubernetes Job can have thre..."
+12,"How do you follow a running Job's logs in real time, and how do you filter pods belonging to a specific job by label?",15,4,2020,557,628,1463,72.43,9349,2475,73.53,701.5,846.28,972.76,2534.94,"To follow a running Job's logs in real-time, you can use the `kubectl logs` command with the `-f` fl..."
+13,"What's the role of the Metrics Server in enabling Horizontal Pod Autoscaling, and what command verifies it's collecting data?",15,4,2529,667,737,1862,73.63,10424,3101,70.25,750.41,1102.7,722.12,2588.12,The Metrics Server plays a crucial role in enabling Horizontal Pod Autoscaling (HPA) by collecting r...
+14,"In an HPA object, what do minReplicas, maxReplicas, and averageUtilization control?",15,4,2743,784,853,1959,71.42,11246,3140,72.08,699.67,1126.38,991.23,2830.91,"In an HPA (Horizontal Pod Autoscaler) object, the following fields control the scaling behavior:
+
+* ..."
+15,How does Vertical Pod Autoscaler's updateMode: Initial differ from Off?,15,4,2666,752,824,1914,71.79,11454,3097,72.96,705.28,835.11,1119.66,2672.27,"In the context of Vertical Pod Autoscaler (VPA), `updateMode` is a parameter that determines how the..."
+16,How does VPA use minAllowed and maxAllowed when it first starts managing a pod?,15,4,2850,682,753,2168,76.07,11561,3121,73.0,683.64,1048.81,1061.09,2805.84,"When the VPA first starts managing a pod, it ensures that the pod's resource requests are within the..."
+17,"In the fine-parallel work queue example, how does a worker Pod know when the queue is empty and exit successfully?",15,4,2202,622,690,1580,71.75,9816,2751,71.97,720.94,1676.44,1090.83,3503.7,"In the fine-parallel work queue example, a worker Pod knows when the queue is empty and exits succes..."
+18,"What storage service and parallelism setting does the fine-parallel work queue example use, and what does 'parallelism: 2' mean here?",15,4,2259,524,594,1735,76.8,9687,2672,72.42,708.87,1470.5,823.71,3016.76,"In the fine-parallel work queue example, the storage service used is Redis, and the parallelism sett..."
+19,"What is kube-scheduler responsible for, and how does it interact with kube-apiserver when binding a Pod to a Node?",15,4,2056,485,554,1571,76.41,10003,2336,76.65,719.21,884.17,1027.12,2645.96,"The `kube-scheduler` is a Master Component in the Kubernetes architecture, responsible for assigning..."
+20,What is etcd's role in the Kubernetes control plane?,15,4,1974,548,620,1426,72.24,9606,2812,70.73,708.06,539.16,783.26,2044.31,Etcd plays a crucial role in the Kubernetes control plane as the cluster's datastore. It provides a ...
+21,"What does kube-controller-manager do, and how does it differ from cloud-controller-manager?",15,4,1947,530,601,1417,72.78,9609,2750,71.38,754.61,652.52,1059.14,2484.19,The `kube-controller-manager` is a primary daemon that manages all core component control loops in a...
+22,"What are the four major Kubernetes Service types, and what does each expose?",15,4,2062,592,664,1470,71.29,10106,2933,70.98,1006.33,749.75,915.98,2686.4,"The four major Kubernetes Service types are:
+
+1. **ClusterIP**: Exposes a service on a strictly clus..."
+23,"What is the difference between a PersistentVolume, a PersistentVolumeClaim, and a StorageClass?",15,4,2081,572,642,1509,72.51,9593,2513,73.8,728.69,673.91,1284.39,2703.28,"In the context of Kubernetes storage management, a PersistentVolume (PV), a PersistentVolumeClaim (P..."
+24,What's the difference between a ConfigMap and a Secret in Kubernetes?,15,4,2207,516,588,1691,76.62,9877,2500,74.69,691.7,745.71,1114.53,2565.87,"In Kubernetes, both ConfigMaps and Secrets are used to store and manage sensitive and non-sensitive ..."
+25,"How do Role, RoleBinding, and ServiceAccount relate to each other in Kubernetes RBAC?",15,4,2175,592,662,1583,72.78,10201,2612,74.39,756.34,717.14,1255.92,2742.23,"In Kubernetes RBAC (Role-Based Access Control), `Role`, `RoleBinding`, and `ServiceAccount` are clos..."
+26,How does a StatefulSet differ from a Deployment in how it manages Pods?,15,4,1853,563,632,1290,69.62,9218,2736,70.32,779.91,587.79,1020.82,2399.84,"In Kubernetes, both StatefulSet and Deployment are used to manage Pods, but they differ significantl..."
+27,"What is a DaemonSet used for, and how does its scheduling differ from a normal Deployment?",15,4,2176,582,651,1594,73.25,9597,2882,69.97,774.06,1333.15,1018.16,3142.14,A DaemonSet is a type of Kubernetes workload controller that ensures a specific Pod is running on ev...
+28,How is a CronJob related to a Job according to the Kubernetes Concepts overview?,15,4,2347,649,720,1698,72.35,10382,3115,70.0,691.36,797.59,832.67,2333.69,"According to the Kubernetes Concepts overview, a CronJob is a type of resource that creates Jobs. In..."
+29,"What's the difference between a Label, an Annotation, and a Selector in Kubernetes?",15,4,2226,645,717,1581,71.02,10512,3124,70.28,703.93,886.59,3069.39,4672.59,"In Kubernetes, Labels, Annotations, and Selectors are three distinct concepts that serve different p..."
+30,"What are the valid operators for set-based selectors, and which object types support them?",15,4,3344,789,860,2555,76.41,11702,3188,72.76,715.58,1079.95,3542.31,5355.19,"The valid operators for set-based selectors are:
+
+1. `In`
+2. `NotIn`
+3. `Exists`
+4. `DoesNotExist`
+
+..."
+31,"How do you create a job using the CLI, and what does the created job's response look like?",15,4,2370,787,857,1583,66.79,9800,3178,67.57,1490.71,1304.88,1977.78,4785.0,"To create a job using the CLI, you can follow these steps:
+
+1. Create a JSON file that defines the j..."
+32,What are the three ways to run a job using the Databricks CLI?,15,4,2625,783,853,1842,70.17,10647,3051,71.34,792.35,992.63,3525.34,5326.48,"The three ways to run a job using the Databricks CLI are:
+
+1. **Scheduled**: If the job definition (..."
+33,What programming languages does the Databricks SDK support for creating and managing jobs?,15,4,2625,690,763,1935,73.71,10675,3141,70.58,711.09,1237.14,2403.32,4363.91,"The Databricks SDK supports popular programming languages such as Python, Java, and Go for creating ..."
+34,"What REST API endpoint retrieves details for a single job in Databricks, and what environment variables does the example require?",15,4,2752,798,869,1954,71.0,11161,3253,70.85,685.36,1016.46,3796.1,5513.24,The REST API endpoint that retrieves details for a single job in Databricks is `GET /api/2.2/jobs/ge...
+35,"Trace what happens from when a Deployment manifest is applied to when its Pod is finally running — which controllers/components are involved, and in what order?",15,4,1958,470,539,1488,76.0,8917,2420,72.86,1518.28,973.15,1008.24,3511.59,"When a Deployment manifest is applied to a Kubernetes cluster, the following sequence of events occu..."
+36,How do master components and node components divide responsibility for getting a Pod scheduled and running?,15,4,1923,499,569,1424,74.05,9452,2517,73.37,702.1,500.48,2978.35,4192.12,"In a Kubernetes cluster, the master components and node components divide responsibility for getting..."
+37,"If a Job shows 0/1 under COMPLETIONS when you run kubectl get jobs, what are the possible explanations and how would you investigate further?",15,4,2312,718,790,1594,68.94,10300,3132,69.59,736.41,1154.82,4173.6,6075.39,"If a Job shows 0/1 under COMPLETIONS when you run `kubectl get jobs`, it indicates that the job has ..."
+38,How does HPA's approach to handling increased load differ fundamentally from VPA's approach?,15,4,2688,652,722,2036,75.74,11268,2908,74.19,1410.72,866.64,2924.31,5212.51,HPA (Horizontal Pod Autoscaling) and VPA (Vertical Pod Autoscaling) differ fundamentally in their ap...
+39,"Walk through the full sequence of steps in the fine-parallel work queue example, from setting up storage to running the Job.",15,4,2169,540,611,1629,75.1,9530,2880,69.78,703.98,1313.16,1930.77,3959.47,"To walk through the full sequence of steps in the fine-parallel work queue example, follow these ste..."
+40,Both the architecture overview and the Jobs guide describe completions and parallelism. What does the Jobs guide add beyond the architecture overview's summary?,15,4,2350,535,604,1815,77.23,10604,2462,76.78,697.89,1308.92,3233.26,5255.41,The Jobs guide provides more detailed information about Jobs beyond the architecture overview's summ...
+41,"The parallel work queue example's Job uses restartPolicy: OnFailure. Is this a valid restart policy for a Kubernetes Job, and what would happen if a worker pod crashed?",15,4,2267,671,742,1596,70.4,10056,3103,69.14,1571.1,1356.39,2321.69,5261.16,"In the context of a Kubernetes Job, `restartPolicy: OnFailure` is a valid restart policy. According ..."
+42,"If you wanted to check the progress of the parallel work-queue Job's individual worker pods, which kubectl commands from the monitoring guide would you use?",15,4,2096,659,730,1437,68.56,9802,3050,68.88,705.29,1463.95,2259.89,4452.77,"To check the progress of the parallel work-queue Job's individual worker pods, I would use the follo..."
+43,"How does a CronJob's spec.jobTemplate relate to the standalone Job concepts (restartPolicy, backoffLimit) described elsewhere?",15,4,2510,624,695,1886,75.14,10363,2685,74.09,749.49,916.67,3289.16,4972.58,A CronJob's `spec.jobTemplate` is essentially a template for creating Jobs based on a defined schedu...
+44,"What is the purpose of a temporary interactive pod in the parallel work queue example, and what command is used to create one?",15,4,2157,540,611,1617,74.97,9577,2882,69.91,721.96,2747.79,682.32,4231.31,The purpose of a temporary interactive pod in the parallel work queue example is to provide a tempor...
+45,What does the rediswq worker script do when it leases an item from the queue but the item is None?,15,4,2741,653,723,2088,76.18,11076,2915,73.68,978.13,2500.74,938.12,4442.53,"According to the provided worker script (worker.py), when the `rediswq` worker script leases an item..."
+46,"In the Job resource-limits troubleshooting section, what are two ways to resolve Pods getting OOMKilled or CPU throttled?",15,4,2665,741,813,1924,72.2,10857,2952,72.81,756.06,1789.42,1869.76,4434.81,To resolve Pods getting OOMKilled or CPU throttled in the Job resource-limits troubleshooting sectio...
+47,"What does ttlSecondsAfterFinished do on a CronJob's job template, and why would you use it in a cost-optimization context?",15,4,2679,634,704,2045,76.33,10682,2821,73.59,763.97,1151.84,3254.62,5222.87,"In the context of a CronJob's job template, `ttlSecondsAfterFinished` is a setting that controls the..."
+48,What OPA Gatekeeper policy pattern is shown for enforcing that Job containers define resource requests and limits?,15,4,2541,603,674,1938,76.27,10539,2726,74.13,701.47,1109.4,2729.4,4553.48,The OPA Gatekeeper policy pattern shown for enforcing that Job containers define resource requests a...
+49,How would you create a job on Databricks using the Python SDK rather than the CLI?,15,4,2628,765,837,1863,70.89,10667,3200,70.0,738.26,1032.48,3910.04,5693.52,"To create a job on Databricks using the Python SDK, you can follow these steps:
+
+1. **Install or upg..."
+50,"What's the recommended way to manage jobs as part of CI/CD according to the jobs automation guide, instead of using the CLI/SDK/REST API directly?",15,4,2569,748,819,1821,70.88,10879,3082,71.67,1469.23,1274.08,2646.55,5404.93,"According to the jobs automation guide, the recommended way to manage jobs as part of CI/CD is to us..."
+51,"How do you view a job's configuration as YAML, Python, or JSON directly from the workspace UI, and what is each format used for?",15,4,2520,684,754,1836,72.86,10087,2658,73.65,739.99,1374.97,1820.59,3949.5,"To view a job's configuration as YAML, Python, or JSON directly from the workspace UI, you can follo..."
+52,"What command deletes a job, and is it the same command whether the job is a Kubernetes Job or a job created through the automation guide's CLI?",15,4,2355,686,758,1669,70.87,10336,3165,69.38,694.21,1240.34,4142.34,6092.6,"To delete a Kubernetes Job, you can use the command `kubectl delete job <job-name>`. 
+
+However, if y..."
+53,"What are the four CNI-compatible network plugins mentioned that are lettered with a C, and what is the CNI's general purpose?",15,4,2755,616,689,2139,77.64,11025,2524,77.11,1473.74,1122.81,1697.52,4315.47,"Based on the provided technical context, the four CNI-compatible network plugins that start with the..."
+54,What are the three fundamental networking rules that apply to all Pods in a Kubernetes cluster?,15,4,1938,504,575,1434,73.99,9208,2421,73.71,765.37,810.1,1597.72,3188.46,"Based on the provided technical context, the three fundamental networking rules that apply to all Po..."
+55,"What is the role of kube-apiserver in the Kubernetes control plane, and why is it described as the 'gatekeeper' to the cluster?",15,4,1936,566,638,1370,70.76,9504,2887,69.62,718.98,595.03,3352.05,4678.92,The `kube-apiserver` plays a crucial role in the Kubernetes control plane as it provides a forward-f...
+56,From what sources can kubelet read YAML container manifests?,15,4,2026,532,601,1494,73.74,9879,2579,73.89,727.62,650.65,2754.45,4144.77,"According to the technical context, Kubelet can read YAML container manifests from the following sou..."
+57,What are the available proxy modes for kube-proxy?,15,4,1977,517,588,1460,73.85,9541,2558,73.19,723.27,796.02,275.61,1808.9,"According to the technical context, the available proxy modes for kube-proxy are:
+
+1. Userspace
+2. i..."
+58,Name the container runtimes listed as CRI-compatible options for Kubernetes.,15,4,2079,488,559,1591,76.53,9674,2206,77.2,732.89,1118.38,1491.46,3359.86,"Based on the provided technical context, the CRI-compatible container runtimes listed for Kubernetes..."
+59,"What does an Ingress controller do, and which specific controller implementations are mentioned?",15,4,2020,578,649,1442,71.39,10045,2947,70.66,747.42,643.24,2663.23,4078.85,An Ingress controller acts as the primary method of exposing a cluster service (usually HTTP) to the...
+60,"What do Kube-dns, Heapster, and Kube-dashboard each provide as additional Kubernetes services?",15,4,2077,575,647,1502,72.32,10284,2856,72.23,731.48,829.36,2204.39,3782.69,"As a Senior Technical Architect, I can provide the following information regarding the additional Ku..."
+61,"How does a ReplicaSet differ from the older ReplicationController, and how does a Deployment relate to a ReplicaSet?",15,4,2068,582,651,1486,71.86,10235,2883,71.83,739.08,1685.39,2458.42,4899.11,"In Kubernetes, a ReplicaSet (RS) and a ReplicationController (RC) are both used to manage the lifecy..."
+62,"What access modes can a PersistentVolume support, and what does each one mean?",15,4,2491,569,639,1922,77.16,10135,2496,75.37,722.75,1421.66,2395.8,4558.17,"As a Senior Technical Architect, I can explain that a PersistentVolume (PV) can support three access..."
+63,"What is a Namespace in Kubernetes, and what is it primarily used for?",15,4,2087,571,642,1516,72.64,9962,2895,70.94,687.24,1000.49,3168.43,4878.38,"In Kubernetes, a Namespace is a logical cluster or environment that serves as the primary method of ..."
+64,"After kubelet is notified of a Pod assigned to its node, what steps does it take to get that Pod's containers running?",15,4,1882,538,607,1344,71.41,9195,2576,71.98,703.31,922.12,2392.11,4032.87,"After the kubelet is notified of a Pod assigned to its node, it takes the following steps to get tha..."
+65,"What RBAC permissions does the example job-runner Role grant, and what SecurityContext settings are recommended for job containers?",15,4,2431,708,779,1723,70.88,10148,2878,71.64,707.18,1525.85,3033.16,5280.91,"The `job-runner` Role grants the following RBAC permissions:
+
+* `get`, `list` verbs on `secrets` and..."
+66,How does the example NetworkPolicy restrict a batch job's network access?,15,4,2294,602,673,1692,73.76,9582,2492,73.99,1470.41,1450.72,2253.24,5187.34,"The example NetworkPolicy restricts a batch job's network access in the following ways:
+
+1. **PodSel..."
+67,How does the ExternalSecret pattern shown retrieve a database password from Vault into a job's Pod?,15,4,2383,638,709,1745,73.23,9931,2576,74.06,714.8,1497.87,2355.51,4588.97,The ExternalSecret pattern shown retrieves a database password from Vault into a job's Pod through t...
+68,"Describe the progressive backoff pattern shown for a job calling an external API, and how it combines with the Job's own backoffLimit.",15,4,2588,788,862,1800,69.55,10874,3106,71.44,726.37,1306.92,4073.89,6120.4,The progressive backoff pattern shown in the job calling an external API is a technique used to hand...
+69,How does the GracefulJobRunner Python example handle a SIGTERM signal during processing?,15,4,2518,740,811,1778,70.61,10787,3031,71.9,1574.51,1495.45,2359.6,5446.41,The `GracefulJobRunner` Python example handles a `SIGTERM` signal during processing by catching the ...
+70,"What is a KEDA ScaledJob, and what event source triggers new job creation in the example shown?",15,4,2322,511,580,1811,77.99,10382,2313,77.72,738.28,1060.66,2321.66,4137.15,A KEDA ScaledJob is a Kubernetes custom resource that allows you to scale jobs based on event-driven...
+71,"How does the compliance-report-job CronJob differ from a typical job in its retry and history retention configuration, and why?",15,4,2466,696,767,1770,71.78,10382,3111,70.03,706.64,1079.84,4731.45,6532.74,"The compliance-report-job CronJob, as defined in the provided technical context, differs from a typi..."
+72,"What command starts a local Kubernetes cluster with Minikube, and how do you verify the cluster is running afterward?",15,4,2082,588,659,1494,71.76,9635,2915,69.75,1472.2,1464.4,955.74,3905.14,"To start a local Kubernetes cluster with Minikube, you can use the following command:
+
+```
+minikube ..."
+73,What JSONPath command extracts just the number of succeeded pods for a specific job?,15,4,2132,579,649,1553,72.84,9318,2622,71.86,733.94,1011.6,1546.92,3304.6,"The JSONPath command that extracts just the number of succeeded pods for a specific job is:
+
+`kubect..."
+74,"How do you create a CronJob that runs every minute, and how do you confirm it's creating Jobs on schedule?",15,4,2403,657,730,1746,72.66,9735,2757,71.68,714.31,927.85,2838.0,4491.79,"To create a CronJob that runs every minute, you can follow these steps:
+
+1. **Create a YAML file**: ..."
+75,"What command is used to generate load against the nginx-svc service in the HPA test, and what does it do?",15,4,3054,939,1008,2115,69.25,11489,3162,72.48,715.06,1199.2,5232.13,7162.61,"The command used to generate load against the `nginx-svc` service in the HPA test is:
+
+```bash
+$ kub..."
+76,"How do you install VPA in a cluster, and how do you verify it's running?",15,4,2804,647,717,2157,76.93,11372,3170,72.12,1547.09,935.45,1849.68,4346.67,"To install VPA in a cluster, you'll need to follow these steps:
+
+1. **Clone the VPA Source Code**: U..."
+77,"How does the ReplicaSet Controller's reconciliation process, as described in the deployment flow, parallel how a Job controller responds when a Pod fails?",15,4,2156,575,644,1581,73.33,10148,2819,72.22,688.49,1208.43,3555.44,5463.23,"In the deployment flow, the ReplicaSet Controller's reconciliation process involves evaluating the c..."
+78,How does the job-runner RBAC Role example relate to the general Role/RoleBinding/ServiceAccount concepts from the architecture overview?,15,4,2337,654,723,1683,72.02,10130,2668,73.66,1425.48,1185.75,2116.58,4739.05,The `job-runner` RBAC Role example provided is a concrete implementation of the general Role/RoleBin...
+79,How does the parallelism field used in the work queue Job's manifest relate to the general spec.parallelism concept from the Kubernetes concepts overview?,15,4,2276,562,630,1714,75.31,10414,2692,74.15,692.64,1251.29,3605.82,5560.87,"In the provided work queue Job's manifest, the `parallelism` field is set to 2, which means that a m..."
+80,How do you retrieve the JSON representation of an existing job and use it to recreate that job's configuration?,15,4,2526,763,832,1763,69.79,10318,3071,70.24,1488.72,1274.5,2176.61,4957.48,To retrieve the JSON representation of an existing job and use it to recreate that job's configurati...
+81,What's the difference between the Python code generated for 'Databricks SDK' versus 'Databricks Asset Bundles' when viewing a job as code?,15,4,2760,777,848,1983,71.85,11170,3174,71.58,744.37,1375.46,3097.24,5231.98,"When viewing a job as code, the Python code generated for 'Databricks SDK' and 'Databricks Asset Bun..."
+82,Does 'databricks jobs submit' save the job the same way 'databricks jobs create' does?,15,4,2718,779,850,1939,71.34,11114,3071,72.37,736.5,1248.75,3688.97,5690.57,"No, 'databricks jobs submit' does not save the job in the same way 'databricks jobs create' does. 
+
+..."
+83,"What Prometheus queries are shown for tracking a Kubernetes Job's success rate, average duration, and failed count?",15,4,2141,595,668,1546,72.21,9701,2800,71.14,1421.21,1028.92,1611.29,4074.34,"The Prometheus queries shown for tracking a Kubernetes Job's metrics are:
+
+1. **Job Success Rate**: ..."
+84,What do the JobFailed and CronJobMissing Prometheus alerting rules detect?,15,4,2349,687,759,1662,70.75,10207,3072,69.9,710.19,915.66,3040.34,4678.89,"The JobFailed and CronJobMissing Prometheus alerting rules detect the following conditions:
+
+1. **Jo..."
+85,"If a Job is stuck in Pending with no Pods running, what are the likely causes and how do you diagnose it?",15,4,2001,602,673,1399,69.92,9096,2850,68.67,676.18,1753.79,2299.21,4745.22,"If a Job is stuck in Pending with no Pods running, the likely causes are:
+
+1. **Insufficient cluster..."
+86,"If a CronJob exists but isn't creating Jobs, what diagnostic steps are recommended, and what's an example of an invalid schedule?",15,4,2604,641,712,1963,75.38,10478,2861,72.7,6408.47,1065.74,824.2,10441.86,"To diagnose a CronJob that exists but isn't creating Jobs, the recommended diagnostic steps are:
+
+1...."
+87,What does the recommended structured logging pattern for job containers look like?,15,4,2284,594,667,1690,73.99,9844,2751,72.05,717.57,1307.25,1216.66,3256.32,The recommended structured logging pattern for job containers is implemented through the `Structured...
+88,"What API group does the Job resource belong to, and can a Job's Pod template be changed after creation?",15,4,2376,589,660,1787,75.21,10500,2583,75.4,748.26,1098.28,406.84,2266.79,"The Job resource belongs to the **batch/v1** API group, which is a stable API group.
+
+As for the Pod..."
+89,"How do you filter Jobs by multiple labels at once, and how do you view events for one specific Job?",15,4,2488,590,660,1898,76.29,10773,2820,73.82,774.52,1091.82,988.13,2867.43,"To filter jobs by multiple labels at once, you can use the `-l` flag with `kubectl get jobs` command..."
+90,What JSONPath command retrieves a Job's creation timestamp?,15,4,2699,731,802,1968,72.92,10860,2938,72.95,709.79,926.86,614.92,2272.98,"To retrieve a Job's creation timestamp, you can use the following JSONPath command:
+
+`kubectl get jo..."
+91,What commands start a local cluster with Minikube and verify both the cluster and its core components are running?,15,4,1923,580,652,1343,69.84,9263,2710,70.74,778.71,1417.56,885.6,3095.13,To start a local cluster with Minikube and verify both the cluster and its core components are runni...
+92,"What three steps does HPA go through to make a scaling decision, and what API version is used to define an HPA object?",15,4,2619,789,858,1830,69.87,11298,3175,71.9,751.33,810.68,562.38,2141.24,"To make a scaling decision, HPA goes through the following three steps:
+
+1. **Monitoring Metrics**: ..."
+93,How does VPA's updateMode: Recreate differ from updateMode: Auto?,15,4,2751,763,835,1988,72.26,11341,3171,72.04,1685.21,915.7,1156.0,3771.85,"In the context of Vertical Pod Autoscaling (VPA), `updateMode` determines how the VPA applies recomm..."
+94,How do you exclude a specific container in a pod from VPA-managed scaling?,15,4,2845,714,786,2131,74.9,11571,3104,73.17,705.11,819.85,595.78,2132.44,"To exclude a specific container in a pod from VPA-managed scaling, you can set the `mode` for that c..."
+95,What does the output of kubectl get hpa -w show while HPA is actively scaling in response to load?,15,4,3045,837,906,2208,72.51,11418,3164,72.29,708.47,1039.9,1093.91,2853.91,The output of `kubectl get hpa -w` shows the current status of the Horizontal Pod Autoscaler (HPA) w...
+96,What access modes and reclaim policies can a PersistentVolume have?,15,4,2615,655,726,1960,74.95,10354,2799,72.97,729.33,893.16,934.81,2568.46,"A PersistentVolume (PV) can have the following access modes:
+
+1. **ReadOnlyMany (ROX)**: The volume ..."
+97,"What fields make up a StorageClass, and what is its purpose?",15,4,2566,599,672,1967,76.66,10421,2672,74.36,735.58,1076.0,949.38,2773.55,"Based on the provided technical context, a StorageClass is composed of the following fields:
+
+1. **P..."
+98,"What steps does a request go through in the apiserver request loop before being published, according to the deployment walkthrough?",15,4,2302,456,526,1846,80.19,9404,2252,76.05,751.68,1252.69,573.24,2598.15,"According to the deployment walkthrough, a request goes through the following steps in the apiserver..."
+99,"What role does the pause container play, and how is networking plumbed to a new Pod?",15,4,1838,468,537,1370,74.54,8473,2229,73.69,722.9,719.09,1054.76,2507.81,The pause container plays a crucial role in the creation of a new Pod. When Kubelet provisions a Pod...
+100,"What does kubelet do during PodSync before a Pod's containers start, and what has to happen before PodStatus is set to ready?",15,4,1812,481,551,1331,73.45,8705,2294,73.65,723.22,1131.05,1284.73,3149.97,"During PodSync, before a Pod's containers start, the kubelet performs several internal processes to ..."
