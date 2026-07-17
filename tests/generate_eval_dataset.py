@@ -166,3 +166,12 @@ print(f"Total Tokens      : {total_token_sum:,}/{TPD_LIMIT:,}")
 
 if len(evaluation_dataset):
     print(f"Average / Question: {total_token_sum / len(evaluation_dataset):.2f}")
+
+
+# ===================================
+# Generated 100 samples.
+# ===================================
+# Prompt Tokens     : 70,237
+# Completion Tokens : 24,509
+# Total Tokens      : 94,746/100,000
+# Average / Question: 947.46
