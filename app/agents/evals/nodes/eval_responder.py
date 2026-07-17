@@ -1,3 +1,4 @@
+import time
 import logfire
 from langchain_groq import ChatGroq
 from app.agents.evals.eval_state import EvaluationState
@@ -31,14 +32,20 @@ def generate_node(state: EvaluationState):
     """
     with logfire.span("LLM Synthesis"):
         try:
+            t0 = time.perf_counter()
             response = llm.invoke(prompt)
+            generation_time_ms = (time.perf_counter() - t0) * 1000
             logfire.info("Response synthesized successfully")
             return{
                 "final_answer":response.content, 
                 "documents" : state["documents"],
+                "raw_documents": state["raw_documents"],
                 "prompt_tokens": response.usage_metadata["input_tokens"],
                 "completion_tokens" : response.usage_metadata["output_tokens"],
-                "total_tokens" : response.usage_metadata["total_tokens"]
+                "total_tokens" : response.usage_metadata["total_tokens"],
+                "retrieval_time_ms": state["retrieval_time_ms"],
+                "rerank_time_ms": state["rerank_time_ms"],
+                "generation_time_ms": generation_time_ms,
             }
 
         except Exception as e:

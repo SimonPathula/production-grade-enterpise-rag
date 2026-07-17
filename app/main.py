@@ -106,3 +106,37 @@ async def evaluate(request: QueryRequest):
             "total_tokens": result["total_tokens"],
         },
     }
+
+@app.post("/evaluate")
+async def evaluate(request: QueryRequest):
+
+    initial_state = {
+        "current_query": request.query,
+        "documents": [],
+        "raw_documents": [],
+        "final_answer": "",
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0,
+        "retrieval_time_ms": 0.0,
+        "rerank_time_ms": 0.0,
+        "generation_time_ms": 0.0,
+    }
+
+    result = eval_rag_agent.invoke(initial_state)
+
+    return {
+        "answer": result["final_answer"],
+        "sources": result["documents"],
+        "raw_sources": result["raw_documents"],
+        "usage": {
+            "input_tokens": result["prompt_tokens"],
+            "output_tokens": result["completion_tokens"],
+            "total_tokens": result["total_tokens"],
+        },
+        "timings_ms": {
+            "retrieval": result["retrieval_time_ms"],
+            "rerank": result["rerank_time_ms"],
+            "generation": result["generation_time_ms"],
+        },
+    }
