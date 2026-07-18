@@ -1,0 +1,2079 @@
+{
+  "questions": [
+    {
+      "id": 1,
+      "question": "What is the difference between completions and parallelism in a Kubernetes Job spec?",
+      "conversation_history": [],
+      "expected_label": "TECHNICAL",
+      "category": "technical"
+    },
+    {
+      "id": 2,
+      "question": "What restart policies are allowed for a Pod managed by a Job, and why is Always not permitted?",
+      "conversation_history": [],
+      "expected_label": "TECHNICAL",
+      "category": "technical"
+    },
+    {
+      "id": 3,
+      "question": "How does completionMode: Indexed differ from the default NonIndexed mode in a Job?",
+      "conversation_history": [],
+      "expected_label": "TECHNICAL",
+      "category": "technical"
+    },
+    {
+      "id": 4,
+      "question": "What cron schedule format does a CronJob use, and what does concurrencyPolicy: Forbid do?",
+      "conversation_history": [],
+      "expected_label": "TECHNICAL",
+      "category": "technical"
+    },
+    {
+      "id": 5,
+      "question": "What do backoffLimit and activeDeadlineSeconds control on a Job?",
+      "conversation_history": [],
+      "expected_label": "TECHNICAL",
+      "category": "technical"
+    },
+    {
+      "id": 6,
+      "question": "What do successfulJobsHistoryLimit and failedJobsHistoryLimit control on a CronJob?",
+      "conversation_history": [],
+      "expected_label": "TECHNICAL",
+      "category": "technical"
+    },
+    {
+      "id": 7,
+      "question": "Describe the idempotent job design pattern and why it matters for Kubernetes Jobs.",
+      "conversation_history": [],
+      "expected_label": "TECHNICAL",
+      "category": "technical"
+    },
+    {
+      "id": 8,
+      "question": "Why is running a long job without checkpointing considered an anti-pattern?",
+      "conversation_history": [],
+      "expected_label": "TECHNICAL",
+      "category": "technical"
+    },
+    {
+      "id": 9,
+      "question": "Which kubectl command shows a Job's completions, duration, and age at a glance?",
+      "conversation_history": [],
+      "expected_label": "TECHNICAL",
+      "category": "technical"
+    },
+    {
+      "id": 10,
+      "question": "How can you view the logs of a Job's pod after the Job has already completed or failed?",
+      "conversation_history": [],
+      "expected_label": "TECHNICAL",
+      "category": "technical"
+    },
+    {
+      "id": 11,
+      "question": "What are the three statuses a Kubernetes Job can have, and what does kubectl describe job show that kubectl get jobs does not?",
+      "conversation_history": [],
+      "expected_label": "TECHNICAL",
+      "category": "technical"
+    },
+    {
+      "id": 12,
+      "question": "How do you follow a running Job's logs in real time, and how do you filter pods belonging to a specific job by label?",
+      "conversation_history": [],
+      "expected_label": "TECHNICAL",
+      "category": "technical"
+    },
+    {
+      "id": 13,
+      "question": "What's the role of the Metrics Server in enabling Horizontal Pod Autoscaling, and what command verifies it's collecting data?",
+      "conversation_history": [],
+      "expected_label": "TECHNICAL",
+      "category": "technical"
+    },
+    {
+      "id": 14,
+      "question": "In an HPA object, what do minReplicas, maxReplicas, and averageUtilization control?",
+      "conversation_history": [],
+      "expected_label": "TECHNICAL",
+      "category": "technical"
+    },
+    {
+      "id": 15,
+      "question": "How does Vertical Pod Autoscaler's updateMode: Initial differ from Off?",
+      "conversation_history": [],
+      "expected_label": "TECHNICAL",
+      "category": "technical"
+    },
+    {
+      "id": 16,
+      "question": "How does VPA use minAllowed and maxAllowed when it first starts managing a pod?",
+      "conversation_history": [],
+      "expected_label": "TECHNICAL",
+      "category": "technical"
+    },
+    {
+      "id": 17,
+      "question": "In the fine-parallel work queue example, how does a worker Pod know when the queue is empty and exit successfully?",
+      "conversation_history": [],
+      "expected_label": "TECHNICAL",
+      "category": "technical"
+    },
+    {
+      "id": 18,
+      "question": "What storage service and parallelism setting does the fine-parallel work queue example use, and what does 'parallelism: 2' mean here?",
+      "conversation_history": [],
+      "expected_label": "TECHNICAL",
+      "category": "technical"
+    },
+    {
+      "id": 19,
+      "question": "What is kube-scheduler responsible for, and how does it interact with kube-apiserver when binding a Pod to a Node?",
+      "conversation_history": [],
+      "expected_label": "TECHNICAL",
+      "category": "technical"
+    },
+    {
+      "id": 20,
+      "question": "What is etcd's role in the Kubernetes control plane?",
+      "conversation_history": [],
+      "expected_label": "TECHNICAL",
+      "category": "technical"
+    },
+    {
+      "id": 21,
+      "question": "What does kube-controller-manager do, and how does it differ from cloud-controller-manager?",
+      "conversation_history": [],
+      "expected_label": "TECHNICAL",
+      "category": "technical"
+    },
+    {
+      "id": 22,
+      "question": "What are the four major Kubernetes Service types, and what does each expose?",
+      "conversation_history": [],
+      "expected_label": "TECHNICAL",
+      "category": "technical"
+    },
+    {
+      "id": 23,
+      "question": "What is the difference between a PersistentVolume, a PersistentVolumeClaim, and a StorageClass?",
+      "conversation_history": [],
+      "expected_label": "TECHNICAL",
+      "category": "technical"
+    },
+    {
+      "id": 24,
+      "question": "What's the difference between a ConfigMap and a Secret in Kubernetes?",
+      "conversation_history": [],
+      "expected_label": "TECHNICAL",
+      "category": "technical"
+    },
+    {
+      "id": 25,
+      "question": "How do Role, RoleBinding, and ServiceAccount relate to each other in Kubernetes RBAC?",
+      "conversation_history": [],
+      "expected_label": "TECHNICAL",
+      "category": "technical"
+    },
+    {
+      "id": 26,
+      "question": "How does a StatefulSet differ from a Deployment in how it manages Pods?",
+      "conversation_history": [],
+      "expected_label": "TECHNICAL",
+      "category": "technical"
+    },
+    {
+      "id": 27,
+      "question": "What is a DaemonSet used for, and how does its scheduling differ from a normal Deployment?",
+      "conversation_history": [],
+      "expected_label": "TECHNICAL",
+      "category": "technical"
+    },
+    {
+      "id": 28,
+      "question": "How is a CronJob related to a Job according to the Kubernetes Concepts overview?",
+      "conversation_history": [],
+      "expected_label": "TECHNICAL",
+      "category": "technical"
+    },
+    {
+      "id": 29,
+      "question": "What's the difference between a Label, an Annotation, and a Selector in Kubernetes?",
+      "conversation_history": [],
+      "expected_label": "TECHNICAL",
+      "category": "technical"
+    },
+    {
+      "id": 30,
+      "question": "What are the valid operators for set-based selectors, and which object types support them?",
+      "conversation_history": [],
+      "expected_label": "TECHNICAL",
+      "category": "technical"
+    },
+    {
+      "id": 31,
+      "question": "How do you create a job using the CLI, and what does the created job's response look like?",
+      "conversation_history": [],
+      "expected_label": "TECHNICAL",
+      "category": "technical"
+    },
+    {
+      "id": 32,
+      "question": "What are the three ways to run a job using the Databricks CLI?",
+      "conversation_history": [],
+      "expected_label": "TECHNICAL",
+      "category": "technical"
+    },
+    {
+      "id": 33,
+      "question": "What programming languages does the Databricks SDK support for creating and managing jobs?",
+      "conversation_history": [],
+      "expected_label": "TECHNICAL",
+      "category": "technical"
+    },
+    {
+      "id": 34,
+      "question": "What REST API endpoint retrieves details for a single job in Databricks, and what environment variables does the example require?",
+      "conversation_history": [],
+      "expected_label": "TECHNICAL",
+      "category": "technical"
+    },
+    {
+      "id": 35,
+      "question": "Trace what happens from when a Deployment manifest is applied to when its Pod is finally running \u2014 which controllers/components are involved, and in what order?",
+      "conversation_history": [],
+      "expected_label": "TECHNICAL",
+      "category": "technical"
+    },
+    {
+      "id": 36,
+      "question": "How do master components and node components divide responsibility for getting a Pod scheduled and running?",
+      "conversation_history": [],
+      "expected_label": "TECHNICAL",
+      "category": "technical"
+    },
+    {
+      "id": 37,
+      "question": "If a Job shows 0/1 under COMPLETIONS when you run kubectl get jobs, what are the possible explanations and how would you investigate further?",
+      "conversation_history": [],
+      "expected_label": "TECHNICAL",
+      "category": "technical"
+    },
+    {
+      "id": 38,
+      "question": "How does HPA's approach to handling increased load differ fundamentally from VPA's approach?",
+      "conversation_history": [],
+      "expected_label": "TECHNICAL",
+      "category": "technical"
+    },
+    {
+      "id": 39,
+      "question": "Walk through the full sequence of steps in the fine-parallel work queue example, from setting up storage to running the Job.",
+      "conversation_history": [],
+      "expected_label": "TECHNICAL",
+      "category": "technical"
+    },
+    {
+      "id": 40,
+      "question": "Both the architecture overview and the Jobs guide describe completions and parallelism. What does the Jobs guide add beyond the architecture overview's summary?",
+      "conversation_history": [],
+      "expected_label": "TECHNICAL",
+      "category": "technical"
+    },
+    {
+      "id": 41,
+      "question": "The parallel work queue example's Job uses restartPolicy: OnFailure. Is this a valid restart policy for a Kubernetes Job, and what would happen if a worker pod crashed?",
+      "conversation_history": [],
+      "expected_label": "TECHNICAL",
+      "category": "technical"
+    },
+    {
+      "id": 42,
+      "question": "If you wanted to check the progress of the parallel work-queue Job's individual worker pods, which kubectl commands from the monitoring guide would you use?",
+      "conversation_history": [],
+      "expected_label": "TECHNICAL",
+      "category": "technical"
+    },
+    {
+      "id": 43,
+      "question": "How does a CronJob's spec.jobTemplate relate to the standalone Job concepts (restartPolicy, backoffLimit) described elsewhere?",
+      "conversation_history": [],
+      "expected_label": "TECHNICAL",
+      "category": "technical"
+    },
+    {
+      "id": 44,
+      "question": "What is the purpose of a temporary interactive pod in the parallel work queue example, and what command is used to create one?",
+      "conversation_history": [],
+      "expected_label": "TECHNICAL",
+      "category": "technical"
+    },
+    {
+      "id": 45,
+      "question": "What does the rediswq worker script do when it leases an item from the queue but the item is None?",
+      "conversation_history": [],
+      "expected_label": "TECHNICAL",
+      "category": "technical"
+    },
+    {
+      "id": 46,
+      "question": "In the Job resource-limits troubleshooting section, what are two ways to resolve Pods getting OOMKilled or CPU throttled?",
+      "conversation_history": [],
+      "expected_label": "TECHNICAL",
+      "category": "technical"
+    },
+    {
+      "id": 47,
+      "question": "What does ttlSecondsAfterFinished do on a CronJob's job template, and why would you use it in a cost-optimization context?",
+      "conversation_history": [],
+      "expected_label": "TECHNICAL",
+      "category": "technical"
+    },
+    {
+      "id": 48,
+      "question": "What OPA Gatekeeper policy pattern is shown for enforcing that Job containers define resource requests and limits?",
+      "conversation_history": [],
+      "expected_label": "TECHNICAL",
+      "category": "technical"
+    },
+    {
+      "id": 49,
+      "question": "How would you create a job on Databricks using the Python SDK rather than the CLI?",
+      "conversation_history": [],
+      "expected_label": "TECHNICAL",
+      "category": "technical"
+    },
+    {
+      "id": 50,
+      "question": "What's the recommended way to manage jobs as part of CI/CD according to the jobs automation guide, instead of using the CLI/SDK/REST API directly?",
+      "conversation_history": [],
+      "expected_label": "TECHNICAL",
+      "category": "technical"
+    },
+    {
+      "id": 51,
+      "question": "How do you view a job's configuration as YAML, Python, or JSON directly from the workspace UI, and what is each format used for?",
+      "conversation_history": [],
+      "expected_label": "TECHNICAL",
+      "category": "technical"
+    },
+    {
+      "id": 52,
+      "question": "What command deletes a job, and is it the same command whether the job is a Kubernetes Job or a job created through the automation guide's CLI?",
+      "conversation_history": [],
+      "expected_label": "TECHNICAL",
+      "category": "technical"
+    },
+    {
+      "id": 53,
+      "question": "What are the four CNI-compatible network plugins mentioned that are lettered with a C, and what is the CNI's general purpose?",
+      "conversation_history": [],
+      "expected_label": "TECHNICAL",
+      "category": "technical"
+    },
+    {
+      "id": 54,
+      "question": "What are the three fundamental networking rules that apply to all Pods in a Kubernetes cluster?",
+      "conversation_history": [],
+      "expected_label": "TECHNICAL",
+      "category": "technical"
+    },
+    {
+      "id": 55,
+      "question": "What is the role of kube-apiserver in the Kubernetes control plane, and why is it described as the 'gatekeeper' to the cluster?",
+      "conversation_history": [],
+      "expected_label": "TECHNICAL",
+      "category": "technical"
+    },
+    {
+      "id": 56,
+      "question": "From what sources can kubelet read YAML container manifests?",
+      "conversation_history": [],
+      "expected_label": "TECHNICAL",
+      "category": "technical"
+    },
+    {
+      "id": 57,
+      "question": "What are the available proxy modes for kube-proxy?",
+      "conversation_history": [],
+      "expected_label": "TECHNICAL",
+      "category": "technical"
+    },
+    {
+      "id": 58,
+      "question": "Name the container runtimes listed as CRI-compatible options for Kubernetes.",
+      "conversation_history": [],
+      "expected_label": "TECHNICAL",
+      "category": "technical"
+    },
+    {
+      "id": 59,
+      "question": "What does an Ingress controller do, and which specific controller implementations are mentioned?",
+      "conversation_history": [],
+      "expected_label": "TECHNICAL",
+      "category": "technical"
+    },
+    {
+      "id": 60,
+      "question": "What do Kube-dns, Heapster, and Kube-dashboard each provide as additional Kubernetes services?",
+      "conversation_history": [],
+      "expected_label": "TECHNICAL",
+      "category": "technical"
+    },
+    {
+      "id": 61,
+      "question": "How does a ReplicaSet differ from the older ReplicationController, and how does a Deployment relate to a ReplicaSet?",
+      "conversation_history": [],
+      "expected_label": "TECHNICAL",
+      "category": "technical"
+    },
+    {
+      "id": 62,
+      "question": "What access modes can a PersistentVolume support, and what does each one mean?",
+      "conversation_history": [],
+      "expected_label": "TECHNICAL",
+      "category": "technical"
+    },
+    {
+      "id": 63,
+      "question": "What is a Namespace in Kubernetes, and what is it primarily used for?",
+      "conversation_history": [],
+      "expected_label": "TECHNICAL",
+      "category": "technical"
+    },
+    {
+      "id": 64,
+      "question": "After kubelet is notified of a Pod assigned to its node, what steps does it take to get that Pod's containers running?",
+      "conversation_history": [],
+      "expected_label": "TECHNICAL",
+      "category": "technical"
+    },
+    {
+      "id": 65,
+      "question": "What RBAC permissions does the example job-runner Role grant, and what SecurityContext settings are recommended for job containers?",
+      "conversation_history": [],
+      "expected_label": "TECHNICAL",
+      "category": "technical"
+    },
+    {
+      "id": 66,
+      "question": "How does the example NetworkPolicy restrict a batch job's network access?",
+      "conversation_history": [],
+      "expected_label": "TECHNICAL",
+      "category": "technical"
+    },
+    {
+      "id": 67,
+      "question": "How does the ExternalSecret pattern shown retrieve a database password from Vault into a job's Pod?",
+      "conversation_history": [],
+      "expected_label": "TECHNICAL",
+      "category": "technical"
+    },
+    {
+      "id": 68,
+      "question": "Describe the progressive backoff pattern shown for a job calling an external API, and how it combines with the Job's own backoffLimit.",
+      "conversation_history": [],
+      "expected_label": "TECHNICAL",
+      "category": "technical"
+    },
+    {
+      "id": 69,
+      "question": "How does the GracefulJobRunner Python example handle a SIGTERM signal during processing?",
+      "conversation_history": [],
+      "expected_label": "TECHNICAL",
+      "category": "technical"
+    },
+    {
+      "id": 70,
+      "question": "What is a KEDA ScaledJob, and what event source triggers new job creation in the example shown?",
+      "conversation_history": [],
+      "expected_label": "TECHNICAL",
+      "category": "technical"
+    },
+    {
+      "id": 71,
+      "question": "How does the compliance-report-job CronJob differ from a typical job in its retry and history retention configuration, and why?",
+      "conversation_history": [],
+      "expected_label": "TECHNICAL",
+      "category": "technical"
+    },
+    {
+      "id": 72,
+      "question": "What command starts a local Kubernetes cluster with Minikube, and how do you verify the cluster is running afterward?",
+      "conversation_history": [],
+      "expected_label": "TECHNICAL",
+      "category": "technical"
+    },
+    {
+      "id": 73,
+      "question": "What JSONPath command extracts just the number of succeeded pods for a specific job?",
+      "conversation_history": [],
+      "expected_label": "TECHNICAL",
+      "category": "technical"
+    },
+    {
+      "id": 74,
+      "question": "How do you create a CronJob that runs every minute, and how do you confirm it's creating Jobs on schedule?",
+      "conversation_history": [],
+      "expected_label": "TECHNICAL",
+      "category": "technical"
+    },
+    {
+      "id": 75,
+      "question": "What command is used to generate load against the nginx-svc service in the HPA test, and what does it do?",
+      "conversation_history": [],
+      "expected_label": "TECHNICAL",
+      "category": "technical"
+    },
+    {
+      "id": 76,
+      "question": "How do you install VPA in a cluster, and how do you verify it's running?",
+      "conversation_history": [],
+      "expected_label": "TECHNICAL",
+      "category": "technical"
+    },
+    {
+      "id": 77,
+      "question": "How does the ReplicaSet Controller's reconciliation process, as described in the deployment flow, parallel how a Job controller responds when a Pod fails?",
+      "conversation_history": [],
+      "expected_label": "TECHNICAL",
+      "category": "technical"
+    },
+    {
+      "id": 78,
+      "question": "How does the job-runner RBAC Role example relate to the general Role/RoleBinding/ServiceAccount concepts from the architecture overview?",
+      "conversation_history": [],
+      "expected_label": "TECHNICAL",
+      "category": "technical"
+    },
+    {
+      "id": 79,
+      "question": "How does the parallelism field used in the work queue Job's manifest relate to the general spec.parallelism concept from the Kubernetes concepts overview?",
+      "conversation_history": [],
+      "expected_label": "TECHNICAL",
+      "category": "technical"
+    },
+    {
+      "id": 80,
+      "question": "How do you retrieve the JSON representation of an existing job and use it to recreate that job's configuration?",
+      "conversation_history": [],
+      "expected_label": "TECHNICAL",
+      "category": "technical"
+    },
+    {
+      "id": 81,
+      "question": "What's the difference between the Python code generated for 'Databricks SDK' versus 'Databricks Asset Bundles' when viewing a job as code?",
+      "conversation_history": [],
+      "expected_label": "TECHNICAL",
+      "category": "technical"
+    },
+    {
+      "id": 82,
+      "question": "Does 'databricks jobs submit' save the job the same way 'databricks jobs create' does?",
+      "conversation_history": [],
+      "expected_label": "TECHNICAL",
+      "category": "technical"
+    },
+    {
+      "id": 83,
+      "question": "What Prometheus queries are shown for tracking a Kubernetes Job's success rate, average duration, and failed count?",
+      "conversation_history": [],
+      "expected_label": "TECHNICAL",
+      "category": "technical"
+    },
+    {
+      "id": 84,
+      "question": "What do the JobFailed and CronJobMissing Prometheus alerting rules detect?",
+      "conversation_history": [],
+      "expected_label": "TECHNICAL",
+      "category": "technical"
+    },
+    {
+      "id": 85,
+      "question": "If a Job is stuck in Pending with no Pods running, what are the likely causes and how do you diagnose it?",
+      "conversation_history": [],
+      "expected_label": "TECHNICAL",
+      "category": "technical"
+    },
+    {
+      "id": 86,
+      "question": "If a CronJob exists but isn't creating Jobs, what diagnostic steps are recommended, and what's an example of an invalid schedule?",
+      "conversation_history": [],
+      "expected_label": "TECHNICAL",
+      "category": "technical"
+    },
+    {
+      "id": 87,
+      "question": "What does the recommended structured logging pattern for job containers look like?",
+      "conversation_history": [],
+      "expected_label": "TECHNICAL",
+      "category": "technical"
+    },
+    {
+      "id": 88,
+      "question": "What API group does the Job resource belong to, and can a Job's Pod template be changed after creation?",
+      "conversation_history": [],
+      "expected_label": "TECHNICAL",
+      "category": "technical"
+    },
+    {
+      "id": 89,
+      "question": "How do you filter Jobs by multiple labels at once, and how do you view events for one specific Job?",
+      "conversation_history": [],
+      "expected_label": "TECHNICAL",
+      "category": "technical"
+    },
+    {
+      "id": 90,
+      "question": "What JSONPath command retrieves a Job's creation timestamp?",
+      "conversation_history": [],
+      "expected_label": "TECHNICAL",
+      "category": "technical"
+    },
+    {
+      "id": 91,
+      "question": "What commands start a local cluster with Minikube and verify both the cluster and its core components are running?",
+      "conversation_history": [],
+      "expected_label": "TECHNICAL",
+      "category": "technical"
+    },
+    {
+      "id": 92,
+      "question": "What three steps does HPA go through to make a scaling decision, and what API version is used to define an HPA object?",
+      "conversation_history": [],
+      "expected_label": "TECHNICAL",
+      "category": "technical"
+    },
+    {
+      "id": 93,
+      "question": "How does VPA's updateMode: Recreate differ from updateMode: Auto?",
+      "conversation_history": [],
+      "expected_label": "TECHNICAL",
+      "category": "technical"
+    },
+    {
+      "id": 94,
+      "question": "How do you exclude a specific container in a pod from VPA-managed scaling?",
+      "conversation_history": [],
+      "expected_label": "TECHNICAL",
+      "category": "technical"
+    },
+    {
+      "id": 95,
+      "question": "What does the output of kubectl get hpa -w show while HPA is actively scaling in response to load?",
+      "conversation_history": [],
+      "expected_label": "TECHNICAL",
+      "category": "technical"
+    },
+    {
+      "id": 96,
+      "question": "What access modes and reclaim policies can a PersistentVolume have?",
+      "conversation_history": [],
+      "expected_label": "TECHNICAL",
+      "category": "technical"
+    },
+    {
+      "id": 97,
+      "question": "What fields make up a StorageClass, and what is its purpose?",
+      "conversation_history": [],
+      "expected_label": "TECHNICAL",
+      "category": "technical"
+    },
+    {
+      "id": 98,
+      "question": "What steps does a request go through in the apiserver request loop before being published, according to the deployment walkthrough?",
+      "conversation_history": [],
+      "expected_label": "TECHNICAL",
+      "category": "technical"
+    },
+    {
+      "id": 99,
+      "question": "What role does the pause container play, and how is networking plumbed to a new Pod?",
+      "conversation_history": [],
+      "expected_label": "TECHNICAL",
+      "category": "technical"
+    },
+    {
+      "id": 100,
+      "question": "What does kubelet do during PodSync before a Pod's containers start, and what has to happen before PodStatus is set to ready?",
+      "conversation_history": [],
+      "expected_label": "TECHNICAL",
+      "category": "technical"
+    },
+    {
+      "id": 101,
+      "question": "hi",
+      "conversation_history": [],
+      "expected_label": "CONVERSATIONAL",
+      "category": "conversational"
+    },
+    {
+      "id": 102,
+      "question": "hello",
+      "conversation_history": [],
+      "expected_label": "CONVERSATIONAL",
+      "category": "conversational"
+    },
+    {
+      "id": 103,
+      "question": "hey there",
+      "conversation_history": [],
+      "expected_label": "CONVERSATIONAL",
+      "category": "conversational"
+    },
+    {
+      "id": 104,
+      "question": "good morning",
+      "conversation_history": [],
+      "expected_label": "CONVERSATIONAL",
+      "category": "conversational"
+    },
+    {
+      "id": 105,
+      "question": "hi there, how are you",
+      "conversation_history": [],
+      "expected_label": "CONVERSATIONAL",
+      "category": "conversational"
+    },
+    {
+      "id": 106,
+      "question": "hello!",
+      "conversation_history": [],
+      "expected_label": "CONVERSATIONAL",
+      "category": "conversational"
+    },
+    {
+      "id": 107,
+      "question": "hey",
+      "conversation_history": [],
+      "expected_label": "CONVERSATIONAL",
+      "category": "conversational"
+    },
+    {
+      "id": 108,
+      "question": "yo",
+      "conversation_history": [],
+      "expected_label": "CONVERSATIONAL",
+      "category": "conversational"
+    },
+    {
+      "id": 109,
+      "question": "good afternoon",
+      "conversation_history": [],
+      "expected_label": "CONVERSATIONAL",
+      "category": "conversational"
+    },
+    {
+      "id": 110,
+      "question": "hiya",
+      "conversation_history": [],
+      "expected_label": "CONVERSATIONAL",
+      "category": "conversational"
+    },
+    {
+      "id": 111,
+      "question": "What topic were we just discussing?",
+      "conversation_history": [
+        {
+          "role": "user",
+          "content": "If you wanted to check the progress of the parallel work-queue Job's individual worker pods, which kubectl commands from the monitoring guide would you use?"
+        },
+        {
+          "role": "assistant",
+          "content": "You could use kubectl get pods -l job-name=job-wq-2 to list the worker pods for that Job, kubectl logs <pod-name> (or kubectl logs -f <pod-name> to follow in real time) to see what a given worker is processing, and kubectl describe jobs/job-wq-2 or kubectl get jobs to check overall completions and status."
+        }
+      ],
+      "expected_label": "CONVERSATIONAL",
+      "category": "conversational"
+    },
+    {
+      "id": 112,
+      "question": "What did I just ask you?",
+      "conversation_history": [
+        {
+          "role": "user",
+          "content": "What is etcd's role in the Kubernetes control plane?"
+        },
+        {
+          "role": "assistant",
+          "content": "etcd acts as the cluster's datastore, providing a strong, consistent, and highly available key-value store used for persisting the cluster's state."
+        }
+      ],
+      "expected_label": "CONVERSATIONAL",
+      "category": "conversational"
+    },
+    {
+      "id": 113,
+      "question": "What was the first thing I asked?",
+      "conversation_history": [
+        {
+          "role": "user",
+          "content": "How do you view a job's configuration as YAML, Python, or JSON directly from the workspace UI, and what is each format used for?"
+        },
+        {
+          "role": "assistant",
+          "content": "This is a Databricks workspace feature: click 'Jobs & Pipelines', select a job, click the kebab menu next to 'Run now', then 'View as code', and choose YAML, Python, or JSON. YAML is pasted into Databricks Asset Bundles configuration files; Python (via SDK or Bundles) is used to create the job programmatically in notebooks or bundles; JSON is used with the CLI, SDK, or REST API to create, update, or get the job."
+        }
+      ],
+      "expected_label": "CONVERSATIONAL",
+      "category": "conversational"
+    },
+    {
+      "id": 114,
+      "question": "What did I just ask you?",
+      "conversation_history": [
+        {
+          "role": "user",
+          "content": "What do the JobFailed and CronJobMissing Prometheus alerting rules detect?"
+        },
+        {
+          "role": "assistant",
+          "content": "JobFailed fires when kube_job_status_failed > 0, immediately (for: 0m), warning severity, indicating a specific job has failed. CronJobMissing fires when the time since a CronJob's last scheduled run exceeds 3600 seconds while the CronJob is not suspended (kube_cronjob_spec_suspend == 0), sustained for 5 minutes, at critical severity, indicating a CronJob hasn't run in over an hour."
+        }
+      ],
+      "expected_label": "CONVERSATIONAL",
+      "category": "conversational"
+    },
+    {
+      "id": 115,
+      "question": "What topic were we just discussing?",
+      "conversation_history": [
+        {
+          "role": "user",
+          "content": "Describe the idempotent job design pattern and why it matters for Kubernetes Jobs."
+        },
+        {
+          "role": "assistant",
+          "content": "An idempotent job checks whether its output already exists (e.g. by comparing an input data checksum against a saved metadata hash) before redoing expensive processing, and skips reprocessing if the input hasn't changed. It matters because Jobs can be retried (via backoffLimit) or rerun, and without idempotency, retries could duplicate work or produce inconsistent results."
+        }
+      ],
+      "expected_label": "CONVERSATIONAL",
+      "category": "conversational"
+    },
+    {
+      "id": 116,
+      "question": "What did I just ask you?",
+      "conversation_history": [
+        {
+          "role": "user",
+          "content": "How can you view the logs of a Job's pod after the Job has already completed or failed?"
+        },
+        {
+          "role": "assistant",
+          "content": "You can still run kubectl logs <pod-name> against the completed or failed pod, since Kubernetes retains the pod (and its logs) after job completion unless it's cleaned up; this works even for pods in a Completed or Error state."
+        }
+      ],
+      "expected_label": "CONVERSATIONAL",
+      "category": "conversational"
+    },
+    {
+      "id": 117,
+      "question": "What was your answer just now?",
+      "conversation_history": [
+        {
+          "role": "user",
+          "content": "How does the GracefulJobRunner Python example handle a SIGTERM signal during processing?"
+        },
+        {
+          "role": "assistant",
+          "content": "It registers a signal_handler for both SIGTERM and SIGINT that sets a shutdown_requested flag when triggered. In its main processing loop, before handling each work item it checks that flag; if a shutdown was requested, it saves progress for the current item and exits cleanly (sys.exit(0)) instead of abruptly terminating mid-item."
+        }
+      ],
+      "expected_label": "CONVERSATIONAL",
+      "category": "conversational"
+    },
+    {
+      "id": 118,
+      "question": "Summarize what you told me so far.",
+      "conversation_history": [
+        {
+          "role": "user",
+          "content": "What's the role of the Metrics Server in enabling Horizontal Pod Autoscaling, and what command verifies it's collecting data?"
+        },
+        {
+          "role": "assistant",
+          "content": "The Metrics Server collects resource usage metrics (CPU and memory) from the cluster's nodes and pods, and HPA relies on these metrics to make scaling decisions. You can verify it's collecting data with kubectl top nodes and kubectl top pods --all-namespaces, which should return CPU and memory usage figures if the Metrics Server is functioning."
+        }
+      ],
+      "expected_label": "CONVERSATIONAL",
+      "category": "conversational"
+    },
+    {
+      "id": 119,
+      "question": "What was the first thing I asked?",
+      "conversation_history": [
+        {
+          "role": "user",
+          "content": "What does ttlSecondsAfterFinished do on a CronJob's job template, and why would you use it in a cost-optimization context?"
+        },
+        {
+          "role": "assistant",
+          "content": "ttlSecondsAfterFinished automatically cleans up (deletes) a completed Job after the specified number of seconds \u2014 e.g. ttlSecondsAfterFinished: 3600 removes the Job an hour after it finishes. It's useful for cost optimization because it avoids leaving completed Job objects and their pods lingering and consuming cluster resources or history."
+        }
+      ],
+      "expected_label": "CONVERSATIONAL",
+      "category": "conversational"
+    },
+    {
+      "id": 120,
+      "question": "What was your answer just now?",
+      "conversation_history": [
+        {
+          "role": "user",
+          "content": "What command is used to generate load against the nginx-svc service in the HPA test, and what does it do?"
+        },
+        {
+          "role": "assistant",
+          "content": "kubectl run -i --tty load-generator --rm --image=busybox:1.28 --restart=Never -- /bin/sh -c \"while sleep 0.01; do wget -q -O- http://nginx-svc; done\" runs a temporary pod that continuously sends requests to nginx-svc in a tight loop, driving up CPU utilization on the nginx pods so the HPA has a reason to scale."
+        }
+      ],
+      "expected_label": "CONVERSATIONAL",
+      "category": "conversational"
+    },
+    {
+      "id": 121,
+      "question": "Can you remind me what you told me about that?",
+      "conversation_history": [
+        {
+          "role": "user",
+          "content": "Why is running a long job without checkpointing considered an anti-pattern?"
+        },
+        {
+          "role": "assistant",
+          "content": "A long-running Job with a very large activeDeadlineSeconds (e.g. 24 hours) and no progress tracking has no way to resume if it's interrupted \u2014 if it fails partway through, all progress is lost and the entire job must restart from the beginning."
+        }
+      ],
+      "expected_label": "CONVERSATIONAL",
+      "category": "conversational"
+    },
+    {
+      "id": 122,
+      "question": "Summarize what you told me so far.",
+      "conversation_history": [
+        {
+          "role": "user",
+          "content": "What RBAC permissions does the example job-runner Role grant, and what SecurityContext settings are recommended for job containers?"
+        },
+        {
+          "role": "assistant",
+          "content": "The job-runner Role grants get/list verbs on secrets and configmaps, and get/list/watch verbs on pods, scoped to the batch-jobs namespace. Recommended SecurityContext settings include runAsNonRoot: true, a specific runAsUser/runAsGroup, allowPrivilegeEscalation: false, readOnlyRootFilesystem: true, and dropping all Linux capabilities (capabilities.drop: [ALL])."
+        }
+      ],
+      "expected_label": "CONVERSATIONAL",
+      "category": "conversational"
+    },
+    {
+      "id": 123,
+      "question": "What was your answer just now?",
+      "conversation_history": [
+        {
+          "role": "user",
+          "content": "How is a CronJob related to a Job according to the Kubernetes Concepts overview?"
+        },
+        {
+          "role": "assistant",
+          "content": "A CronJob is described as an extension of the Job controller \u2014 it adds a cron-like schedule on top of a Job template, so that Jobs are created automatically according to that schedule."
+        }
+      ],
+      "expected_label": "CONVERSATIONAL",
+      "category": "conversational"
+    },
+    {
+      "id": 124,
+      "question": "Can you remind me what you told me about that?",
+      "conversation_history": [
+        {
+          "role": "user",
+          "content": "What do backoffLimit and activeDeadlineSeconds control on a Job?"
+        },
+        {
+          "role": "assistant",
+          "content": "backoffLimit sets the number of retries before a Job is marked as failed (e.g. backoffLimit: 3 allows 3 retries). activeDeadlineSeconds sets a maximum wall-clock time in seconds for the Job to run; if exceeded, the Job is terminated regardless of completion status (e.g. activeDeadlineSeconds: 3600 kills the Job after 1 hour)."
+        }
+      ],
+      "expected_label": "CONVERSATIONAL",
+      "category": "conversational"
+    },
+    {
+      "id": 125,
+      "question": "What topic were we just discussing?",
+      "conversation_history": [
+        {
+          "role": "user",
+          "content": "How do you follow a running Job's logs in real time, and how do you filter pods belonging to a specific job by label?"
+        },
+        {
+          "role": "assistant",
+          "content": "Use kubectl logs -f <pod-name> to stream logs in real time (Ctrl+C to stop). To filter pods for a specific job, use kubectl get pods -l job-name=<job-name>, since Kubernetes automatically labels pods created by a Job with job-name."
+        }
+      ],
+      "expected_label": "CONVERSATIONAL",
+      "category": "conversational"
+    },
+    {
+      "id": 126,
+      "question": "Can you repeat your last answer?",
+      "conversation_history": [
+        {
+          "role": "user",
+          "content": "From what sources can kubelet read YAML container manifests?"
+        },
+        {
+          "role": "assistant",
+          "content": "kubelet can read manifests from a file path, an HTTP endpoint, an etcd watch acting on any changes, or via an HTTP server mode that accepts container manifests over a simple API."
+        }
+      ],
+      "expected_label": "CONVERSATIONAL",
+      "category": "conversational"
+    },
+    {
+      "id": 127,
+      "question": "Can you remind me what you told me about that?",
+      "conversation_history": [
+        {
+          "role": "user",
+          "content": "What are the three fundamental networking rules that apply to all Pods in a Kubernetes cluster?"
+        },
+        {
+          "role": "assistant",
+          "content": "All Pods can communicate with all other Pods without NAT; all Nodes can communicate with all Pods (and vice versa) without NAT; and the IP a Pod sees itself as is the same IP that other Pods see it as."
+        }
+      ],
+      "expected_label": "CONVERSATIONAL",
+      "category": "conversational"
+    },
+    {
+      "id": 128,
+      "question": "Can you remind me what you told me about that?",
+      "conversation_history": [
+        {
+          "role": "user",
+          "content": "Which kubectl command shows a Job's completions, duration, and age at a glance?"
+        },
+        {
+          "role": "assistant",
+          "content": "kubectl get jobs shows a table with NAME, COMPLETIONS (e.g. 1/1), DURATION, and AGE for each Job."
+        }
+      ],
+      "expected_label": "CONVERSATIONAL",
+      "category": "conversational"
+    },
+    {
+      "id": 129,
+      "question": "What did I just ask you?",
+      "conversation_history": [
+        {
+          "role": "user",
+          "content": "How do you create a job using the CLI, and what does the created job's response look like?"
+        },
+        {
+          "role": "assistant",
+          "content": "This refers to the Databricks CLI, not Kubernetes: you copy a job definition into a JSON file (with fields like name and tasks) and run 'databricks jobs create --json @<file-path>'. The response is a JSON object with fields like created_time, creator_user_name, job_id, run_as_user_name, and a settings block describing the job's tasks and configuration \u2014 this is unrelated to the Kubernetes batch/v1 Job API."
+        }
+      ],
+      "expected_label": "CONVERSATIONAL",
+      "category": "conversational"
+    },
+    {
+      "id": 130,
+      "question": "What topic were we just discussing?",
+      "conversation_history": [
+        {
+          "role": "user",
+          "content": "If a CronJob exists but isn't creating Jobs, what diagnostic steps are recommended, and what's an example of an invalid schedule?"
+        },
+        {
+          "role": "assistant",
+          "content": "Run kubectl describe cronjob <cronjob-name>, verify the cron syntax (e.g. with an online cron expression tester), and check kube-controller-manager logs (kubectl logs -n kube-system deployment/kube-controller-manager). An example invalid expression is schedule: \"60 * * * *\" (minute must be 0-59); the fix is schedule: \"0 * * * *\"."
+        }
+      ],
+      "expected_label": "CONVERSATIONAL",
+      "category": "conversational"
+    },
+    {
+      "id": 131,
+      "question": "What did you just say the answer was?",
+      "conversation_history": [
+        {
+          "role": "user",
+          "content": "How does the compliance-report-job CronJob differ from a typical job in its retry and history retention configuration, and why?"
+        },
+        {
+          "role": "assistant",
+          "content": "It sets backoffLimit: 1 (no retries) for compliance jobs, and retains successfulJobsHistoryLimit and failedJobsHistoryLimit at 12 each (about a year of monthly reports), unlike typical jobs which might retry more and keep less history \u2014 this is meant to preserve an auditable record for compliance purposes rather than optimize for job success rate."
+        }
+      ],
+      "expected_label": "CONVERSATIONAL",
+      "category": "conversational"
+    },
+    {
+      "id": 132,
+      "question": "What was the first thing I asked?",
+      "conversation_history": [
+        {
+          "role": "user",
+          "content": "What is the role of kube-apiserver in the Kubernetes control plane, and why is it described as the 'gatekeeper' to the cluster?"
+        },
+        {
+          "role": "assistant",
+          "content": "kube-apiserver provides a forward-facing REST interface into the Kubernetes control plane and datastore. All clients \u2014 including nodes, users, and other applications \u2014 interact with Kubernetes strictly through the API Server, which handles authentication, authorization, request validation, mutation, and admission control, in addition to being the front-end to the backing datastore (etcd)."
+        }
+      ],
+      "expected_label": "CONVERSATIONAL",
+      "category": "conversational"
+    },
+    {
+      "id": 133,
+      "question": "Can you repeat your last answer?",
+      "conversation_history": [
+        {
+          "role": "user",
+          "content": "What JSONPath command retrieves a Job's creation timestamp?"
+        },
+        {
+          "role": "assistant",
+          "content": "kubectl get job labeled-job -o jsonpath='{.metadata.creationTimestamp}' extracts just the creation timestamp field from the job's metadata."
+        }
+      ],
+      "expected_label": "CONVERSATIONAL",
+      "category": "conversational"
+    },
+    {
+      "id": 134,
+      "question": "What did you just say the answer was?",
+      "conversation_history": [
+        {
+          "role": "user",
+          "content": "What JSONPath command extracts just the number of succeeded pods for a specific job?"
+        },
+        {
+          "role": "assistant",
+          "content": "kubectl get job <job-name> -o jsonpath='{.status.succeeded}' outputs just the succeeded count for that job."
+        }
+      ],
+      "expected_label": "CONVERSATIONAL",
+      "category": "conversational"
+    },
+    {
+      "id": 135,
+      "question": "What did you just say the answer was?",
+      "conversation_history": [
+        {
+          "role": "user",
+          "content": "How does VPA use minAllowed and maxAllowed when it first starts managing a pod?"
+        },
+        {
+          "role": "assistant",
+          "content": "VPA ensures the pod's resource requests fall within the minAllowed and maxAllowed range. On first adjustment it raises requests to at least minAllowed as a baseline, then over time it monitors actual usage and incrementally adjusts recommendations toward observed usage patterns, rather than jumping straight to maxAllowed unless usage justifies it."
+        }
+      ],
+      "expected_label": "CONVERSATIONAL",
+      "category": "conversational"
+    },
+    {
+      "id": 136,
+      "question": "Wait, why does that matter?",
+      "conversation_history": [
+        {
+          "role": "user",
+          "content": "What does ttlSecondsAfterFinished do on a CronJob's job template, and why would you use it in a cost-optimization context?"
+        },
+        {
+          "role": "assistant",
+          "content": "ttlSecondsAfterFinished automatically cleans up (deletes) a completed Job after the specified number of seconds \u2014 e.g. ttlSecondsAfterFinished: 3600 removes the Job an hour after it finishes. It's useful for cost optimization because it avoids leaving completed Job objects and their pods lingering and consuming cluster resources or history."
+        }
+      ],
+      "expected_label": "CONVERSATIONAL",
+      "category": "conversational"
+    },
+    {
+      "id": 137,
+      "question": "So which option should I actually use?",
+      "conversation_history": [
+        {
+          "role": "user",
+          "content": "Walk through the full sequence of steps in the fine-parallel work queue example, from setting up storage to running the Job."
+        },
+        {
+          "role": "assistant",
+          "content": "First, start a single Redis instance to hold the work queue (applying redis-pod.yaml and redis-service.yaml). Second, start a temporary interactive pod to run the Redis CLI, connect to Redis, and fill the queue (named 'job2') with items using rpush. Third, build a worker container image containing a Python script that connects to the queue via the rediswq library, leases items, processes them, and marks them complete until the queue is empty, then push that image to a container registry. Fourth, define a Job manifest with parallelism set (e.g. 2) referencing the worker image with restartPolicy OnFailure. Fifth, apply the Job, monitor it with kubectl describe/kubectl wait, and check logs to confirm work was processed."
+        }
+      ],
+      "expected_label": "CONVERSATIONAL",
+      "category": "conversational"
+    },
+    {
+      "id": 138,
+      "question": "Wait, why does that matter?",
+      "conversation_history": [
+        {
+          "role": "user",
+          "content": "What are the three ways to run a job using the Databricks CLI?"
+        },
+        {
+          "role": "assistant",
+          "content": "Scheduled (the job runs automatically per a schedule defined in its JSON settings), triggered with 'databricks jobs run-now' (runs an already-created job), and triggered with 'databricks jobs submit' (submits an ad-hoc job definition that runs once, isn't saved, and isn't visible in the UI). This is Databricks' job execution model, distinct from Kubernetes Jobs."
+        }
+      ],
+      "expected_label": "CONVERSATIONAL",
+      "category": "conversational"
+    },
+    {
+      "id": 139,
+      "question": "So which option should I actually use?",
+      "conversation_history": [
+        {
+          "role": "user",
+          "content": "What's the difference between a ConfigMap and a Secret in Kubernetes?"
+        },
+        {
+          "role": "assistant",
+          "content": "Both externalize configuration data that can be injected as a file, environment variable, or command argument into a Pod. A Secret is functionally identical to a ConfigMap but is stored base64-encoded and, if configured, encrypted at rest, making it the appropriate choice for sensitive data."
+        }
+      ],
+      "expected_label": "CONVERSATIONAL",
+      "category": "conversational"
+    },
+    {
+      "id": 140,
+      "question": "What did you mean by that?",
+      "conversation_history": [
+        {
+          "role": "user",
+          "content": "What JSONPath command retrieves a Job's creation timestamp?"
+        },
+        {
+          "role": "assistant",
+          "content": "kubectl get job labeled-job -o jsonpath='{.metadata.creationTimestamp}' extracts just the creation timestamp field from the job's metadata."
+        }
+      ],
+      "expected_label": "CONVERSATIONAL",
+      "category": "conversational"
+    },
+    {
+      "id": 141,
+      "question": "What did you mean by that?",
+      "conversation_history": [
+        {
+          "role": "user",
+          "content": "What steps does a request go through in the apiserver request loop before being published, according to the deployment walkthrough?"
+        },
+        {
+          "role": "assistant",
+          "content": "kubectl authenticates to the apiserver via x509, JWT, an HTTP auth proxy, other plugins, or HTTP basic auth. Authorization then iterates over available sources: Node, ABAC, RBAC, or webhook. AdmissionControl checks resource quotas and other security-related rules. The request is stored in etcd, Initializers get a chance to mutate the object before it's published, and finally the request is published on the apiserver."
+        }
+      ],
+      "expected_label": "CONVERSATIONAL",
+      "category": "conversational"
+    },
+    {
+      "id": 142,
+      "question": "Break that down a bit more for me.",
+      "conversation_history": [
+        {
+          "role": "user",
+          "content": "What are the three statuses a Kubernetes Job can have, and what does kubectl describe job show that kubectl get jobs does not?"
+        },
+        {
+          "role": "assistant",
+          "content": "A Job can be Active (still running), Completed (finished successfully), or Failed (failed after reaching its backoff limit). kubectl describe job additionally shows labels/annotations, selector details, parallelism and completion requirements, individual pod statuses, and an Events section with lifecycle events like pod creation and completion."
+        }
+      ],
+      "expected_label": "CONVERSATIONAL",
+      "category": "conversational"
+    },
+    {
+      "id": 143,
+      "question": "So which option should I actually use?",
+      "conversation_history": [
+        {
+          "role": "user",
+          "content": "How do you create a CronJob that runs every minute, and how do you confirm it's creating Jobs on schedule?"
+        },
+        {
+          "role": "assistant",
+          "content": "Define a CronJob manifest with schedule: \"*/1 * * * *\" and apply it with kubectl apply -f. Confirm it's registered with kubectl get cronjobs (showing SCHEDULE, ACTIVE, LAST SCHEDULE columns), then after a minute or two check kubectl get jobs for auto-created jobs named like <cronjob-name>-<timestamp>, and view a specific run's logs by finding its pod and running kubectl logs <pod-name>."
+        }
+      ],
+      "expected_label": "CONVERSATIONAL",
+      "category": "conversational"
+    },
+    {
+      "id": 144,
+      "question": "What did you mean by that?",
+      "conversation_history": [
+        {
+          "role": "user",
+          "content": "What role does the pause container play, and how is networking plumbed to a new Pod?"
+        },
+        {
+          "role": "assistant",
+          "content": "Kubelet provisions a 'pause' container via the CRI, which acts as the parent container for the Pod. The network is then plumbed via the CNI, creating a veth pair attached to the pause container and to a container bridge (cbr0), with IPAM (handled by the CNI plugin) assigning an IP to the pause container."
+        }
+      ],
+      "expected_label": "CONVERSATIONAL",
+      "category": "conversational"
+    },
+    {
+      "id": 145,
+      "question": "Can you explain that in simpler terms?",
+      "conversation_history": [
+        {
+          "role": "user",
+          "content": "Describe the progressive backoff pattern shown for a job calling an external API, and how it combines with the Job's own backoffLimit."
+        },
+        {
+          "role": "assistant",
+          "content": "Inside the container command, a shell loop retries the API call up to 5 times, sleeping progressively longer between attempts (10s, 20s, 30s, 40s, 50s) before failing entirely if all attempts fail. This in-container retry logic is layered on top of the Job-level backoffLimit (e.g. 3), which provides an additional, separate layer of retries at the Pod level if the container itself exits with failure."
+        }
+      ],
+      "expected_label": "CONVERSATIONAL",
+      "category": "conversational"
+    },
+    {
+      "id": 146,
+      "question": "Break that down a bit more for me.",
+      "conversation_history": [
+        {
+          "role": "user",
+          "content": "After kubelet is notified of a Pod assigned to its node, what steps does it take to get that Pod's containers running?"
+        },
+        {
+          "role": "assistant",
+          "content": "kubelet polls the apiserver for pods matching its NodeName and compares current vs desired state, asynchronously posting PodStatus updates. It provisions a 'pause' container via the CRI to act as the Pod's parent container, plumbs networking via the CNI (creating a veth pair to a container bridge, with IPAM assigning the pause container's IP), then pulls the container images, starts any init containers, and once those complete, starts the primary containers. If liveness/readiness probes are defined, they run before PodStatus is set to ready."
+        }
+      ],
+      "expected_label": "CONVERSATIONAL",
+      "category": "conversational"
+    },
+    {
+      "id": 147,
+      "question": "Wait, why does that matter?",
+      "conversation_history": [
+        {
+          "role": "user",
+          "content": "What is the purpose of a temporary interactive pod in the parallel work queue example, and what command is used to create one?"
+        },
+        {
+          "role": "assistant",
+          "content": "The temporary interactive pod is used to run the Redis CLI so you can connect to the Redis service and manually fill the work queue with items. It's created with: kubectl run -i --tty temp --image redis --command \"/bin/sh\"."
+        }
+      ],
+      "expected_label": "CONVERSATIONAL",
+      "category": "conversational"
+    },
+    {
+      "id": 148,
+      "question": "So which option should I actually use?",
+      "conversation_history": [
+        {
+          "role": "user",
+          "content": "Name the container runtimes listed as CRI-compatible options for Kubernetes."
+        },
+        {
+          "role": "assistant",
+          "content": "Containerd (docker), Cri-o, Rkt, Kata (formerly Clear and Hyper), and Virtlet (a VM-based CRI-compatible runtime)."
+        }
+      ],
+      "expected_label": "CONVERSATIONAL",
+      "category": "conversational"
+    },
+    {
+      "id": 149,
+      "question": "Break that down a bit more for me.",
+      "conversation_history": [
+        {
+          "role": "user",
+          "content": "If a Job shows 0/1 under COMPLETIONS when you run kubectl get jobs, what are the possible explanations and how would you investigate further?"
+        },
+        {
+          "role": "assistant",
+          "content": "0/1 completions means the Job hasn't yet reached its desired successful completions \u2014 it may still be Active (running normally, just not finished yet) or it may have Failed after exhausting its backoff limit. To investigate, run kubectl describe job <job-name> to see selector details, pod statuses, and the Events section for lifecycle issues, and check kubectl get pods -l job-name=<job-name> to see individual pod states (e.g. Error), then use kubectl logs <pod-name> on a failed pod to see what went wrong."
+        }
+      ],
+      "expected_label": "CONVERSATIONAL",
+      "category": "conversational"
+    },
+    {
+      "id": 150,
+      "question": "Can you rephrase that last part?",
+      "conversation_history": [
+        {
+          "role": "user",
+          "content": "How does the job-runner RBAC Role example relate to the general Role/RoleBinding/ServiceAccount concepts from the architecture overview?"
+        },
+        {
+          "role": "assistant",
+          "content": "The architecture overview explains that a Role contains permission rules scoped to a namespace, a RoleBinding grants those permissions to a subject, and a ServiceAccount provides an identity for pods interacting with the cluster. The job-runner example applies exactly this pattern concretely: it defines a namespaced Role (job-runner) with get/list rules on secrets/configmaps and pods, then a RoleBinding (job-runner-binding) grants that Role to a ServiceAccount (job-service-account) \u2014 giving job pods running under that ServiceAccount only the specific permissions defined in the Role."
+        }
+      ],
+      "expected_label": "CONVERSATIONAL",
+      "category": "conversational"
+    },
+    {
+      "id": 151,
+      "question": "Is that always true?",
+      "conversation_history": [
+        {
+          "role": "user",
+          "content": "How can you view the logs of a Job's pod after the Job has already completed or failed?"
+        },
+        {
+          "role": "assistant",
+          "content": "You can still run kubectl logs <pod-name> against the completed or failed pod, since Kubernetes retains the pod (and its logs) after job completion unless it's cleaned up; this works even for pods in a Completed or Error state."
+        }
+      ],
+      "expected_label": "CONVERSATIONAL",
+      "category": "conversational"
+    },
+    {
+      "id": 152,
+      "question": "Can you explain that in simpler terms?",
+      "conversation_history": [
+        {
+          "role": "user",
+          "content": "How does VPA use minAllowed and maxAllowed when it first starts managing a pod?"
+        },
+        {
+          "role": "assistant",
+          "content": "VPA ensures the pod's resource requests fall within the minAllowed and maxAllowed range. On first adjustment it raises requests to at least minAllowed as a baseline, then over time it monitors actual usage and incrementally adjusts recommendations toward observed usage patterns, rather than jumping straight to maxAllowed unless usage justifies it."
+        }
+      ],
+      "expected_label": "CONVERSATIONAL",
+      "category": "conversational"
+    },
+    {
+      "id": 153,
+      "question": "So which option should I actually use?",
+      "conversation_history": [
+        {
+          "role": "user",
+          "content": "How does the example NetworkPolicy restrict a batch job's network access?"
+        },
+        {
+          "role": "assistant",
+          "content": "It applies to pods labeled app: batch-job in the batch-jobs namespace, restricting Egress traffic to only two destinations: TCP port 5432 to pods in the namespace labeled name: database, and UDP port 53 to any destination (to allow DNS resolution). All other outbound traffic from the job's pods is implicitly denied."
+        }
+      ],
+      "expected_label": "CONVERSATIONAL",
+      "category": "conversational"
+    },
+    {
+      "id": 154,
+      "question": "Is that always true?",
+      "conversation_history": [
+        {
+          "role": "user",
+          "content": "What are the three fundamental networking rules that apply to all Pods in a Kubernetes cluster?"
+        },
+        {
+          "role": "assistant",
+          "content": "All Pods can communicate with all other Pods without NAT; all Nodes can communicate with all Pods (and vice versa) without NAT; and the IP a Pod sees itself as is the same IP that other Pods see it as."
+        }
+      ],
+      "expected_label": "CONVERSATIONAL",
+      "category": "conversational"
+    },
+    {
+      "id": 155,
+      "question": "Can you give me a concrete example of what you just described?",
+      "conversation_history": [
+        {
+          "role": "user",
+          "content": "What are the four major Kubernetes Service types, and what does each expose?"
+        },
+        {
+          "role": "assistant",
+          "content": "ClusterIP exposes the service on a strictly cluster-internal IP (the default). NodePort exposes the service on each node's IP at a statically defined port. LoadBalancer works with a cloud provider to expose the service externally on a static IP. ExternalName references endpoints outside the cluster via a static internally-referenced DNS name."
+        }
+      ],
+      "expected_label": "CONVERSATIONAL",
+      "category": "conversational"
+    },
+    {
+      "id": 156,
+      "question": "Wait, why does that matter?",
+      "conversation_history": [
+        {
+          "role": "user",
+          "content": "How do you filter Jobs by multiple labels at once, and how do you view events for one specific Job?"
+        },
+        {
+          "role": "assistant",
+          "content": "Use kubectl get jobs -l department=engineering,environment=training to filter by multiple labels simultaneously (comma-separated). To view events for a specific job, use kubectl get events --field-selector involvedObject.name=<job-name>, versus kubectl get events --sort-by=.metadata.creationTimestamp which lists all events in the namespace."
+        }
+      ],
+      "expected_label": "CONVERSATIONAL",
+      "category": "conversational"
+    },
+    {
+      "id": 157,
+      "question": "What did you mean by that?",
+      "conversation_history": [
+        {
+          "role": "user",
+          "content": "What is etcd's role in the Kubernetes control plane?"
+        },
+        {
+          "role": "assistant",
+          "content": "etcd acts as the cluster's datastore, providing a strong, consistent, and highly available key-value store used for persisting the cluster's state."
+        }
+      ],
+      "expected_label": "CONVERSATIONAL",
+      "category": "conversational"
+    },
+    {
+      "id": 158,
+      "question": "So which option should I actually use?",
+      "conversation_history": [
+        {
+          "role": "user",
+          "content": "What is a Namespace in Kubernetes, and what is it primarily used for?"
+        },
+        {
+          "role": "assistant",
+          "content": "A Namespace is a logical cluster or environment within a physical cluster \u2014 it's the primary method of dividing a cluster or scoping access to resources."
+        }
+      ],
+      "expected_label": "CONVERSATIONAL",
+      "category": "conversational"
+    },
+    {
+      "id": 159,
+      "question": "Can you explain that in simpler terms?",
+      "conversation_history": [
+        {
+          "role": "user",
+          "content": "Does 'databricks jobs submit' save the job the same way 'databricks jobs create' does?"
+        },
+        {
+          "role": "assistant",
+          "content": "No. databricks jobs create persists a saved, reusable job visible in the Databricks UI. databricks jobs submit takes a job definition and triggers a one-off run \u2014 the job is not saved, is not visible in the UI, and ceases to exist once that run completes. This is a Databricks CLI distinction, unrelated to how Kubernetes Jobs are created and persisted."
+        }
+      ],
+      "expected_label": "CONVERSATIONAL",
+      "category": "conversational"
+    },
+    {
+      "id": 160,
+      "question": "Why is that the case?",
+      "conversation_history": [
+        {
+          "role": "user",
+          "content": "What do successfulJobsHistoryLimit and failedJobsHistoryLimit control on a CronJob?"
+        },
+        {
+          "role": "assistant",
+          "content": "They control how many completed Job objects a CronJob retains for review: successfulJobsHistoryLimit sets the number of successful Job runs to keep, and failedJobsHistoryLimit sets the number of failed Job runs to keep, after which older ones are cleaned up."
+        }
+      ],
+      "expected_label": "CONVERSATIONAL",
+      "category": "conversational"
+    },
+    {
+      "id": 161,
+      "question": "Break that down a bit more for me.",
+      "conversation_history": [
+        {
+          "role": "user",
+          "content": "If a Job is stuck in Pending with no Pods running, what are the likely causes and how do you diagnose it?"
+        },
+        {
+          "role": "assistant",
+          "content": "Likely causes are insufficient cluster resources, node selector constraints, or Pod security policies blocking creation. Diagnose with kubectl describe job <job-name>, kubectl get events --sort-by=.metadata.creationTimestamp, and kubectl top nodes / kubectl describe nodes to check resource availability. A common fix is adding explicit resource requests/limits to the container spec to help the scheduler place the Pod."
+        }
+      ],
+      "expected_label": "CONVERSATIONAL",
+      "category": "conversational"
+    },
+    {
+      "id": 162,
+      "question": "Can you give me a concrete example of what you just described?",
+      "conversation_history": [
+        {
+          "role": "user",
+          "content": "What command starts a local Kubernetes cluster with Minikube, and how do you verify the cluster is running afterward?"
+        },
+        {
+          "role": "assistant",
+          "content": "minikube start --driver=docker starts a local single-node cluster. Afterward, kubectl get nodes verifies the node is Ready, and kubectl get pods -n kube-system confirms core components like kube-apiserver and kube-controller-manager are running."
+        }
+      ],
+      "expected_label": "CONVERSATIONAL",
+      "category": "conversational"
+    },
+    {
+      "id": 163,
+      "question": "Why is that the case?",
+      "conversation_history": [
+        {
+          "role": "user",
+          "content": "The parallel work queue example's Job uses restartPolicy: OnFailure. Is this a valid restart policy for a Kubernetes Job, and what would happen if a worker pod crashed?"
+        },
+        {
+          "role": "assistant",
+          "content": "Yes \u2014 OnFailure is one of the two valid restart policies for a Job (the other being Never); Always is not permitted since it would prevent completion. With OnFailure, if a worker pod crashes, kubelet restarts the container within the same Pod rather than the Job controller creating an entirely new Pod."
+        }
+      ],
+      "expected_label": "CONVERSATIONAL",
+      "category": "conversational"
+    },
+    {
+      "id": 164,
+      "question": "Can you rephrase that last part?",
+      "conversation_history": [
+        {
+          "role": "user",
+          "content": "How do you retrieve the JSON representation of an existing job and use it to recreate that job's configuration?"
+        },
+        {
+          "role": "assistant",
+          "content": "This is Databricks, not Kubernetes: from the job page UI, select 'View JSON' to get the existing job's JSON configuration, copy it into a file, then run 'databricks jobs create --json @<file-path>' to create a new job using that same configuration."
+        }
+      ],
+      "expected_label": "CONVERSATIONAL",
+      "category": "conversational"
+    },
+    {
+      "id": 165,
+      "question": "Can you rephrase that last part?",
+      "conversation_history": [
+        {
+          "role": "user",
+          "content": "What does the rediswq worker script do when it leases an item from the queue but the item is None?"
+        },
+        {
+          "role": "assistant",
+          "content": "If q.lease() returns None (no item currently available within the timeout), the worker prints \"Waiting for work\" and loops back to check again, rather than exiting \u2014 it only exits once q.empty() becomes true."
+        }
+      ],
+      "expected_label": "CONVERSATIONAL",
+      "category": "conversational"
+    },
+    {
+      "id": 166,
+      "question": "Who are you?",
+      "conversation_history": [],
+      "expected_label": "CONVERSATIONAL",
+      "category": "conversational"
+    },
+    {
+      "id": 167,
+      "question": "What can you help me with?",
+      "conversation_history": [],
+      "expected_label": "CONVERSATIONAL",
+      "category": "conversational"
+    },
+    {
+      "id": 168,
+      "question": "How are you doing today?",
+      "conversation_history": [],
+      "expected_label": "CONVERSATIONAL",
+      "category": "conversational"
+    },
+    {
+      "id": 169,
+      "question": "Are you an AI?",
+      "conversation_history": [],
+      "expected_label": "CONVERSATIONAL",
+      "category": "conversational"
+    },
+    {
+      "id": 170,
+      "question": "What's your name?",
+      "conversation_history": [],
+      "expected_label": "CONVERSATIONAL",
+      "category": "conversational"
+    },
+    {
+      "id": 171,
+      "question": "Thanks, that was helpful!",
+      "conversation_history": [],
+      "expected_label": "CONVERSATIONAL",
+      "category": "conversational"
+    },
+    {
+      "id": 172,
+      "question": "Ok cool, thank you.",
+      "conversation_history": [],
+      "expected_label": "CONVERSATIONAL",
+      "category": "conversational"
+    },
+    {
+      "id": 173,
+      "question": "Are you sure about that?",
+      "conversation_history": [],
+      "expected_label": "CONVERSATIONAL",
+      "category": "conversational"
+    },
+    {
+      "id": 174,
+      "question": "That's interesting, tell me more about yourself.",
+      "conversation_history": [],
+      "expected_label": "CONVERSATIONAL",
+      "category": "conversational"
+    },
+    {
+      "id": 175,
+      "question": "Can you help with non-technical stuff too?",
+      "conversation_history": [],
+      "expected_label": "CONVERSATIONAL",
+      "category": "conversational"
+    },
+    {
+      "id": 176,
+      "question": "What model are you running on?",
+      "conversation_history": [],
+      "expected_label": "CONVERSATIONAL",
+      "category": "conversational"
+    },
+    {
+      "id": 177,
+      "question": "Do you remember our previous conversations?",
+      "conversation_history": [],
+      "expected_label": "CONVERSATIONAL",
+      "category": "conversational"
+    },
+    {
+      "id": 178,
+      "question": "Nice, appreciate it.",
+      "conversation_history": [],
+      "expected_label": "CONVERSATIONAL",
+      "category": "conversational"
+    },
+    {
+      "id": 179,
+      "question": "You're pretty helpful.",
+      "conversation_history": [],
+      "expected_label": "CONVERSATIONAL",
+      "category": "conversational"
+    },
+    {
+      "id": 180,
+      "question": "Bye for now.",
+      "conversation_history": [],
+      "expected_label": "CONVERSATIONAL",
+      "category": "conversational"
+    },
+    {
+      "id": 181,
+      "question": "How many pods did you say run at once with parallelism: 3?",
+      "conversation_history": [
+        {
+          "role": "user",
+          "content": "What is the difference between completions and parallelism in a Kubernetes Job spec?"
+        },
+        {
+          "role": "assistant",
+          "content": "completions specifies the number of Pods that must successfully complete for the Job to be considered done (e.g. completions: 5 means the Job finishes after 5 successful Pod completions). parallelism controls the maximum number of Pods that can run concurrently at any given time (e.g. parallelism: 3 means at most 3 Pods run simultaneously)."
+        }
+      ],
+      "expected_label": "CONVERSATIONAL",
+      "category": "edge_case"
+    },
+    {
+      "id": 182,
+      "question": "Which restart policy did you say lets the Job controller create a new pod?",
+      "conversation_history": [
+        {
+          "role": "user",
+          "content": "What restart policies are allowed for a Pod managed by a Job, and why is Always not permitted?"
+        },
+        {
+          "role": "assistant",
+          "content": "Allowed restart policies are OnFailure (kubelet restarts the container within the same Pod if it crashes) and Never (the whole Pod is marked failed and the Job controller creates a new Pod). Always is not allowed because it would prevent the Pod from ever completing, which contradicts a Job's purpose of running to completion."
+        }
+      ],
+      "expected_label": "CONVERSATIONAL",
+      "category": "edge_case"
+    },
+    {
+      "id": 183,
+      "question": "What did you say backoffLimit: 3 means again?",
+      "conversation_history": [
+        {
+          "role": "user",
+          "content": "What do backoffLimit and activeDeadlineSeconds control on a Job?"
+        },
+        {
+          "role": "assistant",
+          "content": "backoffLimit sets the number of retries before a Job is marked as failed (e.g. backoffLimit: 3 allows 3 retries). activeDeadlineSeconds sets a maximum wall-clock time in seconds for the Job to run; if exceeded, the Job is terminated regardless of completion status (e.g. activeDeadlineSeconds: 3600 kills the Job after 1 hour)."
+        }
+      ],
+      "expected_label": "CONVERSATIONAL",
+      "category": "edge_case"
+    },
+    {
+      "id": 184,
+      "question": "What command did you say shows completions, duration, and age?",
+      "conversation_history": [
+        {
+          "role": "user",
+          "content": "Which kubectl command shows a Job's completions, duration, and age at a glance?"
+        },
+        {
+          "role": "assistant",
+          "content": "kubectl get jobs shows a table with NAME, COMPLETIONS (e.g. 1/1), DURATION, and AGE for each Job."
+        }
+      ],
+      "expected_label": "CONVERSATIONAL",
+      "category": "edge_case"
+    },
+    {
+      "id": 185,
+      "question": "What were those two verification commands you mentioned?",
+      "conversation_history": [
+        {
+          "role": "user",
+          "content": "What's the role of the Metrics Server in enabling Horizontal Pod Autoscaling, and what command verifies it's collecting data?"
+        },
+        {
+          "role": "assistant",
+          "content": "The Metrics Server collects resource usage metrics (CPU and memory) from the cluster's nodes and pods, and HPA relies on these metrics to make scaling decisions. You can verify it's collecting data with kubectl top nodes and kubectl top pods --all-namespaces, which should return CPU and memory usage figures if the Metrics Server is functioning."
+        }
+      ],
+      "expected_label": "CONVERSATIONAL",
+      "category": "edge_case"
+    },
+    {
+      "id": 186,
+      "question": "What field did you say sets the CPU utilization target?",
+      "conversation_history": [
+        {
+          "role": "user",
+          "content": "In an HPA object, what do minReplicas, maxReplicas, and averageUtilization control?"
+        },
+        {
+          "role": "assistant",
+          "content": "minReplicas and maxReplicas bound the range the HPA can scale the target between (e.g. 1 to 10 pods). averageUtilization sets the target metric threshold (e.g. 50% average CPU utilization) that the HPA tries to maintain by scaling pod count up or down."
+        }
+      ],
+      "expected_label": "CONVERSATIONAL",
+      "category": "edge_case"
+    },
+    {
+      "id": 187,
+      "question": "What was that cron schedule format you mentioned?",
+      "conversation_history": [
+        {
+          "role": "user",
+          "content": "What are the three fundamental networking rules that apply to all Pods in a Kubernetes cluster?"
+        },
+        {
+          "role": "assistant",
+          "content": "All Pods can communicate with all other Pods without NAT; all Nodes can communicate with all Pods (and vice versa) without NAT; and the IP a Pod sees itself as is the same IP that other Pods see it as."
+        }
+      ],
+      "expected_label": "CONVERSATIONAL",
+      "category": "edge_case"
+    },
+    {
+      "id": 188,
+      "question": "What was the field name you just used?",
+      "conversation_history": [
+        {
+          "role": "user",
+          "content": "What storage service and parallelism setting does the fine-parallel work queue example use, and what does 'parallelism: 2' mean here?"
+        },
+        {
+          "role": "assistant",
+          "content": "The example uses Redis as the work queue storage service. The Job manifest sets parallelism: 2, meaning at most 2 worker Pods run concurrently, each pulling and processing items from the shared Redis queue until it's empty."
+        }
+      ],
+      "expected_label": "CONVERSATIONAL",
+      "category": "edge_case"
+    },
+    {
+      "id": 189,
+      "question": "What was that command syntax again?",
+      "conversation_history": [
+        {
+          "role": "user",
+          "content": "How does the compliance-report-job CronJob differ from a typical job in its retry and history retention configuration, and why?"
+        },
+        {
+          "role": "assistant",
+          "content": "It sets backoffLimit: 1 (no retries) for compliance jobs, and retains successfulJobsHistoryLimit and failedJobsHistoryLimit at 12 each (about a year of monthly reports), unlike typical jobs which might retry more and keep less history \u2014 this is meant to preserve an auditable record for compliance purposes rather than optimize for job success rate."
+        }
+      ],
+      "expected_label": "CONVERSATIONAL",
+      "category": "edge_case"
+    },
+    {
+      "id": 190,
+      "question": "What was the field name you just used?",
+      "conversation_history": [
+        {
+          "role": "user",
+          "content": "What commands start a local cluster with Minikube and verify both the cluster and its core components are running?"
+        },
+        {
+          "role": "assistant",
+          "content": "minikube start --driver=docker starts the local cluster. kubectl get nodes verifies the node is Ready, and kubectl get pods -n kube-system verifies core components like kube-apiserver and kube-controller-manager are running as pods."
+        }
+      ],
+      "expected_label": "CONVERSATIONAL",
+      "category": "edge_case"
+    },
+    {
+      "id": 191,
+      "question": "What cron schedule format does a CronJob use, and what does concurrencyPolicy: Forbid do?",
+      "conversation_history": [
+        {
+          "role": "user",
+          "content": "How does completionMode: Indexed differ from the default NonIndexed mode in a Job?"
+        },
+        {
+          "role": "assistant",
+          "content": "In NonIndexed mode (the default), all Pods created by the Job are identical. In Indexed mode, each Pod is assigned a unique completion index (exposed as the JOB_COMPLETION_INDEX env var), which lets each Pod process a distinct slice of work, such as a specific data range."
+        }
+      ],
+      "expected_label": "TECHNICAL",
+      "category": "edge_case"
+    },
+    {
+      "id": 192,
+      "question": "If a Job is stuck in Pending with no Pods running, what are the likely causes and how do you diagnose it?",
+      "conversation_history": [
+        {
+          "role": "user",
+          "content": "What do the JobFailed and CronJobMissing Prometheus alerting rules detect?"
+        },
+        {
+          "role": "assistant",
+          "content": "JobFailed fires when kube_job_status_failed > 0, immediately (for: 0m), warning severity, indicating a specific job has failed. CronJobMissing fires when the time since a CronJob's last scheduled run exceeds 3600 seconds while the CronJob is not suspended (kube_cronjob_spec_suspend == 0), sustained for 5 minutes, at critical severity, indicating a CronJob hasn't run in over an hour."
+        }
+      ],
+      "expected_label": "TECHNICAL",
+      "category": "edge_case"
+    },
+    {
+      "id": 193,
+      "question": "What does ttlSecondsAfterFinished do on a CronJob's job template, and why would you use it in a cost-optimization context?",
+      "conversation_history": [
+        {
+          "role": "user",
+          "content": "In the Job resource-limits troubleshooting section, what are two ways to resolve Pods getting OOMKilled or CPU throttled?"
+        },
+        {
+          "role": "assistant",
+          "content": "Increase the resource requests/limits in the Job's container spec (e.g. raising memory limits), or use Vertical Pod Autoscaling in a recommendation mode (e.g. updateMode: Initial) to right-size resources based on observed usage instead of hardcoding values."
+        }
+      ],
+      "expected_label": "TECHNICAL",
+      "category": "edge_case"
+    },
+    {
+      "id": 194,
+      "question": "How do you follow a running Job's logs in real time, and how do you filter pods belonging to a specific job by label?",
+      "conversation_history": [
+        {
+          "role": "user",
+          "content": "What are the three statuses a Kubernetes Job can have, and what does kubectl describe job show that kubectl get jobs does not?"
+        },
+        {
+          "role": "assistant",
+          "content": "A Job can be Active (still running), Completed (finished successfully), or Failed (failed after reaching its backoff limit). kubectl describe job additionally shows labels/annotations, selector details, parallelism and completion requirements, individual pod statuses, and an Events section with lifecycle events like pod creation and completion."
+        }
+      ],
+      "expected_label": "TECHNICAL",
+      "category": "edge_case"
+    },
+    {
+      "id": 195,
+      "question": "If a Job shows 0/1 under COMPLETIONS when you run kubectl get jobs, what are the possible explanations and how would you investigate further?",
+      "conversation_history": [
+        {
+          "role": "user",
+          "content": "How do you follow a running Job's logs in real time, and how do you filter pods belonging to a specific job by label?"
+        },
+        {
+          "role": "assistant",
+          "content": "Use kubectl logs -f <pod-name> to stream logs in real time (Ctrl+C to stop). To filter pods for a specific job, use kubectl get pods -l job-name=<job-name>, since Kubernetes automatically labels pods created by a Job with job-name."
+        }
+      ],
+      "expected_label": "TECHNICAL",
+      "category": "edge_case"
+    },
+    {
+      "id": 196,
+      "question": "What JSONPath command extracts just the number of succeeded pods for a specific job?",
+      "conversation_history": [
+        {
+          "role": "user",
+          "content": "What command starts a local Kubernetes cluster with Minikube, and how do you verify the cluster is running afterward?"
+        },
+        {
+          "role": "assistant",
+          "content": "minikube start --driver=docker starts a local single-node cluster. Afterward, kubectl get nodes verifies the node is Ready, and kubectl get pods -n kube-system confirms core components like kube-apiserver and kube-controller-manager are running."
+        }
+      ],
+      "expected_label": "TECHNICAL",
+      "category": "edge_case"
+    },
+    {
+      "id": 197,
+      "question": "In an HPA object, what do minReplicas, maxReplicas, and averageUtilization control?",
+      "conversation_history": [
+        {
+          "role": "user",
+          "content": "What's the role of the Metrics Server in enabling Horizontal Pod Autoscaling, and what command verifies it's collecting data?"
+        },
+        {
+          "role": "assistant",
+          "content": "The Metrics Server collects resource usage metrics (CPU and memory) from the cluster's nodes and pods, and HPA relies on these metrics to make scaling decisions. You can verify it's collecting data with kubectl top nodes and kubectl top pods --all-namespaces, which should return CPU and memory usage figures if the Metrics Server is functioning."
+        }
+      ],
+      "expected_label": "TECHNICAL",
+      "category": "edge_case"
+    },
+    {
+      "id": 198,
+      "question": "How does VPA's updateMode: Recreate differ from updateMode: Auto?",
+      "conversation_history": [
+        {
+          "role": "user",
+          "content": "What three steps does HPA go through to make a scaling decision, and what API version is used to define an HPA object?"
+        },
+        {
+          "role": "assistant",
+          "content": "HPA operates by (1) monitoring specified metrics like CPU or memory usage, (2) evaluating current metric values against predefined thresholds, and (3) scaling pods up if values exceed the threshold or down if they drop below it. HPA objects are defined under apiVersion: autoscaling/v2."
+        }
+      ],
+      "expected_label": "TECHNICAL",
+      "category": "edge_case"
+    },
+    {
+      "id": 199,
+      "question": "How do you exclude a specific container in a pod from VPA-managed scaling?",
+      "conversation_history": [
+        {
+          "role": "user",
+          "content": "How does VPA's updateMode: Recreate differ from updateMode: Auto?"
+        },
+        {
+          "role": "assistant",
+          "content": "Recreate assigns resource requests at pod creation time and updates existing pods by evicting and recreating them. Auto also recreates pods based on VPA's recommendations, applying updated resource requests as usage patterns change over time \u2014 in practice the two behave similarly, both requiring pod recreation to apply changes, unlike Initial which only sets requests once at creation and never changes them."
+        }
+      ],
+      "expected_label": "TECHNICAL",
+      "category": "edge_case"
+    },
+    {
+      "id": 200,
+      "question": "Walk through the full sequence of steps in the fine-parallel work queue example, from setting up storage to running the Job.",
+      "conversation_history": [
+        {
+          "role": "user",
+          "content": "What storage service and parallelism setting does the fine-parallel work queue example use, and what does 'parallelism: 2' mean here?"
+        },
+        {
+          "role": "assistant",
+          "content": "The example uses Redis as the work queue storage service. The Job manifest sets parallelism: 2, meaning at most 2 worker Pods run concurrently, each pulling and processing items from the shared Redis queue until it's empty."
+        }
+      ],
+      "expected_label": "TECHNICAL",
+      "category": "edge_case"
+    }
+  ]
+}
