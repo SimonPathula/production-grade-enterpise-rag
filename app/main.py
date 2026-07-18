@@ -37,7 +37,8 @@ def get_graph_image():
         return {"error" : f"Could not generate graph image: {e}"}
 
 @app.post("/query")
-def query(request: QueryRequest):
+async def query(request: QueryRequest):
+    import asyncio
     q = request.query
     thread_id = request.thread_id
 
@@ -51,9 +52,10 @@ def query(request: QueryRequest):
     config = {"configurable": {"thread_id": thread_id}}
 
     try:
-        rail_fired,rail_response = guard(q)
+        # Both guard() and rag_agent.invoke() use sync blocking calls — run in thread pool
+        rail_fired, rail_response = await asyncio.to_thread(guard, q)
         if rail_fired:
-            logfire.info(f"🛡️ Request blocked by guardrails | thread={thread_id}")
+            logfire.info(f"Request blocked by guardrails | thread={thread_id}")
             return {
                 "question": q,
                 "answer": rail_response,
@@ -62,7 +64,8 @@ def query(request: QueryRequest):
                 "sources": [],
             }
 
-        final_output = rag_agent.invoke(initial_state, config=config)
+        # Run the blocking LangGraph pipeline in a thread pool so uvicorn stays responsive
+        final_output = await asyncio.to_thread(rag_agent.invoke, initial_state, config)
 
         return {
             "question": q,
@@ -73,7 +76,7 @@ def query(request: QueryRequest):
         }
 
     except Exception as e:
-        logfire.error(f"❌ Backend Execution Failed: {e}")
+        logfire.error(f"Backend Execution Failed: {e}")
         return {
             "question": q,
             "answer": "I apologize, but I encountered an internal error. Please try again.",

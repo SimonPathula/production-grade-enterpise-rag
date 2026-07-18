@@ -1,0 +1,31 @@
+{
+    'question': 'What is the difference between completions and parallelism in a Kubernetes Job spec?', 
+    'answer': 'In a Kubernetes Job spec, `completions` and `parallelism` are two related but distinct settings that control how a Job is executed.\n\n**Completions** refers to the number of successful completions of a Job. In other words, it specifies how many times the Job needs to be successfully executed before it is considered complete. For example, if `completions` is set to 5, the Job will run 5 times, and each run must complete successfully for the Job to be considered complete.\n\n**Parallelism**, on the other hand, refers to the number of Pods that can run concurrently to execute a Job. It controls how many Pods are created to run the Job in parallel. For example, if `parallelism` is set to 3, Kubernetes will create 3 Pods to run the Job simultaneously.\n\nTo illustrate the difference, consider a Job that needs to process a large dataset. You might set `completions` to 1 (since you only need to process the dataset once) and `parallelism` to 5 (since you want to process the dataset in parallel using 5 Pods). In this case, Kubernetes will create 5 Pods to process the dataset concurrently, and the Job will be considered complete when all 5 Pods have finished processing the dataset successfully.\n\nHere\'s an example of a Job spec that demonstrates this:\n```yaml\napiVersion: batch/v1\nkind: Job\nmetadata:\n  name: my-job\nspec:\n  completions: 1\n  parallelism: 5\n  template:\n    spec:\n      containers:\n      - name: my-container\n        image: my-image\n        command: ["my-command"]\n```\nIn this example, the Job will create 5 Pods to run the `my-command` container in parallel, and the Job will be considered complete when all 5 Pods have finished running successfully.\n\nI hope this helps clarify the difference between `completions` and `parallelism` in a Kubernetes Job spec! Let me know if you have any further questions.', 
+    'thought_process': ['Intent: Conversational/Memory', 'Retrieval: Skipped'], 
+    'status': 'Response generated.', 
+    'sources': []
+}
+
+{
+    'question': 'What is my name?', 
+    'answer': "I don't have any information about your name. Our conversation just started with a discussion about Kubernetes Job specs, and you didn't mention your name. If you'd like to share your name, I'd be happy to chat with you and get to know you better!", 
+    'thought_process': ['Intent: Conversational/Memory', 'Retrieval: Skipped'], 
+    'status': 'Response generated.', 
+    'sources': []
+}
+
+{
+    'question': 'My name is Simon', 
+    'answer': "Nice to meet you, Simon. Now that I know your name, I can address you personally. Is there anything else you'd like to know about Kubernetes Job specs or is there something else I can help you with?", 
+    'thought_process': ['Intent: Conversational/Memory', 'Retrieval: Skipped'], 
+    'status': 'Response generated.', 
+    'sources': []
+}
+
+{
+    'question': 'What is my name?', 
+    'answer': 'Your name is Simon. We established that earlier in our conversation. Is there anything else I can help you with, Simon?', 'thought_process': ['Intent: Conversational/Memory', 'Retrieval: Skipped'], 
+    'status': 'Response generated.', 
+    'sources': []
+}
+

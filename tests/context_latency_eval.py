@@ -1,16 +1,3 @@
-"""
-Latency + Context Reduction Eval — hits your live /evaluate endpoint.
-end_to_end_latency_ms = real wall-clock HTTP round trip (includes FastAPI/network overhead).
-retrieval/rerank/generation_ms = internal stage timings, returned by the endpoint.
-tokens_before / tokens_after = both computed with the SAME tiktoken tokenizer (cl100k_base)
-  over (question + chunks), so reduction_pct is an apples-to-apples comparison.
-actual_prompt_tokens = real usage.input_tokens from Groq, kept as a separate column —
-  not used in reduction_pct, since it's a different tokenizer than tiktoken.
-chars_before/chars_after/char_reduction_pct = raw character-count comparison, tokenizer-agnostic.
-Resumable: writes each row to CSV as it completes, skips ids already in the CSV on restart.
-Retries each question up to MAX_RETRIES with exponential backoff before giving up.
-"""
-
 import time, json, httpx, tiktoken
 from pathlib import Path
 import pandas as pd
