@@ -1,0 +1,201 @@
+id,category,expected_label,predicted_label,raw_decision,question
+1,technical,TECHNICAL,TECHNICAL,What is the difference between completions and parallelism in a Kubernetes Job spec?,What is the difference between completions and parallelism in a Kubernetes Job spec?
+2,technical,TECHNICAL,TECHNICAL,"What restart policies are allowed for a Pod managed by a Job, and why is Always not permitted?","What restart policies are allowed for a Pod managed by a Job, and why is Always not permitted?"
+3,technical,TECHNICAL,TECHNICAL,How does completionMode: Indexed differ from the default NonIndexed mode in a Job?,How does completionMode: Indexed differ from the default NonIndexed mode in a Job?
+4,technical,TECHNICAL,TECHNICAL,"What cron schedule format does a CronJob use, and what does concurrencyPolicy: Forbid do?","What cron schedule format does a CronJob use, and what does concurrencyPolicy: Forbid do?"
+5,technical,TECHNICAL,TECHNICAL,What do backoffLimit and activeDeadlineSeconds control on a Job?,What do backoffLimit and activeDeadlineSeconds control on a Job?
+6,technical,TECHNICAL,TECHNICAL,What do successfulJobsHistoryLimit and failedJobsHistoryLimit control on a CronJob?,What do successfulJobsHistoryLimit and failedJobsHistoryLimit control on a CronJob?
+7,technical,TECHNICAL,TECHNICAL,Describe the idempotent job design pattern and why it matters for Kubernetes Jobs.,Describe the idempotent job design pattern and why it matters for Kubernetes Jobs.
+8,technical,TECHNICAL,TECHNICAL,Why is running a long job without checkpointing considered an anti-pattern?,Why is running a long job without checkpointing considered an anti-pattern?
+9,technical,TECHNICAL,TECHNICAL,"Which kubectl command shows a Job's completions, duration, and age at a glance?","Which kubectl command shows a Job's completions, duration, and age at a glance?"
+10,technical,TECHNICAL,TECHNICAL,How can you view the logs of a Job's pod after the Job has already completed or failed?,How can you view the logs of a Job's pod after the Job has already completed or failed?
+11,technical,TECHNICAL,TECHNICAL,"What are the three statuses a Kubernetes Job can have, and what does kubectl describe job show that kubectl get jobs does not?","What are the three statuses a Kubernetes Job can have, and what does kubectl describe job show that kubectl get jobs does not?"
+12,technical,TECHNICAL,TECHNICAL,"How do you follow a running Job's logs in real time, and how do you filter pods belonging to a specific job by label?","How do you follow a running Job's logs in real time, and how do you filter pods belonging to a specific job by label?"
+13,technical,TECHNICAL,TECHNICAL,"What's the role of the Metrics Server in enabling Horizontal Pod Autoscaling, and what command verifies it's collecting data?","What's the role of the Metrics Server in enabling Horizontal Pod Autoscaling, and what command verifies it's collecting data?"
+14,technical,TECHNICAL,TECHNICAL,"In an HPA object, what do minReplicas, maxReplicas, and averageUtilization control?","In an HPA object, what do minReplicas, maxReplicas, and averageUtilization control?"
+15,technical,TECHNICAL,TECHNICAL,How does Vertical Pod Autoscaler's updateMode: Initial differ from Off?,How does Vertical Pod Autoscaler's updateMode: Initial differ from Off?
+16,technical,TECHNICAL,TECHNICAL,How does VPA use minAllowed and maxAllowed when it first starts managing a pod?,How does VPA use minAllowed and maxAllowed when it first starts managing a pod?
+17,technical,TECHNICAL,TECHNICAL,"In the fine-parallel work queue example, how does a worker Pod know when the queue is empty and exit successfully?","In the fine-parallel work queue example, how does a worker Pod know when the queue is empty and exit successfully?"
+18,technical,TECHNICAL,TECHNICAL,"What storage service and parallelism setting does the fine-parallel work queue example use, and what does 'parallelism: 2' mean here?","What storage service and parallelism setting does the fine-parallel work queue example use, and what does 'parallelism: 2' mean here?"
+19,technical,TECHNICAL,TECHNICAL,"What is kube-scheduler responsible for, and how does it interact with kube-apiserver when binding a Pod to a Node?","What is kube-scheduler responsible for, and how does it interact with kube-apiserver when binding a Pod to a Node?"
+20,technical,TECHNICAL,TECHNICAL,What is etcd's role in the Kubernetes control plane?,What is etcd's role in the Kubernetes control plane?
+21,technical,TECHNICAL,TECHNICAL,"What does kube-controller-manager do, and how does it differ from cloud-controller-manager?","What does kube-controller-manager do, and how does it differ from cloud-controller-manager?"
+22,technical,TECHNICAL,TECHNICAL,"What are the four major Kubernetes Service types, and what does each expose?","What are the four major Kubernetes Service types, and what does each expose?"
+23,technical,TECHNICAL,TECHNICAL,"What is the difference between a PersistentVolume, a PersistentVolumeClaim, and a StorageClass?","What is the difference between a PersistentVolume, a PersistentVolumeClaim, and a StorageClass?"
+24,technical,TECHNICAL,TECHNICAL,What's the difference between a ConfigMap and a Secret in Kubernetes?,What's the difference between a ConfigMap and a Secret in Kubernetes?
+25,technical,TECHNICAL,TECHNICAL,"How do Role, RoleBinding, and ServiceAccount relate to each other in Kubernetes RBAC?","How do Role, RoleBinding, and ServiceAccount relate to each other in Kubernetes RBAC?"
+26,technical,TECHNICAL,TECHNICAL,How does a StatefulSet differ from a Deployment in how it manages Pods?,How does a StatefulSet differ from a Deployment in how it manages Pods?
+27,technical,TECHNICAL,TECHNICAL,"What is a DaemonSet used for, and how does its scheduling differ from a normal Deployment?","What is a DaemonSet used for, and how does its scheduling differ from a normal Deployment?"
+28,technical,TECHNICAL,TECHNICAL,How is a CronJob related to a Job according to the Kubernetes Concepts overview?,How is a CronJob related to a Job according to the Kubernetes Concepts overview?
+29,technical,TECHNICAL,TECHNICAL,"What's the difference between a Label, an Annotation, and a Selector in Kubernetes?","What's the difference between a Label, an Annotation, and a Selector in Kubernetes?"
+30,technical,TECHNICAL,TECHNICAL,"What are the valid operators for set-based selectors, and which object types support them?","What are the valid operators for set-based selectors, and which object types support them?"
+31,technical,TECHNICAL,TECHNICAL,"How do you create a job using the CLI, and what does the created job's response look like?","How do you create a job using the CLI, and what does the created job's response look like?"
+32,technical,TECHNICAL,TECHNICAL,What are the three ways to run a job using the Databricks CLI?,What are the three ways to run a job using the Databricks CLI?
+33,technical,TECHNICAL,TECHNICAL,What programming languages does the Databricks SDK support for creating and managing jobs?,What programming languages does the Databricks SDK support for creating and managing jobs?
+34,technical,TECHNICAL,TECHNICAL,"What REST API endpoint retrieves details for a single job in Databricks, and what environment variables does the example require?","What REST API endpoint retrieves details for a single job in Databricks, and what environment variables does the example require?"
+35,technical,TECHNICAL,TECHNICAL,"Trace what happens from when a Deployment manifest is applied to when its Pod is finally running — which controllers/components are involved, and in what order?","Trace what happens from when a Deployment manifest is applied to when its Pod is finally running — which controllers/components are involved, and in what order?"
+36,technical,TECHNICAL,TECHNICAL,How do master components and node components divide responsibility for getting a Pod scheduled and running?,How do master components and node components divide responsibility for getting a Pod scheduled and running?
+37,technical,TECHNICAL,TECHNICAL,"If a Job shows 0/1 under COMPLETIONS when you run kubectl get jobs, what are the possible explanations and how would you investigate further?","If a Job shows 0/1 under COMPLETIONS when you run kubectl get jobs, what are the possible explanations and how would you investigate further?"
+38,technical,TECHNICAL,TECHNICAL,How does HPA's approach to handling increased load differ fundamentally from VPA's approach?,How does HPA's approach to handling increased load differ fundamentally from VPA's approach?
+39,technical,TECHNICAL,TECHNICAL,"Walk through the full sequence of steps in the fine-parallel work queue example, from setting up storage to running the Job.","Walk through the full sequence of steps in the fine-parallel work queue example, from setting up storage to running the Job."
+40,technical,TECHNICAL,TECHNICAL,Both the architecture overview and the Jobs guide describe completions and parallelism. What does the Jobs guide add beyond the architecture overview's summary?,Both the architecture overview and the Jobs guide describe completions and parallelism. What does the Jobs guide add beyond the architecture overview's summary?
+41,technical,TECHNICAL,TECHNICAL,"The parallel work queue example's Job uses restartPolicy: OnFailure. Is this a valid restart policy for a Kubernetes Job, and what would happen if a worker pod crashed?","The parallel work queue example's Job uses restartPolicy: OnFailure. Is this a valid restart policy for a Kubernetes Job, and what would happen if a worker pod crashed?"
+42,technical,TECHNICAL,TECHNICAL,"If you wanted to check the progress of the parallel work-queue Job's individual worker pods, which kubectl commands from the monitoring guide would you use?","If you wanted to check the progress of the parallel work-queue Job's individual worker pods, which kubectl commands from the monitoring guide would you use?"
+43,technical,TECHNICAL,TECHNICAL,"How does a CronJob's spec.jobTemplate relate to the standalone Job concepts (restartPolicy, backoffLimit) described elsewhere?","How does a CronJob's spec.jobTemplate relate to the standalone Job concepts (restartPolicy, backoffLimit) described elsewhere?"
+44,technical,TECHNICAL,TECHNICAL,"What is the purpose of a temporary interactive pod in the parallel work queue example, and what command is used to create one?","What is the purpose of a temporary interactive pod in the parallel work queue example, and what command is used to create one?"
+45,technical,TECHNICAL,TECHNICAL,What does the rediswq worker script do when it leases an item from the queue but the item is None?,What does the rediswq worker script do when it leases an item from the queue but the item is None?
+46,technical,TECHNICAL,TECHNICAL,"In the Job resource-limits troubleshooting section, what are two ways to resolve Pods getting OOMKilled or CPU throttled?","In the Job resource-limits troubleshooting section, what are two ways to resolve Pods getting OOMKilled or CPU throttled?"
+47,technical,TECHNICAL,TECHNICAL,"What does ttlSecondsAfterFinished do on a CronJob's job template, and why would you use it in a cost-optimization context?","What does ttlSecondsAfterFinished do on a CronJob's job template, and why would you use it in a cost-optimization context?"
+48,technical,TECHNICAL,TECHNICAL,What OPA Gatekeeper policy pattern is shown for enforcing that Job containers define resource requests and limits?,What OPA Gatekeeper policy pattern is shown for enforcing that Job containers define resource requests and limits?
+49,technical,TECHNICAL,TECHNICAL,How would you create a job on Databricks using the Python SDK rather than the CLI?,How would you create a job on Databricks using the Python SDK rather than the CLI?
+50,technical,TECHNICAL,TECHNICAL,"What's the recommended way to manage jobs as part of CI/CD according to the jobs automation guide, instead of using the CLI/SDK/REST API directly?","What's the recommended way to manage jobs as part of CI/CD according to the jobs automation guide, instead of using the CLI/SDK/REST API directly?"
+51,technical,TECHNICAL,TECHNICAL,"How do you view a job's configuration as YAML, Python, or JSON directly from the workspace UI, and what is each format used for?","How do you view a job's configuration as YAML, Python, or JSON directly from the workspace UI, and what is each format used for?"
+52,technical,TECHNICAL,TECHNICAL,"What command deletes a job, and is it the same command whether the job is a Kubernetes Job or a job created through the automation guide's CLI?","What command deletes a job, and is it the same command whether the job is a Kubernetes Job or a job created through the automation guide's CLI?"
+53,technical,TECHNICAL,TECHNICAL,"What are the four CNI-compatible network plugins mentioned that are lettered with a C, and what is the CNI's general purpose?","What are the four CNI-compatible network plugins mentioned that are lettered with a C, and what is the CNI's general purpose?"
+54,technical,TECHNICAL,TECHNICAL,What are the three fundamental networking rules that apply to all Pods in a Kubernetes cluster?,What are the three fundamental networking rules that apply to all Pods in a Kubernetes cluster?
+55,technical,TECHNICAL,TECHNICAL,"What is the role of kube-apiserver in the Kubernetes control plane, and why is it described as the 'gatekeeper' to the cluster?","What is the role of kube-apiserver in the Kubernetes control plane, and why is it described as the 'gatekeeper' to the cluster?"
+56,technical,TECHNICAL,TECHNICAL,From what sources can kubelet read YAML container manifests?,From what sources can kubelet read YAML container manifests?
+57,technical,TECHNICAL,TECHNICAL,What are the available proxy modes for kube-proxy?,What are the available proxy modes for kube-proxy?
+58,technical,TECHNICAL,TECHNICAL,Name the container runtimes listed as CRI-compatible options for Kubernetes.,Name the container runtimes listed as CRI-compatible options for Kubernetes.
+59,technical,TECHNICAL,TECHNICAL,"What does an Ingress controller do, and which specific controller implementations are mentioned?","What does an Ingress controller do, and which specific controller implementations are mentioned?"
+60,technical,TECHNICAL,TECHNICAL,"What do Kube-dns, Heapster, and Kube-dashboard each provide as additional Kubernetes services?","What do Kube-dns, Heapster, and Kube-dashboard each provide as additional Kubernetes services?"
+61,technical,TECHNICAL,TECHNICAL,"How does a ReplicaSet differ from the older ReplicationController, and how does a Deployment relate to a ReplicaSet?","How does a ReplicaSet differ from the older ReplicationController, and how does a Deployment relate to a ReplicaSet?"
+62,technical,TECHNICAL,TECHNICAL,"What access modes can a PersistentVolume support, and what does each one mean?","What access modes can a PersistentVolume support, and what does each one mean?"
+63,technical,TECHNICAL,TECHNICAL,"What is a Namespace in Kubernetes, and what is it primarily used for?","What is a Namespace in Kubernetes, and what is it primarily used for?"
+64,technical,TECHNICAL,TECHNICAL,"After kubelet is notified of a Pod assigned to its node, what steps does it take to get that Pod's containers running?","After kubelet is notified of a Pod assigned to its node, what steps does it take to get that Pod's containers running?"
+65,technical,TECHNICAL,TECHNICAL,"What RBAC permissions does the example job-runner Role grant, and what SecurityContext settings are recommended for job containers?","What RBAC permissions does the example job-runner Role grant, and what SecurityContext settings are recommended for job containers?"
+66,technical,TECHNICAL,TECHNICAL,How does the example NetworkPolicy restrict a batch job's network access?,How does the example NetworkPolicy restrict a batch job's network access?
+67,technical,TECHNICAL,TECHNICAL,How does the ExternalSecret pattern shown retrieve a database password from Vault into a job's Pod?,How does the ExternalSecret pattern shown retrieve a database password from Vault into a job's Pod?
+68,technical,TECHNICAL,TECHNICAL,"Describe the progressive backoff pattern shown for a job calling an external API, and how it combines with the Job's own backoffLimit.","Describe the progressive backoff pattern shown for a job calling an external API, and how it combines with the Job's own backoffLimit."
+69,technical,TECHNICAL,TECHNICAL,How does the GracefulJobRunner Python example handle a SIGTERM signal during processing?,How does the GracefulJobRunner Python example handle a SIGTERM signal during processing?
+70,technical,TECHNICAL,TECHNICAL,"What is a KEDA ScaledJob, and what event source triggers new job creation in the example shown?","What is a KEDA ScaledJob, and what event source triggers new job creation in the example shown?"
+71,technical,TECHNICAL,TECHNICAL,"How does the compliance-report-job CronJob differ from a typical job in its retry and history retention configuration, and why?","How does the compliance-report-job CronJob differ from a typical job in its retry and history retention configuration, and why?"
+72,technical,TECHNICAL,TECHNICAL,"What command starts a local Kubernetes cluster with Minikube, and how do you verify the cluster is running afterward?","What command starts a local Kubernetes cluster with Minikube, and how do you verify the cluster is running afterward?"
+73,technical,TECHNICAL,TECHNICAL,What JSONPath command extracts just the number of succeeded pods for a specific job?,What JSONPath command extracts just the number of succeeded pods for a specific job?
+74,technical,TECHNICAL,TECHNICAL,"How do you create a CronJob that runs every minute, and how do you confirm it's creating Jobs on schedule?","How do you create a CronJob that runs every minute, and how do you confirm it's creating Jobs on schedule?"
+75,technical,TECHNICAL,TECHNICAL,"What command is used to generate load against the nginx-svc service in the HPA test, and what does it do?","What command is used to generate load against the nginx-svc service in the HPA test, and what does it do?"
+76,technical,TECHNICAL,TECHNICAL,"How do you install VPA in a cluster, and how do you verify it's running?","How do you install VPA in a cluster, and how do you verify it's running?"
+77,technical,TECHNICAL,TECHNICAL,"How does the ReplicaSet Controller's reconciliation process, as described in the deployment flow, parallel how a Job controller responds when a Pod fails?","How does the ReplicaSet Controller's reconciliation process, as described in the deployment flow, parallel how a Job controller responds when a Pod fails?"
+78,technical,TECHNICAL,TECHNICAL,How does the job-runner RBAC Role example relate to the general Role/RoleBinding/ServiceAccount concepts from the architecture overview?,How does the job-runner RBAC Role example relate to the general Role/RoleBinding/ServiceAccount concepts from the architecture overview?
+79,technical,TECHNICAL,TECHNICAL,How does the parallelism field used in the work queue Job's manifest relate to the general spec.parallelism concept from the Kubernetes concepts overview?,How does the parallelism field used in the work queue Job's manifest relate to the general spec.parallelism concept from the Kubernetes concepts overview?
+80,technical,TECHNICAL,TECHNICAL,How do you retrieve the JSON representation of an existing job and use it to recreate that job's configuration?,How do you retrieve the JSON representation of an existing job and use it to recreate that job's configuration?
+81,technical,TECHNICAL,TECHNICAL,What's the difference between the Python code generated for 'Databricks SDK' versus 'Databricks Asset Bundles' when viewing a job as code?,What's the difference between the Python code generated for 'Databricks SDK' versus 'Databricks Asset Bundles' when viewing a job as code?
+82,technical,TECHNICAL,TECHNICAL,Does 'databricks jobs submit' save the job the same way 'databricks jobs create' does?,Does 'databricks jobs submit' save the job the same way 'databricks jobs create' does?
+83,technical,TECHNICAL,TECHNICAL,"What Prometheus queries are shown for tracking a Kubernetes Job's success rate, average duration, and failed count?","What Prometheus queries are shown for tracking a Kubernetes Job's success rate, average duration, and failed count?"
+84,technical,TECHNICAL,TECHNICAL,What do the JobFailed and CronJobMissing Prometheus alerting rules detect?,What do the JobFailed and CronJobMissing Prometheus alerting rules detect?
+85,technical,TECHNICAL,TECHNICAL,"If a Job is stuck in Pending with no Pods running, what are the likely causes and how do you diagnose it?","If a Job is stuck in Pending with no Pods running, what are the likely causes and how do you diagnose it?"
+86,technical,TECHNICAL,TECHNICAL,"If a CronJob exists but isn't creating Jobs, what diagnostic steps are recommended, and what's an example of an invalid schedule?","If a CronJob exists but isn't creating Jobs, what diagnostic steps are recommended, and what's an example of an invalid schedule?"
+87,technical,TECHNICAL,TECHNICAL,What does the recommended structured logging pattern for job containers look like?,What does the recommended structured logging pattern for job containers look like?
+88,technical,TECHNICAL,TECHNICAL,"What API group does the Job resource belong to, and can a Job's Pod template be changed after creation?","What API group does the Job resource belong to, and can a Job's Pod template be changed after creation?"
+89,technical,TECHNICAL,TECHNICAL,"How do you filter Jobs by multiple labels at once, and how do you view events for one specific Job?","How do you filter Jobs by multiple labels at once, and how do you view events for one specific Job?"
+90,technical,TECHNICAL,TECHNICAL,What JSONPath command retrieves a Job's creation timestamp?,What JSONPath command retrieves a Job's creation timestamp?
+91,technical,TECHNICAL,TECHNICAL,What commands start a local cluster with Minikube and verify both the cluster and its core components are running?,What commands start a local cluster with Minikube and verify both the cluster and its core components are running?
+92,technical,TECHNICAL,TECHNICAL,"What three steps does HPA go through to make a scaling decision, and what API version is used to define an HPA object?","What three steps does HPA go through to make a scaling decision, and what API version is used to define an HPA object?"
+93,technical,TECHNICAL,TECHNICAL,How does VPA's updateMode: Recreate differ from updateMode: Auto?,How does VPA's updateMode: Recreate differ from updateMode: Auto?
+94,technical,TECHNICAL,TECHNICAL,How do you exclude a specific container in a pod from VPA-managed scaling?,How do you exclude a specific container in a pod from VPA-managed scaling?
+95,technical,TECHNICAL,TECHNICAL,What does the output of kubectl get hpa -w show while HPA is actively scaling in response to load?,What does the output of kubectl get hpa -w show while HPA is actively scaling in response to load?
+96,technical,TECHNICAL,TECHNICAL,What access modes and reclaim policies can a PersistentVolume have?,What access modes and reclaim policies can a PersistentVolume have?
+97,technical,TECHNICAL,TECHNICAL,"What fields make up a StorageClass, and what is its purpose?","What fields make up a StorageClass, and what is its purpose?"
+98,technical,TECHNICAL,TECHNICAL,"What steps does a request go through in the apiserver request loop before being published, according to the deployment walkthrough?","What steps does a request go through in the apiserver request loop before being published, according to the deployment walkthrough?"
+99,technical,TECHNICAL,TECHNICAL,"What role does the pause container play, and how is networking plumbed to a new Pod?","What role does the pause container play, and how is networking plumbed to a new Pod?"
+100,technical,TECHNICAL,TECHNICAL,"What does kubelet do during PodSync before a Pod's containers start, and what has to happen before PodStatus is set to ready?","What does kubelet do during PodSync before a Pod's containers start, and what has to happen before PodStatus is set to ready?"
+101,conversational,CONVERSATIONAL,CONVERSATIONAL,CONVERSATIONAL,hi
+102,conversational,CONVERSATIONAL,CONVERSATIONAL,CONVERSATIONAL,hello
+103,conversational,CONVERSATIONAL,CONVERSATIONAL,CONVERSATIONAL,hey there
+104,conversational,CONVERSATIONAL,CONVERSATIONAL,CONVERSATIONAL,good morning
+105,conversational,CONVERSATIONAL,CONVERSATIONAL,CONVERSATIONAL,"hi there, how are you"
+106,conversational,CONVERSATIONAL,CONVERSATIONAL,CONVERSATIONAL,hello!
+107,conversational,CONVERSATIONAL,CONVERSATIONAL,CONVERSATIONAL,hey
+108,conversational,CONVERSATIONAL,CONVERSATIONAL,CONVERSATIONAL,yo
+109,conversational,CONVERSATIONAL,CONVERSATIONAL,CONVERSATIONAL,good afternoon
+110,conversational,CONVERSATIONAL,CONVERSATIONAL,CONVERSATIONAL,hiya
+111,conversational,CONVERSATIONAL,CONVERSATIONAL,CONVERSATIONAL,What topic were we just discussing?
+112,conversational,CONVERSATIONAL,CONVERSATIONAL,CONVERSATIONAL,What did I just ask you?
+113,conversational,CONVERSATIONAL,CONVERSATIONAL,CONVERSATIONAL,What was the first thing I asked?
+114,conversational,CONVERSATIONAL,CONVERSATIONAL,CONVERSATIONAL,What did I just ask you?
+115,conversational,CONVERSATIONAL,CONVERSATIONAL,CONVERSATIONAL,What topic were we just discussing?
+116,conversational,CONVERSATIONAL,CONVERSATIONAL,CONVERSATIONAL,What did I just ask you?
+117,conversational,CONVERSATIONAL,CONVERSATIONAL,CONVERSATIONAL,What was your answer just now?
+118,conversational,CONVERSATIONAL,CONVERSATIONAL,CONVERSATIONAL,Summarize what you told me so far.
+119,conversational,CONVERSATIONAL,CONVERSATIONAL,CONVERSATIONAL,What was the first thing I asked?
+120,conversational,CONVERSATIONAL,CONVERSATIONAL,CONVERSATIONAL,What was your answer just now?
+121,conversational,CONVERSATIONAL,CONVERSATIONAL,CONVERSATIONAL,Can you remind me what you told me about that?
+122,conversational,CONVERSATIONAL,CONVERSATIONAL,CONVERSATIONAL,Summarize what you told me so far.
+123,conversational,CONVERSATIONAL,CONVERSATIONAL,CONVERSATIONAL,What was your answer just now?
+124,conversational,CONVERSATIONAL,CONVERSATIONAL,CONVERSATIONAL,Can you remind me what you told me about that?
+125,conversational,CONVERSATIONAL,CONVERSATIONAL,CONVERSATIONAL,What topic were we just discussing?
+126,conversational,CONVERSATIONAL,CONVERSATIONAL,CONVERSATIONAL,Can you repeat your last answer?
+127,conversational,CONVERSATIONAL,CONVERSATIONAL,CONVERSATIONAL,Can you remind me what you told me about that?
+128,conversational,CONVERSATIONAL,CONVERSATIONAL,CONVERSATIONAL,Can you remind me what you told me about that?
+129,conversational,CONVERSATIONAL,CONVERSATIONAL,CONVERSATIONAL,What did I just ask you?
+130,conversational,CONVERSATIONAL,CONVERSATIONAL,CONVERSATIONAL,What topic were we just discussing?
+131,conversational,CONVERSATIONAL,CONVERSATIONAL,CONVERSATIONAL,What did you just say the answer was?
+132,conversational,CONVERSATIONAL,CONVERSATIONAL,CONVERSATIONAL,What was the first thing I asked?
+133,conversational,CONVERSATIONAL,CONVERSATIONAL,CONVERSATIONAL,Can you repeat your last answer?
+134,conversational,CONVERSATIONAL,CONVERSATIONAL,CONVERSATIONAL,What did you just say the answer was?
+135,conversational,CONVERSATIONAL,CONVERSATIONAL,CONVERSATIONAL,What did you just say the answer was?
+136,conversational,CONVERSATIONAL,CONVERSATIONAL,CONVERSATIONAL,"Wait, why does that matter?"
+137,conversational,CONVERSATIONAL,TECHNICAL,So which option should I actually use?,So which option should I actually use?
+138,conversational,CONVERSATIONAL,CONVERSATIONAL,CONVERSATIONAL,"Wait, why does that matter?"
+139,conversational,CONVERSATIONAL,TECHNICAL,So which option should I actually use?,So which option should I actually use?
+140,conversational,CONVERSATIONAL,CONVERSATIONAL,CONVERSATIONAL,What did you mean by that?
+141,conversational,CONVERSATIONAL,CONVERSATIONAL,CONVERSATIONAL,What did you mean by that?
+142,conversational,CONVERSATIONAL,TECHNICAL,Break that down a bit more for me.,Break that down a bit more for me.
+143,conversational,CONVERSATIONAL,TECHNICAL,So which option should I actually use?,So which option should I actually use?
+144,conversational,CONVERSATIONAL,CONVERSATIONAL,CONVERSATIONAL,What did you mean by that?
+145,conversational,CONVERSATIONAL,TECHNICAL,Can you explain that in simpler terms?,Can you explain that in simpler terms?
+146,conversational,CONVERSATIONAL,TECHNICAL,Break that down a bit more for me.,Break that down a bit more for me.
+147,conversational,CONVERSATIONAL,CONVERSATIONAL,CONVERSATIONAL,"Wait, why does that matter?"
+148,conversational,CONVERSATIONAL,CONVERSATIONAL,CONVERSATIONAL,So which option should I actually use?
+149,conversational,CONVERSATIONAL,TECHNICAL,Break that down a bit more for me.,Break that down a bit more for me.
+150,conversational,CONVERSATIONAL,CONVERSATIONAL,CONVERSATIONAL,Can you rephrase that last part?
+151,conversational,CONVERSATIONAL,CONVERSATIONAL,CONVERSATIONAL,Is that always true?
+152,conversational,CONVERSATIONAL,TECHNICAL,Can you explain that in simpler terms?,Can you explain that in simpler terms?
+153,conversational,CONVERSATIONAL,TECHNICAL,So which option should I actually use?,So which option should I actually use?
+154,conversational,CONVERSATIONAL,CONVERSATIONAL,CONVERSATIONAL,Is that always true?
+155,conversational,CONVERSATIONAL,TECHNICAL,Can you give me a concrete example of what you just described?,Can you give me a concrete example of what you just described?
+156,conversational,CONVERSATIONAL,CONVERSATIONAL,CONVERSATIONAL,"Wait, why does that matter?"
+157,conversational,CONVERSATIONAL,CONVERSATIONAL,CONVERSATIONAL,What did you mean by that?
+158,conversational,CONVERSATIONAL,TECHNICAL,So which option should I actually use?,So which option should I actually use?
+159,conversational,CONVERSATIONAL,TECHNICAL,Can you explain that in simpler terms?,Can you explain that in simpler terms?
+160,conversational,CONVERSATIONAL,CONVERSATIONAL,CONVERSATIONAL,Why is that the case?
+161,conversational,CONVERSATIONAL,TECHNICAL,Break that down a bit more for me.,Break that down a bit more for me.
+162,conversational,CONVERSATIONAL,TECHNICAL,Can you give me a concrete example of what you just described?,Can you give me a concrete example of what you just described?
+163,conversational,CONVERSATIONAL,CONVERSATIONAL,CONVERSATIONAL,Why is that the case?
+164,conversational,CONVERSATIONAL,CONVERSATIONAL,CONVERSATIONAL,Can you rephrase that last part?
+165,conversational,CONVERSATIONAL,CONVERSATIONAL,CONVERSATIONAL,Can you rephrase that last part?
+166,conversational,CONVERSATIONAL,CONVERSATIONAL,CONVERSATIONAL,Who are you?
+167,conversational,CONVERSATIONAL,CONVERSATIONAL,CONVERSATIONAL,What can you help me with?
+168,conversational,CONVERSATIONAL,CONVERSATIONAL,CONVERSATIONAL,How are you doing today?
+169,conversational,CONVERSATIONAL,TECHNICAL,Are you an AI?,Are you an AI?
+170,conversational,CONVERSATIONAL,CONVERSATIONAL,CONVERSATIONAL,What's your name?
+171,conversational,CONVERSATIONAL,CONVERSATIONAL,CONVERSATIONAL,"Thanks, that was helpful!"
+172,conversational,CONVERSATIONAL,CONVERSATIONAL,CONVERSATIONAL,"Ok cool, thank you."
+173,conversational,CONVERSATIONAL,CONVERSATIONAL,CONVERSATIONAL,Are you sure about that?
+174,conversational,CONVERSATIONAL,CONVERSATIONAL,CONVERSATIONAL,"That's interesting, tell me more about yourself."
+175,conversational,CONVERSATIONAL,TECHNICAL,Can you help with non-technical stuff too?,Can you help with non-technical stuff too?
+176,conversational,CONVERSATIONAL,TECHNICAL,What model are you running on?,What model are you running on?
+177,conversational,CONVERSATIONAL,CONVERSATIONAL,CONVERSATIONAL,Do you remember our previous conversations?
+178,conversational,CONVERSATIONAL,CONVERSATIONAL,CONVERSATIONAL,"Nice, appreciate it."
+179,conversational,CONVERSATIONAL,CONVERSATIONAL,CONVERSATIONAL,You're pretty helpful.
+180,conversational,CONVERSATIONAL,CONVERSATIONAL,CONVERSATIONAL,Bye for now.
+181,edge_case,CONVERSATIONAL,TECHNICAL,How many pods did you say run at once with parallelism: 3?,How many pods did you say run at once with parallelism: 3?
+182,edge_case,CONVERSATIONAL,CONVERSATIONAL,CONVERSATIONAL,Which restart policy did you say lets the Job controller create a new pod?
+183,edge_case,CONVERSATIONAL,CONVERSATIONAL,CONVERSATIONAL,What did you say backoffLimit: 3 means again?
+184,edge_case,CONVERSATIONAL,CONVERSATIONAL,CONVERSATIONAL,"What command did you say shows completions, duration, and age?"
+185,edge_case,CONVERSATIONAL,CONVERSATIONAL,CONVERSATIONAL,What were those two verification commands you mentioned?
+186,edge_case,CONVERSATIONAL,CONVERSATIONAL,CONVERSATIONAL,What field did you say sets the CPU utilization target?
+187,edge_case,CONVERSATIONAL,CONVERSATIONAL,CONVERSATIONAL,What was that cron schedule format you mentioned?
+188,edge_case,CONVERSATIONAL,CONVERSATIONAL,CONVERSATIONAL,What was the field name you just used?
+189,edge_case,CONVERSATIONAL,CONVERSATIONAL,CONVERSATIONAL,What was that command syntax again?
+190,edge_case,CONVERSATIONAL,CONVERSATIONAL,CONVERSATIONAL,What was the field name you just used?
+191,edge_case,TECHNICAL,TECHNICAL,"What cron schedule format does a CronJob use, and what does concurrencyPolicy: Forbid do?","What cron schedule format does a CronJob use, and what does concurrencyPolicy: Forbid do?"
+192,edge_case,TECHNICAL,TECHNICAL,"If a Job is stuck in Pending with no Pods running, what are the likely causes and how do you diagnose it?","If a Job is stuck in Pending with no Pods running, what are the likely causes and how do you diagnose it?"
+193,edge_case,TECHNICAL,TECHNICAL,"What does ttlSecondsAfterFinished do on a CronJob's job template, and why would you use it in a cost-optimization context?","What does ttlSecondsAfterFinished do on a CronJob's job template, and why would you use it in a cost-optimization context?"
+194,edge_case,TECHNICAL,TECHNICAL,"How do you follow a running Job's logs in real time, and how do you filter pods belonging to a specific job by label?","How do you follow a running Job's logs in real time, and how do you filter pods belonging to a specific job by label?"
+195,edge_case,TECHNICAL,TECHNICAL,"If a Job shows 0/1 under COMPLETIONS when you run kubectl get jobs, what are the possible explanations and how would you investigate further?","If a Job shows 0/1 under COMPLETIONS when you run kubectl get jobs, what are the possible explanations and how would you investigate further?"
+196,edge_case,TECHNICAL,TECHNICAL,What JSONPath command extracts just the number of succeeded pods for a specific job?,What JSONPath command extracts just the number of succeeded pods for a specific job?
+197,edge_case,TECHNICAL,TECHNICAL,"In an HPA object, what do minReplicas, maxReplicas, and averageUtilization control?","In an HPA object, what do minReplicas, maxReplicas, and averageUtilization control?"
+198,edge_case,TECHNICAL,TECHNICAL,How does VPA's updateMode: Recreate differ from updateMode: Auto?,How does VPA's updateMode: Recreate differ from updateMode: Auto?
+199,edge_case,TECHNICAL,TECHNICAL,How do you exclude a specific container in a pod from VPA-managed scaling?,How do you exclude a specific container in a pod from VPA-managed scaling?
+200,edge_case,TECHNICAL,TECHNICAL,"Walk through the full sequence of steps in the fine-parallel work queue example, from setting up storage to running the Job.","Walk through the full sequence of steps in the fine-parallel work queue example, from setting up storage to running the Job."

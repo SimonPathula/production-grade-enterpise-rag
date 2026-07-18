@@ -1,0 +1,29 @@
+{
+  "total": 200,
+  "correct": 182,
+  "misclassified": 18,
+  "routing_accuracy": 0.91,
+  "precision_technical": 0.8594,
+  "recall_technical": 1.0,
+  "f1_technical": 0.9244,
+  "confusion_matrix": {
+    "tp": 110,
+    "fp": 18,
+    "tn": 72,
+    "fn": 0
+  },
+  "per_category": {
+    "technical": {
+      "correct": 100,
+      "total": 100
+    },
+    "conversational": {
+      "correct": 63,
+      "total": 80
+    },
+    "edge_case": {
+      "correct": 19,
+      "total": 20
+    }
+  }
+}
