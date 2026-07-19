@@ -45,6 +45,7 @@ with st.sidebar:
     st.markdown("---")
     st.success(f"Logfire: {LOGFIRE_STATUS}")
     st.info(f"Memory ID: {st.session_state.session_id[:8]}")
+    st.sidebar.write("Backend URL:", base_url)
     
     if st.button("🗑️ Clear History & Memory", width="stretch", type="primary"):
         logfire.warning(f"🗑️ Memory Wipe Triggered for session: {st.session_state.session_id}")
