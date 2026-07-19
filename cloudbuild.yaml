@@ -4,7 +4,7 @@ steps:
     args:
       - 'build'
       - '-t'
-      - 'us-central1-docker.pkg.dev/${PROJECT_ID}/enterpriserag-repo/backend:latest'
+      - 'us-central1-docker.pkg.dev/${PROJECT_ID}/enterprise-rag-repo/backend:latest'
       - '-f'
       - 'docker/backend.Dockerfile'
       - '.'
@@ -14,7 +14,7 @@ steps:
     args:
       - 'build'
       - '-t'
-      - 'us-central1-docker.pkg.dev/${PROJECT_ID}/enterpriserag-repo/ui:latest'
+      - 'us-central1-docker.pkg.dev/${PROJECT_ID}/enterprise-rag-repo/ui:latest'
       - '-f'
       - 'docker/ui.Dockerfile'
       - '.'
@@ -24,7 +24,7 @@ steps:
     args:
       - 'build'
       - '-t'
-      - 'us-central1-docker.pkg.dev/${PROJECT_ID}/enterpriserag-repo/ingestion:latest'
+      - 'us-central1-docker.pkg.dev/${PROJECT_ID}/enterprise-rag-repo/ingestion:latest'
       - '-f'
       - 'docker/ingestion.Dockerfile'
       - '.'
