@@ -10,3 +10,4 @@ resume_points.txt
 *$py.class
 **/__init__.py
 .deepeval
+hf_embeddings_migration.md
