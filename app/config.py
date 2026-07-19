@@ -55,7 +55,7 @@ class Settings:
     # --- Evals ---
     JUDGE_GROQ = os.getenv("JUDGE_GROQ")
 
-    LOCAL_MODE = os.getenv("LOCAL_MODE")
+    LOCAL_MODE = os.getenv("LOCAL_MODE", "false").lower() == "true"
 
 
 # Apply LangSmith env vars for automatic LangChain tracing
