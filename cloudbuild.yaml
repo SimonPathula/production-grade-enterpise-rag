@@ -31,9 +31,9 @@ steps:
   
 # Push all images to Artifact Registry
 images:
-  - 'us-central1-docker.pkg.dev/${PROJECT_ID}/enterprise-rag-repo/backend:latest'
-  - 'us-central1-docker.pkg.dev/${PROJECT_ID}/enterprise-rag-repo/ui:latest'
-  - 'us-central1-docker.pkg.dev/${PROJECT_ID}/enterprise-rag-repo/ingestion:latest'
+  - 'us-central1-docker.pkg.dev/${PROJECT_ID}/enterpriserag-repo/backend:latest'
+  - 'us-central1-docker.pkg.dev/${PROJECT_ID}/enterpriserag-repo/ui:latest'
+  - 'us-central1-docker.pkg.dev/${PROJECT_ID}/enterpriserag-repo/ingestion:latest'
 
 # Give Cloud Build enough time for the evals image (PyTorch download is slow)
 timeout: '7200s'
