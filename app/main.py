@@ -1,10 +1,10 @@
-from nemoguardrails import LLMRails, RailsConfig
+from dotenv import load_dotenv
+load_dotenv()
+
 from app.config import settings
 import logfire
 import os
-from dotenv import load_dotenv
 
-load_dotenv()
 logfire.configure(token=settings.LOGFIRE_TOKEN)
 
 from fastapi import FastAPI, Response
