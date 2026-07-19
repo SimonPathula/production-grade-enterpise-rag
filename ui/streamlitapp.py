@@ -40,7 +40,6 @@ with st.sidebar:
 
     base_url = os.getenv("BACKEND_URL", "http://localhost:8000")
 
-
     st.markdown("---")
     st.success(f"Logfire: {LOGFIRE_STATUS}")
     st.info(f"Memory ID: {st.session_state.session_id[:8]}")
