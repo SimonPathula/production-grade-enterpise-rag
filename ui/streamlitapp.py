@@ -38,8 +38,7 @@ with st.sidebar:
     st.title("🧠 Agent OS")
     st.markdown("---")
 
-    # base_url = "https://rag-api-743241835438.us-central1.run.app"
-    base_url = os.getenv("BACKEND_URL", "http://localhost:8000")
+    base_url = "https://rag-api-743241835438.us-central1.run.app"
 
 
     st.markdown("---")
