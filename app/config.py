@@ -57,6 +57,7 @@ class Settings:
     JUDGE_GROQ = os.getenv("JUDGE_GROQ")
 
     LOCAL_MODE = os.getenv("LOCAL_MODE", "false").lower() == "true"
+    HF_API_TOKEN = os.getenv("HF_API_TOKEN")
 
 
 # Apply LangSmith env vars for automatic LangChain tracing
