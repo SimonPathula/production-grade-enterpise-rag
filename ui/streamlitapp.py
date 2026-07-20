@@ -38,8 +38,11 @@ with st.sidebar:
     st.title("🧠 Agent OS")
     st.markdown("---")
 
-    base_url = st.secrets.get("BACKEND_URL", os.getenv("BACKEND_URL", "http://localhost:8000"))
-    base_url = base_url.rstrip("/")
+    configured_backend_url = st.secrets.get("BACKEND_URL", os.getenv("BACKEND_URL"))
+    if not configured_backend_url:
+        st.error("BACKEND_URL is not configured in Streamlit Secrets.")
+        st.stop()
+    base_url = configured_backend_url.rstrip("/")
 
     st.markdown("---")
     st.success(f"Logfire: {LOGFIRE_STATUS}")

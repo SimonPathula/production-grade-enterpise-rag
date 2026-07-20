@@ -70,8 +70,11 @@ if prompt := st.chat_input("Ask about your documentation..."):
                     # DISTRIBUTED TRACE: Calling Backend
                     with logfire.span("📡 Calling RAG Backend"):
                         # Get backend URL from env, or default to local if not set
-                        base_url = st.secrets.get("BACKEND_URL", os.getenv("BACKEND_URL", "http://localhost:8000"))
-                        base_url = base_url.rstrip("/")
+                        configured_backend_url = st.secrets.get("BACKEND_URL", os.getenv("BACKEND_URL"))
+                        if not configured_backend_url:
+                            st.error("BACKEND_URL is not configured in Streamlit Secrets.")
+                            st.stop()
+                        base_url = configured_backend_url.rstrip("/")
                         url = f"{base_url}/query"
                         payload = {"query": prompt, "thread_id": st.session_state.session_id}
                         response = requests.post(url, json=payload, timeout=60)
