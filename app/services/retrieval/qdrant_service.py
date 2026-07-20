@@ -6,6 +6,10 @@ from app.services.retrieval.embedding import embed_query
 client = QdrantClient(url=settings.QDRANT_URL, api_key=settings.QDRANT_API_KEY)
 
 def search_qdrant_db(query:str, limit: int = 8):
+    logfire.info(
+        f"Searching collection '{settings.QDRANT_COLLECTION}' "
+        f"on {settings.QDRANT_URL}"
+    )
     try:
         query_vector = embed_query(query)
 

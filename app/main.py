@@ -23,6 +23,13 @@ class QueryRequest(BaseModel):
 @app.on_event("startup")
 def startup_event():
     intialize_rails()
+    logfire.info(
+        "Backend started",
+        collection=settings.QDRANT_COLLECTION,
+        qdrant_url=settings.QDRANT_URL,
+        embedding_model="BAAI/bge-base-en-v1.5",
+        llm=settings.GROQ_MODEL,
+    )
 
 @app.get("/")
 def health():
