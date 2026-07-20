@@ -32,6 +32,7 @@ class Settings:
 
     # --- Guardrails (NVIDIA) ---
     NVIDIA_API_KEY = os.getenv("NVIDIA_API_KEY")
+    ENABLE_NEMO_GUARDRAILS = os.getenv("ENABLE_NEMO_GUARDRAILS", "false").lower() == "true"
 
     # --- Postgres Memory ---
     DB_HOST = os.getenv("DB_HOST")                # /cloudsql/... (Cloud Run) or hostname (local)

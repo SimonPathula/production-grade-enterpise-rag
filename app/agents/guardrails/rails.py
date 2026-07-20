@@ -1,13 +1,11 @@
 import logfire
 from langchain_groq import ChatGroq
-from nemoguardrails import RailsConfig, LLMRails
-from nemoguardrails.embeddings.providers import register_embedding_provider 
+from typing import Any
 
 from app.config import settings
 from app.agents.guardrails.colang_rules import COLANG_CONTENT, YAML_CONTENT, RAIL_INDICATORS
-from app.agents.guardrails.hf_embedding_provider import HFAPIEmbeddingModel
 
-_rails: LLMRails | None = None
+_rails: Any | None = None
 
 _OFF_TOPIC_RESPONSE = (
     "I'm an Enterprise IT Assistant focused on Kubernetes, Intel hardware, "
@@ -48,11 +46,20 @@ def _normalize_message(message: str) -> str:
 
 def intialize_rails() -> None:
     global _rails
+    if not settings.ENABLE_NEMO_GUARDRAILS:
+        logfire.info("NeMo Guardrails disabled. Using deterministic guardrails only.")
+        return
+
     if not settings.HF_API_TOKEN:
         raise RuntimeError(
             "HF_API_TOKEN is required for NeMo Guardrails embeddings. "
             "Add it to Render environment variables and redeploy."
         )
+
+    from nemoguardrails import RailsConfig, LLMRails
+    from nemoguardrails.embeddings.providers import register_embedding_provider
+
+    from app.agents.guardrails.hf_embedding_provider import HFAPIEmbeddingModel
 
     register_embedding_provider(HFAPIEmbeddingModel, "hf_api")
     rails_llm = ChatGroq(api_key= settings.GROQ_API_KEY, model= "llama-3.1-8b-instant", temperature=0)
