@@ -12,3 +12,10 @@ resume_points.txt
 .deepeval
 hf_embeddings_migration.md
 terraform/terraform.tfvars
+.git
+.gitignore
+*.pyc
+*.pyo
+.idea
+.pytest_cache
+.mypy_cache
