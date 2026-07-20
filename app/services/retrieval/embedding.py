@@ -45,7 +45,7 @@
 import requests
 from app.config import settings
 
-HF_API_URL = "https://api-inference.huggingface.co/pipeline/feature-extraction/BAAI/bge-base-en-v1.5"
+HF_API_URL = "https://router.huggingface.co/hf-inference/models/BAAI/bge-base-en-v1.5/pipeline/feature-extraction"
 HEADERS = {"Authorization": f"Bearer {settings.HF_API_TOKEN}"}
 BATCH_SIZE = 50
 
