@@ -43,6 +43,7 @@ dependencies = [
     "redis>=7.4.1",
     "redisvl>=0.23.0",
     "requests>=2.34.2",
+    "sentence-transformers>=5.6.0",
     "sqlalchemy>=2.0.51",
     "streamlit>=1.59.2",
     "uvicorn[standard]>=0.51.0",

@@ -5,7 +5,7 @@ import json
 import time
 import tempfile
 import logfire
-import vertexai
+# import vertexai
 
 from typing import List
 from fastapi import FastAPI, Request, BackgroundTasks
@@ -24,7 +24,7 @@ from app.ingestion.chunking.splitter import chunk_text
 # === Client Configuration ====
 
 logfire.configure(service_name="enterprise-ingestion-service")
-vertexai.init(project= settings.PROJECT_ID, location= settings.LOCATION)
+# vertexai.init(project= settings.PROJECT_ID, location= settings.LOCATION)
 storage_client = storage.Client(project=settings.PROJECT_ID)
 qdrant_client = QdrantClient(url=settings.QDRANT_URL, api_key=settings.QDRANT_API_KEY, timeout= 60)
 
@@ -39,21 +39,30 @@ FAILED_FILES: List[str] = []
 def health():
     return {"status": "ok", "service": "RAG Ingestion", "mode": "cloud"}
 
-def upload_to_gcs(data, bucket_name:str, destination:str, is_json: bool = False):
+def upload_to_gcs(data, bucket_name: str, destination: str, is_json: bool = False, retries: int = 3, backoff_base: float = 2.0):
     with logfire.span("Google Cloud Storage Upload", bucket=bucket_name, blob=destination):
-        try:
-            bucket = storage_client.bucket(bucket_name)
-            blob = bucket.blob(destination)
+        last_err = None
+        for attempt in range(1, retries + 1):
+            try:
+                bucket = storage_client.bucket(bucket_name)
+                blob = bucket.blob(destination)
 
-            if is_json:
-                blob.upload_from_string(json.dumps(data), content_type="application/json")
-            else:
-                blob.upload_from_filename(data)
+                if is_json:
+                    blob.upload_from_string(json.dumps(data), content_type="application/json")
+                else:
+                    blob.upload_from_filename(data)
 
-            logfire.info(f"Uploaded to {bucket_name}/{destination}")
-        except Exception as e:
-            logfire.error(f"GCS Upload failed: {e}")
-            raise e
+                logfire.info(f"Uploaded to {bucket_name}/{destination}")
+                return
+            except Exception as e:
+                last_err = e
+                if attempt == retries:
+                    logfire.error(f"GCS Upload failed after {retries} attempts: {e}")
+                    raise
+                wait = backoff_base ** attempt
+                logfire.warning(f"GCS upload attempt {attempt}/{retries} failed ({e}). Retrying in {wait:.0f}s...")
+                time.sleep(wait)
+        raise last_err  # unreachable
 
 def upsert_in_batches(points, batch_size=64, retries=3):
     for i in range(0, len(points), batch_size):

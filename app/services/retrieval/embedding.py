@@ -1,5 +1,6 @@
-import vertexai
-from vertexai.language_models import TextEmbeddingModel
+# import vertexai
+# from vertexai.language_models import TextEmbeddingModel
+from sentence_transformers import SentenceTransformer
 from app.config import settings
 
 model = None
@@ -9,16 +10,22 @@ def get_embedding_model():
     global model
     if model is None:
         #Initialize the VertexAI before loading the model
-        vertexai.init(project=settings.PROJECT_ID, location=settings.LOCATION)
-
-        model = TextEmbeddingModel.from_pretrained("text-embedding-004")
+        # vertexai.init(project=settings.PROJECT_ID, location=settings.LOCATION)
+        # model = TextEmbeddingModel.from_pretrained("text-embedding-004")
+        
+        # Load HuggingFace model (BAAI/bge-base-en-v1.5 has 768 dimensions, same as text-embedding-004)
+        model = SentenceTransformer("BAAI/bge-base-en-v1.5")
 
     return model
 
 def embed_query(query:str):
     model = get_embedding_model()
-    embeddings = model.get_embeddings([query])
-    return embeddings[0].values
+    # embeddings = model.get_embeddings([query])
+    # return embeddings[0].values
+    
+    # Generate HuggingFace embeddings
+    embedding = model.encode([query]).tolist()
+    return embedding[0]
 
 def embed_texts(texts: list[str]):
     model = get_embedding_model()
@@ -26,7 +33,11 @@ def embed_texts(texts: list[str]):
 
     for i in range(0, len(texts), BATCH_SIZE):
         batch = texts[i : i + BATCH_SIZE]
-        embeddings = model.get_embeddings(batch)
-        all_embeddings.extend([e.values for e in embeddings])
+        # embeddings = model.get_embeddings(batch)
+        # all_embeddings.extend([e.values for e in embeddings])
+        
+        # Generate HuggingFace embeddings for batch
+        embeddings = model.encode(batch).tolist()
+        all_embeddings.extend(embeddings)
 
     return all_embeddings

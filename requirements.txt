@@ -14,7 +14,14 @@ asn1crypto==1.5.1
 asttokens==3.0.2
 attrs==26.1.0
 backoff==2.2.1
-beautifulsoup4==4.15.0
+# ===== Documents =====
+python-pptx
+python-docx
+pypdf
+beautifulsoup4
+unstructured
+
+# ===== Validation =====
 blinker==1.9.0
 bottleneck==1.6.0
 cachetools==7.1.4
@@ -102,6 +109,7 @@ langchain-google-vertexai==2.1.2
 langchain-groq==0.3.8
 langchain-openai==0.3.30
 langchain-text-splitters==0.3.11
+sentence-transformers>=2.7.0
 langgraph==1.0.1
 langgraph-checkpoint==3.0.1
 langgraph-checkpoint-postgres==3.0.5
