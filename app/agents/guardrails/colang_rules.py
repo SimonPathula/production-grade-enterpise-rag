@@ -97,6 +97,9 @@ models:
   - type: main
     engine: openai
     model: gpt-3.5-turbo
+  - type: embeddings
+    engine: hf_api
+    model: BAAI/bge-base-en-v1.5
 
 instructions:
   - type: general
