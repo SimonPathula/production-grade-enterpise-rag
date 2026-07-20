@@ -1,0 +1,77 @@
+# ===========================
+# Core API
+# ===========================
+fastapi==0.139.0
+uvicorn[standard]==0.51.0
+python-dotenv==1.2.2
+python-multipart==0.0.32
+requests==2.34.2
+
+# ===========================
+# AI / Agent Framework
+# ===========================
+langchain==0.3.27
+langchain-community==0.3.27
+langchain-openai==0.3.30
+langchain-groq==0.3.8
+langgraph==1.0.1
+langgraph-checkpoint-postgres==3.0.5
+
+# ===========================
+# Guardrails
+# ===========================
+nemoguardrails==0.11.0
+
+# ===========================
+# Vector DB
+# ===========================
+qdrant-client==1.18.0
+
+# ===========================
+# Embeddings
+# ===========================
+sentence-transformers==5.6.0
+torch
+transformers
+
+# ===========================
+# Reranking
+# ===========================
+flashrank==0.2.10
+
+# ===========================
+# Database
+# ===========================
+psycopg[binary]==3.3.4
+psycopg-pool==3.3.1
+redis==7.4.1
+
+# ===========================
+# Google Cloud (only if used)
+# ===========================
+google-cloud-storage==2.19.0
+google-cloud-documentai==3.15.0
+cloud-sql-python-connector==1.20.4
+pg8000==1.31.5
+
+# ===========================
+# Parsing
+# ===========================
+beautifulsoup4==4.15.0
+pypdf==6.14.2
+python-docx==1.2.0
+python-pptx==1.0.2
+
+# ===========================
+# Utilities
+# ===========================
+numpy==2.5.1
+pandas==3.0.3
+pytz==2026.2
+loguru==0.7.3
+
+# ===========================
+# Observability
+# ===========================
+logfire[fastapi,requests]==4.37.0
+langsmith==0.10.5
