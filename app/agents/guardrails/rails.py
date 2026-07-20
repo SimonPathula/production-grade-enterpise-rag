@@ -1,6 +1,7 @@
 import logfire
 from langchain_groq import ChatGroq
 from nemoguardrails import RailsConfig, LLMRails
+from nemoguardrails.embeddings.providers import register_embedding_provider 
 
 from app.config import settings
 from app.agents.guardrails.colang_rules import COLANG_CONTENT, YAML_CONTENT, RAIL_INDICATORS
@@ -10,11 +11,11 @@ _rails: LLMRails | None = None
 
 def intialize_rails() -> None:
     global _rails
+    register_embedding_provider(HFAPIEmbeddingModel, "hf_api")
     rails_llm = ChatGroq(api_key= settings.GROQ_API_KEY, model= "llama-3.1-8b-instant", temperature=0)
 
     config = RailsConfig.from_content(COLANG_CONTENT, YAML_CONTENT)
     _rails = LLMRails(config, llm=rails_llm)
-    _rails.register_embedding_provider(HFAPIEmbeddingModel, "hf_api")
     logfire.info("NeMo Guardrails intialised (llama-3.1-8b-instant)")
 
 def guard(message: str) -> tuple[bool, str | None]:
