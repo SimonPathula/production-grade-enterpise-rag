@@ -12,3 +12,4 @@ resume_points.txt
 .deepeval
 hf_embeddings_migration.md
 terraform/terraform.tfvarsterraform/terraform.tfvars
+.pytest_cache
