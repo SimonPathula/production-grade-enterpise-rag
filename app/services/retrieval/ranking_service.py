@@ -73,7 +73,7 @@ PASSAGES:
 {passages}
 """
 
-def rerank_documents(query: str, documents: list[str], top_n: int = 4, retries: int = 2) -> list[str]:
+def rerank_documents(query: str, documents: list[str], top_n: int = 5, retries: int = 2) -> list[str]:
     if not documents:
         return []
 
